@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -9,16 +10,18 @@
 
 <style>
 
+/* ===== GLOBAL ===== */
+
 body{
 margin:0;
-background:linear-gradient(135deg,#ff9a9e,#fad0c4);
 font-family:Arial, Helvetica, sans-serif;
 text-align:center;
 color:white;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
 overflow:hidden;
 }
 
-/* TITLE */
+/* ===== TITLE ===== */
 
 .title{
 margin-top:60px;
@@ -31,28 +34,40 @@ font-size:20px;
 opacity:0.9;
 }
 
-/* HEART */
+/* ===== HEART ===== */
 
 #heart{
+
 position:relative;
 width:200px;
 height:200px;
-margin:100px auto;
+margin:90px auto;
+
 transform:rotate(45deg);
+
 background:#ff2e63;
+
 animation:beat 1s infinite;
+
 cursor:pointer;
-box-shadow:0 0 40px #ff2e63;
+
+box-shadow:0 0 50px #ff2e63;
+
 }
 
 #heart:before,
 #heart:after{
+
 content:'';
 position:absolute;
+
 width:200px;
 height:200px;
+
 background:#ff2e63;
+
 border-radius:50%;
+
 }
 
 #heart:before{
@@ -66,12 +81,14 @@ top:0;
 }
 
 @keyframes beat{
+
 0%{transform:scale(1) rotate(45deg)}
-50%{transform:scale(1.1) rotate(45deg)}
+50%{transform:scale(1.12) rotate(45deg)}
 100%{transform:scale(1) rotate(45deg)}
+
 }
 
-/* MESSAGE */
+/* ===== MESSAGE ===== */
 
 #message{
 display:none;
@@ -79,39 +96,36 @@ font-size:28px;
 margin-top:20px;
 }
 
-/* TIMER */
+/* ===== TIMER ===== */
 
 #timer{
+
 margin-top:20px;
 font-size:22px;
-}
 
-/* BUTTON GO */
+background:rgba(255,255,255,0.2);
 
-.go-btn{
-margin-top:30px;
 display:inline-block;
-padding:12px 30px;
-background:white;
-color:#ff2e63;
-font-weight:bold;
-border-radius:30px;
-text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
-transition:0.3s;
+
+padding:12px 22px;
+
+border-radius:20px;
+
+backdrop-filter:blur(10px);
+
 }
 
-.go-btn:hover{
-transform:scale(1.1);
-}
+/* ===== FLOWER RAIN ===== */
 
-/* FLOWERS */
+.fall{
 
-.flower{
-position:absolute;
+position:fixed;
 top:-10px;
+
 font-size:20px;
-animation:fall linear infinite;
+
+animation:fall linear forwards;
+
 }
 
 @keyframes fall{
@@ -120,11 +134,57 @@ transform:translateY(110vh);
 }
 }
 
-/* MUSIC PLAYER */
+/* ===== HEART FOLLOW MOUSE ===== */
+
+.mouse-heart{
+
+position:fixed;
+
+font-size:18px;
+
+pointer-events:none;
+
+animation:float 1s linear forwards;
+
+}
+
+@keyframes float{
+
+0%{opacity:1; transform:translateY(0)}
+100%{opacity:0; transform:translateY(-40px)}
+
+}
+
+/* ===== SPARKLE ===== */
+
+.spark{
+
+position:absolute;
+
+width:6px;
+height:6px;
+
+background:white;
+
+border-radius:50%;
+
+animation:spark 1s linear infinite;
+
+}
+
+@keyframes spark{
+
+0%{opacity:1}
+100%{opacity:0}
+
+}
+
+/* ===== MUSIC PLAYER ===== */
 
 .music-player{
 
 position:fixed;
+
 right:20px;
 bottom:20px;
 
@@ -132,10 +192,15 @@ display:flex;
 align-items:center;
 gap:10px;
 
-background:rgba(255,255,255,0.2);
+background:rgba(255,255,255,0.25);
+
 padding:10px 15px;
+
 border-radius:30px;
+
 backdrop-filter:blur(10px);
+
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
 
 }
 
@@ -145,34 +210,42 @@ backdrop-filter:blur(10px);
 
 width:50px;
 height:50px;
+
 border-radius:50%;
+
 background:url("preview/music.png");
+
 background-size:cover;
 
+border:3px solid rgba(255,255,255,0.7);
+
 animation:spin 4s linear infinite;
+
 animation-play-state:paused;
 
 }
 
 @keyframes spin{
+
 from{transform:rotate(0)}
 to{transform:rotate(360deg)}
-}
 
-/* SONG NAME */
-
-.song-name{
-font-size:14px;
 }
 
 /* PLAY BUTTON */
 
-.play-btn{
+.play{
 
-background:white;
+background:#ff4d6d;
+
 border:none;
-border-radius:20px;
+
+color:white;
+
 padding:6px 12px;
+
+border-radius:20px;
+
 cursor:pointer;
 
 }
@@ -199,43 +272,35 @@ Anh yêu em rất nhiều 💖
 
 <div id="timer"></div>
 
-<a class="go-btn" href="001/">
-💌 Xem điều anh chuẩn bị cho em
-</a>
-
 <!-- MUSIC PLAYER -->
 
 <div class="music-player">
 
 <div class="disk" id="disk"></div>
 
-<div class="song-name">
-Tình cờ tôi thích em 🎵
-</div>
+<div>Tình cờ tôi thích em 🎵</div>
 
-<button class="play-btn" onclick="toggleMusic()">
-Play
-</button>
+<button class="play" id="btn" onclick="toggleMusic()">Play</button>
 
 </div>
 
-<audio id="bgm" loop>
+<audio id="bgm" loop autoplay>
 <source src="audio/tinhcotoithichem.mp3">
 </audio>
 
 <script>
 
-/* HEART CLICK */
+/* ===== HEART CLICK ===== */
 
-document.getElementById("heart").onclick=function(){
+document.getElementById("heart").onclick=()=>{
 
 document.getElementById("message").style.display="block"
 
 }
 
-/* TIMER */
+/* ===== TIMER ===== */
 
-var start=new Date("2026-03-12")
+var start=new Date("2026-03-12T00:00:00")
 
 function update(){
 
@@ -243,135 +308,126 @@ var now=new Date()
 
 var diff=now-start
 
-var days=Math.floor(diff/1000/60/60/24)
+var d=Math.floor(diff/1000/60/60/24)
 
-var hours=Math.floor(diff/1000/60/60)%24
+var h=Math.floor(diff/1000/60/60)%24
 
-var minutes=Math.floor(diff/1000/60)%60
+var m=Math.floor(diff/1000/60)%60
 
-var seconds=Math.floor(diff/1000)%60
+var s=Math.floor(diff/1000)%60
 
 document.getElementById("timer").innerHTML=
 
-"Đã bên nhau: "
+"Quang Quân ❤️ Quỳnh Trang<br>Đã bên nhau: "
 
-+days+" ngày "
-
-+hours+" giờ "
-
-+minutes+" phút "
-
-+seconds+" giây"
++d+" ngày "+h+" giờ "+m+" phút "+s+" giây"
 
 }
 
+update()
 setInterval(update,1000)
 
-/* FLOWERS */
+/* ===== FLOWER RAIN ===== */
 
-function flower(){
+function rain(){
 
-var f=document.createElement("div")
+var e=document.createElement("div")
 
-f.className="flower"
+e.className="fall"
 
-f.innerHTML="🌸"
+var icons=["🌸","💕","💖","😍"]
 
-f.style.left=Math.random()*100+"vw"
+e.innerHTML=icons[Math.floor(Math.random()*icons.length)]
 
-f.style.animationDuration=(3+Math.random()*5)+"s"
+e.style.left=Math.random()*100+"vw"
 
-document.body.appendChild(f)
+e.style.animationDuration=(3+Math.random()*5)+"s"
 
-setTimeout(()=>f.remove(),8000)
+document.body.appendChild(e)
 
-}
-
-
-function flower1(){
-
-var f=document.createElement("div")
-
-f.className="flower"
-
-f.innerHTML="😍"
-
-f.style.left=Math.random()*100+"vw"
-
-f.style.animationDuration=(3+Math.random()*5)+"s"
-
-document.body.appendChild(f)
-
-setTimeout(()=>f.remove(),8000)
+setTimeout(()=>e.remove(),8000)
 
 }
 
+setInterval(rain,250)
 
-function heart(){
+/* ===== HEART FOLLOW MOUSE ===== */
 
-var f=document.createElement("div")
+document.onmousemove=(e)=>{
 
-f.className="flower"
+var h=document.createElement("div")
 
-f.innerHTML="💕"
+h.className="mouse-heart"
 
-f.style.left=Math.random()*100+"vw"
+h.innerHTML="💗"
 
-f.style.animationDuration=(3+Math.random()*5)+"s"
+h.style.left=e.pageX+"px"
 
-document.body.appendChild(f)
+h.style.top=e.pageY+"px"
 
-setTimeout(()=>f.remove(),8000)
+document.body.appendChild(h)
 
-}
-
-function heart1(){
-
-var f=document.createElement("div")
-
-f.className="flower"
-
-f.innerHTML="💖"
-
-f.style.left=Math.random()*100+"vw"
-
-f.style.animationDuration=(3+Math.random()*5)+"s"
-
-document.body.appendChild(f)
-
-setTimeout(()=>f.remove(),8000)
+setTimeout(()=>h.remove(),1000)
 
 }
 
+/* ===== SPARKLE AROUND HEART ===== */
 
-setInterval(flower,300)
+for(let i=0;i<15;i++){
 
+var s=document.createElement("div")
 
-setInterval(flower1,200)
+s.className="spark"
 
-setInterval(heart,300)
+s.style.left=Math.random()*200+"px"
 
+s.style.top=Math.random()*200+"px"
 
-setInterval(heart1,200)
+document.getElementById("heart").appendChild(s)
 
-/* MUSIC */
+}
+
+/* ===== MUSIC ===== */
 
 const music=document.getElementById("bgm")
 const disk=document.getElementById("disk")
+const btn=document.getElementById("btn")
 
 function toggleMusic(){
 
 if(music.paused){
 
-music.play()
+music.play().then(()=>{
+
 disk.style.animationPlayState="running"
+
+btn.innerHTML="Pause"
+
+})
 
 }else{
 
 music.pause()
+
 disk.style.animationPlayState="paused"
 
+btn.innerHTML="Play"
+
 }
+
+}
+
+/* AUTO PLAY */
+
+window.onload=()=>{
+
+music.play().then(()=>{
+
+disk.style.animationPlayState="running"
+
+btn.innerHTML="Pause"
+
+}).catch(()=>{})
 
 }
 
@@ -380,3 +436,4 @@ disk.style.animationPlayState="paused"
 </body>
 
 </html>
+```
