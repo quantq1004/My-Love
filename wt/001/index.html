@@ -31,37 +31,37 @@ font-size:20px;
 opacity:0.9;
 }
 
-/* HEART */
+/* HEART (GIẢM KÍCH CỠ) */
 
 #heart{
 position:relative;
-width:200px;
-height:200px;
-margin:100px auto;
+width:140px;
+height:140px;
+margin:80px auto;
 transform:rotate(45deg);
 background:#ff2e63;
 animation:beat 1s infinite;
 cursor:pointer;
-box-shadow:0 0 40px #ff2e63;
+box-shadow:0 0 30px #ff2e63;
 }
 
 #heart:before,
 #heart:after{
 content:'';
 position:absolute;
-width:200px;
-height:200px;
+width:140px;
+height:140px;
 background:#ff2e63;
 border-radius:50%;
 }
 
 #heart:before{
-top:-100px;
+top:-70px;
 left:0;
 }
 
 #heart:after{
-left:-100px;
+left:-70px;
 top:0;
 }
 
@@ -86,7 +86,7 @@ margin-top:20px;
 font-size:22px;
 }
 
-/* BUTTON GO */
+/* BUTTON */
 
 .go-btn{
 margin-top:30px;
@@ -107,11 +107,39 @@ transform:scale(1.1);
 
 /* FLOWERS */
 
+/* FLOWER RANDOM FLY */
+
 .flower{
-position:absolute;
-top:-10px;
-font-size:20px;
-animation:fall linear infinite;
+position:fixed;
+font-size:22px;
+pointer-events:none;
+animation:flowerFly linear forwards;
+}
+
+@keyframes flowerFly{
+
+0%{
+transform:translate(0,0) rotate(0deg);
+opacity:1;
+}
+
+25%{
+transform:translate(40px,120px) rotate(90deg);
+}
+
+50%{
+transform:translate(-40px,260px) rotate(180deg);
+}
+
+75%{
+transform:translate(60px,420px) rotate(270deg);
+}
+
+100%{
+transform:translate(-30px,600px) rotate(360deg);
+opacity:0;
+}
+
 }
 
 @keyframes fall{
@@ -146,6 +174,7 @@ backdrop-filter:blur(10px);
 width:50px;
 height:50px;
 border-radius:50%;
+
 background:url("preview/music.png");
 background-size:cover;
 
@@ -155,7 +184,6 @@ animation-play-state:paused;
 }
 
 @keyframes spin{
-from{transform:rotate(0)}
 to{transform:rotate(360deg)}
 }
 
@@ -172,7 +200,7 @@ font-size:14px;
 background:white;
 border:none;
 border-radius:20px;
-padding:6px 12px;
+padding:6px 14px;
 cursor:pointer;
 
 }
@@ -213,7 +241,7 @@ Ngày kỷ niệm: 12-03-2026 💌
 Tình cờ tôi thích em 🎵
 </div>
 
-<button class="play-btn" onclick="toggleMusic()">
+<button class="play-btn" id="playBtn" onclick="toggleMusic()">
 Play
 </button>
 
@@ -271,93 +299,45 @@ setInterval(update,1000)
 
 function flower(){
 
-var f=document.createElement("div")
+let f=document.createElement("div")
 
 f.className="flower"
 
-f.innerHTML="🌸"
+let items=["🌸","🌺","💮","💕","💖","😍"]
 
+f.innerHTML=items[Math.floor(Math.random()*items.length)]
+
+/* random start position */
+
+let side=Math.floor(Math.random()*3)
+
+if(side==0){
 f.style.left=Math.random()*100+"vw"
+f.style.top="-20px"
+}
+else if(side==1){
+f.style.left="-20px"
+f.style.top=Math.random()*80+"vh"
+}
+else{
+f.style.left="100vw"
+f.style.top=Math.random()*80+"vh"
+}
 
-f.style.animationDuration=(3+Math.random()*5)+"s"
+f.style.animationDuration=(6+Math.random()*4)+"s"
 
 document.body.appendChild(f)
 
-setTimeout(()=>f.remove(),8000)
+setTimeout(()=>f.remove(),10000)
 
 }
 
+setInterval(flower,250)
 
-function flower1(){
-
-var f=document.createElement("div")
-
-f.className="flower"
-
-f.innerHTML="😍"
-
-f.style.left=Math.random()*100+"vw"
-
-f.style.animationDuration=(3+Math.random()*5)+"s"
-
-document.body.appendChild(f)
-
-setTimeout(()=>f.remove(),8000)
-
-}
-
-
-function heart(){
-
-var f=document.createElement("div")
-
-f.className="flower"
-
-f.innerHTML="💕"
-
-f.style.left=Math.random()*100+"vw"
-
-f.style.animationDuration=(3+Math.random()*5)+"s"
-
-document.body.appendChild(f)
-
-setTimeout(()=>f.remove(),8000)
-
-}
-
-function heart1(){
-
-var f=document.createElement("div")
-
-f.className="flower"
-
-f.innerHTML="💖"
-
-f.style.left=Math.random()*100+"vw"
-
-f.style.animationDuration=(3+Math.random()*5)+"s"
-
-document.body.appendChild(f)
-
-setTimeout(()=>f.remove(),8000)
-
-}
-
-
-setInterval(flower,300)
-
-
-setInterval(flower1,200)
-
-setInterval(heart,300)
-
-
-setInterval(heart1,200)
-
-/* MUSIC */
 
 const music=document.getElementById("bgm")
 const disk=document.getElementById("disk")
+const btn=document.getElementById("playBtn")
 
 function toggleMusic(){
 
@@ -365,11 +345,13 @@ if(music.paused){
 
 music.play()
 disk.style.animationPlayState="running"
+btn.innerHTML="Pause"
 
 }else{
 
 music.pause()
 disk.style.animationPlayState="paused"
+btn.innerHTML="Play"
 
 }
 
@@ -378,5 +360,4 @@ disk.style.animationPlayState="paused"
 </script>
 
 </body>
-
 </html>
