@@ -105,6 +105,25 @@ transition:0.3s;
 transform:scale(1.1);
 }
 
+.go-btn1{
+margin-top:30px;
+margin-bottom:30px;
+display:inline-block;
+padding:12px 30px;
+background:white;
+color:#ff2e63;
+font-weight:bold;
+border-radius:30px;
+text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+
+.go-btn1:hover{
+transform:scale(1.1);
+}
+
+
 /* FLOWERS */
 
 /* FLOWER RANDOM FLY */
@@ -175,7 +194,7 @@ width:50px;
 height:50px;
 border-radius:50%;
 
-background:url("preview/music.png");
+background:url("/preview/music.png");
 background-size:cover;
 
 animation:spin 4s linear infinite;
@@ -227,9 +246,10 @@ Anh yêu em rất nhiều 💖
 
 <div id="timer"></div>
 
-<a class="go-btn" href="001/">
+<a class="go-btn1">
 Ngày kỷ niệm: 12-03-2026 💌
 </a>
+
 
 <!-- MUSIC PLAYER -->
 
@@ -248,7 +268,7 @@ Play
 </div>
 
 <audio id="bgm" loop>
-<source src="audio/tinhcotoithichem.mp3">
+<source src="/audio/tinhcotoithichem.mp3">
 </audio>
 
 <script>
