@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -118,65 +117,44 @@ backdrop-filter:blur(10px);
 /* ===== FLOWER RAIN ===== */
 
 .fall{
-
 position:fixed;
 top:-10px;
-
 font-size:20px;
-
 animation:fall linear forwards;
-
 }
 
 @keyframes fall{
-to{
-transform:translateY(110vh);
-}
+to{transform:translateY(110vh);}
 }
 
 /* ===== HEART FOLLOW MOUSE ===== */
 
 .mouse-heart{
-
 position:fixed;
-
 font-size:18px;
-
 pointer-events:none;
-
 animation:float 1s linear forwards;
-
 }
 
 @keyframes float{
-
 0%{opacity:1; transform:translateY(0)}
 100%{opacity:0; transform:translateY(-40px)}
-
 }
 
 /* ===== SPARKLE ===== */
 
 .spark{
-
 position:absolute;
-
 width:6px;
 height:6px;
-
 background:white;
-
 border-radius:50%;
-
 animation:spark 1s linear infinite;
-
 }
 
 @keyframes spark{
-
 0%{opacity:1}
 100%{opacity:0}
-
 }
 
 /* ===== MUSIC PLAYER ===== */
@@ -204,8 +182,6 @@ box-shadow:0 10px 30px rgba(0,0,0,0.3);
 
 }
 
-/* DISK */
-
 .disk{
 
 width:50px;
@@ -226,28 +202,17 @@ animation-play-state:paused;
 }
 
 @keyframes spin{
-
 from{transform:rotate(0)}
 to{transform:rotate(360deg)}
-
 }
 
-/* PLAY BUTTON */
-
 .play{
-
 background:#ff4d6d;
-
 border:none;
-
 color:white;
-
 padding:6px 12px;
-
 border-radius:20px;
-
 cursor:pointer;
-
 }
 
 </style>
@@ -256,9 +221,7 @@ cursor:pointer;
 
 <body>
 
-<div class="title">
-💕 Quỳnh Trang 💕
-</div>
+<div class="title">💕 Quỳnh Trang 💕</div>
 
 <div class="subtitle">
 Every time I see you, my heart beats faster
@@ -284,8 +247,8 @@ Anh yêu em rất nhiều 💖
 
 </div>
 
-<audio id="bgm" loop autoplay>
-<source src="audio/tinhcotoithichem.mp3">
+<audio id="bgm" loop autoplay muted>
+<source src="audio/tinhcotoithichem.mp3" type="audio/mpeg">
 </audio>
 
 <script>
@@ -293,9 +256,7 @@ Anh yêu em rất nhiều 💖
 /* ===== HEART CLICK ===== */
 
 document.getElementById("heart").onclick=()=>{
-
 document.getElementById("message").style.display="block"
-
 }
 
 /* ===== TIMER ===== */
@@ -309,17 +270,12 @@ var now=new Date()
 var diff=now-start
 
 var d=Math.floor(diff/1000/60/60/24)
-
 var h=Math.floor(diff/1000/60/60)%24
-
 var m=Math.floor(diff/1000/60)%60
-
 var s=Math.floor(diff/1000)%60
 
 document.getElementById("timer").innerHTML=
-
 "Quang Quân ❤️ Quỳnh Trang<br>Đã bên nhau: "
-
 +d+" ngày "+h+" giờ "+m+" phút "+s+" giây"
 
 }
@@ -332,7 +288,6 @@ setInterval(update,1000)
 function rain(){
 
 var e=document.createElement("div")
-
 e.className="fall"
 
 var icons=["🌸","💕","💖","😍"]
@@ -340,7 +295,6 @@ var icons=["🌸","💕","💖","😍"]
 e.innerHTML=icons[Math.floor(Math.random()*icons.length)]
 
 e.style.left=Math.random()*100+"vw"
-
 e.style.animationDuration=(3+Math.random()*5)+"s"
 
 document.body.appendChild(e)
@@ -358,11 +312,9 @@ document.onmousemove=(e)=>{
 var h=document.createElement("div")
 
 h.className="mouse-heart"
-
 h.innerHTML="💗"
 
 h.style.left=e.pageX+"px"
-
 h.style.top=e.pageY+"px"
 
 document.body.appendChild(h)
@@ -371,7 +323,7 @@ setTimeout(()=>h.remove(),1000)
 
 }
 
-/* ===== SPARKLE AROUND HEART ===== */
+/* ===== SPARKLE ===== */
 
 for(let i=0;i<15;i++){
 
@@ -380,7 +332,6 @@ var s=document.createElement("div")
 s.className="spark"
 
 s.style.left=Math.random()*200+"px"
-
 s.style.top=Math.random()*200+"px"
 
 document.getElementById("heart").appendChild(s)
@@ -398,34 +349,34 @@ function toggleMusic(){
 if(music.paused){
 
 music.play().then(()=>{
-
 disk.style.animationPlayState="running"
-
 btn.innerHTML="Pause"
-
 })
 
 }else{
 
 music.pause()
-
 disk.style.animationPlayState="paused"
-
 btn.innerHTML="Play"
 
 }
 
 }
 
-/* AUTO PLAY */
+/* ===== AUTO PLAY FIX ===== */
 
 window.onload=()=>{
+
+music.muted=true
 
 music.play().then(()=>{
 
 disk.style.animationPlayState="running"
-
 btn.innerHTML="Pause"
+
+setTimeout(()=>{
+music.muted=false
+},500)
 
 }).catch(()=>{})
 
@@ -436,4 +387,3 @@ btn.innerHTML="Pause"
 </body>
 
 </html>
-```

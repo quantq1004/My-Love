@@ -271,9 +271,13 @@ transform:translateY(110vh);
 </a>
 </div>
 
-<div class="card"></div>
+<div class="card">
+<h3>Coming soon 🌸</h3>
+</div>
 
-<div class="card"></div>
+<div class="card">
+<h3>Coming soon 💖</h3>
+</div>
 
 <!-- <div class="card">
 <a href="wt/002/">
@@ -308,7 +312,7 @@ Play
 </button>
 
 </div>
-<audio id="bgm" loop autoplay>
+<audio id="bgm" loop autoplay muted>
 <source src="audio/Perfect.mp3">
 </audio>
 
@@ -396,6 +400,25 @@ setTimeout(()=>e.remove(),8000)
 
 setInterval(rain,300)
 
+
+/* ===== AUTO PLAY FIX ===== */
+
+window.onload=()=>{
+
+music.muted=true
+
+music.play().then(()=>{
+
+disk.style.animationPlayState="running"
+btn.innerHTML="Pause"
+
+setTimeout(()=>{
+music.muted=false
+},500)
+
+}).catch(()=>{})
+
+}
 </script>
 
 </body>
