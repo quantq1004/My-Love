@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+<meta charset="UTF-8">
+<title>Quỳnh Trang ❤️</title>
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+
+body{
+margin:0;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+font-family:Arial, Helvetica, sans-serif;
+text-align:center;
+color:white;
+overflow:hidden;
+}
+
+/* TITLE */
+
+.title{
+margin-top:60px;
+font-size:42px;
+font-weight:bold;
+}
+
+.subtitle{
+font-size:20px;
+opacity:0.9;
+}
+
+/* HEART */
+
+#heart{
+
+position:relative;
+width:200px;
+height:200px;
+margin:120px auto;
+transform:rotate(45deg);
+background:#ff2e63;
+animation:beat 1s infinite;
+cursor:pointer;
+box-shadow:0 0 40px #ff2e63;
+
+}
+
+#heart:before,
+#heart:after{
+
+content:'';
+position:absolute;
+width:200px;
+height:200px;
+background:#ff2e63;
+border-radius:50%;
+
+}
+
+#heart:before{
+top:-100px;
+left:0;
+}
+
+#heart:after{
+left:-100px;
+top:0;
+}
+
+@keyframes beat{
+
+0%{transform:scale(1) rotate(45deg)}
+50%{transform:scale(1.1) rotate(45deg)}
+100%{transform:scale(1) rotate(45deg)}
+
+}
+
+/* MESSAGE */
+
+#message{
+
+display:none;
+font-size:28px;
+margin-top:30px;
+
+}
+
+/* TIMER */
+
+#timer{
+
+margin-top:20px;
+font-size:22px;
+
+}
+
+/* FLOWERS */
+
+.flower{
+
+position:absolute;
+top:-10px;
+font-size:20px;
+animation:fall linear infinite;
+
+}
+
+@keyframes fall{
+
+to{
+transform:translateY(110vh);
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="title">
+Quỳnh Trang ❤️
+</div>
+
+<div class="subtitle">
+Every time I see you, my heart beats faster
+</div>
+
+<div id="heart"></div>
+
+<div id="message">
+Anh yêu em rất nhiều 💖
+</div>
+
+<div id="timer"></div>
+
+<audio autoplay loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_9f0a2c0df7.mp3">
+</audio>
+
+<script>
+
+/* click heart */
+
+document.getElementById("heart").onclick=function(){
+
+document.getElementById("message").style.display="block"
+
+}
+
+/* timer */
+
+var start=new Date("2024-01-01")
+
+function update(){
+
+var now=new Date()
+
+var diff=now-start
+
+var days=Math.floor(diff/1000/60/60/24)
+
+var hours=Math.floor(diff/1000/60/60)%24
+
+var minutes=Math.floor(diff/1000/60)%60
+
+var seconds=Math.floor(diff/1000)%60
+
+document.getElementById("timer").innerHTML=
+
+"Đã bên nhau: "
+
++days+" ngày "
+
++hours+" giờ "
+
++minutes+" phút "
+
++seconds+" giây"
+
+}
+
+setInterval(update,1000)
+
+/* flowers */
+
+function flower(){
+
+var f=document.createElement("div")
+
+f.className="flower"
+
+f.innerHTML="🌸"
+
+f.style.left=Math.random()*100+"vw"
+
+f.style.animationDuration=(3+Math.random()*5)+"s"
+
+document.body.appendChild(f)
+
+setTimeout(()=>f.remove(),8000)
+
+}
+
+setInterval(flower,300)
+
+</script>
+
+</body>
+
+</html>
