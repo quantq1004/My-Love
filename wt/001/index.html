@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
 
 <meta charset="UTF-8">
@@ -72,23 +71,6 @@ font-size:46px;
 font-weight:bold;
 }
 
-.cinematic{
-
-background:linear-gradient(90deg,#fff,#ff9a9e,#fff);
-background-size:200%;
-
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-
-animation:shine 6s linear infinite;
-
-}
-
-@keyframes shine{
-0%{background-position:-200%}
-100%{background-position:200%}
-}
-
 .subtitle{
 font-size:20px;
 opacity:0.9;
@@ -141,9 +123,9 @@ left:-100px;
 
 @keyframes beat{
 
-0%{transform:scale(1) rotate(45deg)}
-50%{transform:scale(1.12) rotate(45deg)}
-100%{transform:scale(1) rotate(45deg)}
+0%{transform:rotate(45deg)}
+50%{transform:rotate(45deg) scale(1.05)}
+100%{transform:rotate(45deg)}
 
 }
 
@@ -190,7 +172,7 @@ font-size:28px;
 margin-top:20px;
 }
 
-/* ===== FLOWER RAIN ===== */
+/* ===== FLOWERS ===== */
 
 .fall{
 position:fixed;
@@ -203,7 +185,7 @@ animation:fall linear forwards;
 to{transform:translateY(110vh) rotate(360deg);}
 }
 
-/* ===== HEART FOLLOW MOUSE ===== */
+/* ===== HEART FOLLOW ===== */
 
 .mouse-heart{
 position:fixed;
@@ -257,8 +239,6 @@ border-radius:50px;
 
 backdrop-filter:blur(15px);
 
-box-shadow:0 10px 40px rgba(0,0,0,0.6);
-
 }
 
 .disk{
@@ -282,10 +262,6 @@ animation-play-state:paused;
 to{transform:rotate(360deg)}
 }
 
-.song-title{
-font-size:14px;
-}
-
 .play{
 
 background:#1db954;
@@ -305,23 +281,13 @@ font-size:16px;
 
 }
 
-/* ===== CREDIT ===== */
-
-.credit{
-position:fixed;
-bottom:5px;
-right:10px;
-font-size:12px;
-opacity:0.6;
-}
-
 </style>
 
 </head>
 
 <body>
 
-<div class="title cinematic">💕 Quỳnh Trang 💕</div>
+<div class="title">💕 Quỳnh Trang 💕</div>
 
 <div class="subtitle">
 Every time I see you, my heart beats faster
@@ -341,36 +307,27 @@ Anh yêu em rất nhiều 💖
 
 <div class="disk" id="disk"></div>
 
-<div class="song-title">
-Tình cờ tôi thích em 🎵
-</div>
+<div>Tình cờ tôi thích em 🎵</div>
 
 <button class="play" id="btn" onclick="toggleMusic()">▶</button>
 
 </div>
 
-<audio id="bgm" loop autoplay muted>
-<source src="audio/tinhcotoithichem.mp3">
+<audio id="bgm" loop>
+<source src="audio/tinhcotoithichem.mp3" type="audio/mpeg">
 </audio>
-
-<div class="credit">
-Created with ❤️ by <b>quantq</b>
-</div>
 
 <script>
 
-/* ===== GALAXY STARS ===== */
+/* ===== STARS ===== */
 
 for(let i=0;i<120;i++){
 
 const star=document.createElement("div")
-
 star.className="star"
 
 star.style.left=Math.random()*100+"vw"
 star.style.top=Math.random()*100+"vh"
-
-star.style.animationDuration=(2+Math.random()*3)+"s"
 
 document.body.appendChild(star)
 
@@ -383,7 +340,6 @@ setInterval(()=>{
 const s=document.createElement("div")
 
 s.className="shooting"
-
 s.style.top=Math.random()*50+"vh"
 
 document.body.appendChild(s)
@@ -398,7 +354,7 @@ document.getElementById("heart").onclick=(e)=>{
 
 document.getElementById("message").style.display="block"
 
-for(let i=0;i<35;i++){
+for(let i=0;i<30;i++){
 
 setTimeout(()=>{
 
@@ -440,7 +396,7 @@ var m=Math.floor(diff/60000)%60
 var s=Math.floor(diff/1000)%60
 
 document.getElementById("timer").innerHTML=
-"Quang Quân ❤️ Quỳnh Trang<br>Đã bên nhau: "+
+"Kỷ niệm từ: 12-03-2026<br>"+
 d+" ngày "+h+" giờ "+m+" phút "+s+" giây"
 
 }
@@ -525,37 +481,16 @@ function toggleMusic(){
 if(music.paused){
 
 music.play()
-
 disk.style.animationPlayState="running"
-
 btn.innerHTML="⏸"
 
 }else{
 
 music.pause()
-
 disk.style.animationPlayState="paused"
-
 btn.innerHTML="▶"
 
 }
-
-}
-
-/* ===== AUTO PLAY ===== */
-
-window.onload=()=>{
-
-music.muted=true
-
-music.play().then(()=>{
-
-disk.style.animationPlayState="running"
-btn.innerHTML="⏸"
-
-setTimeout(()=>music.muted=false,800)
-
-}).catch(()=>{})
 
 }
 

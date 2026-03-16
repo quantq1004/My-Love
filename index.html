@@ -9,7 +9,7 @@
 
 <style>
 
-/* GLOBAL */
+/* ===== GLOBAL ===== */
 
 body{
 margin:0;
@@ -17,76 +17,30 @@ font-family:'Segoe UI',sans-serif;
 color:white;
 text-align:center;
 overflow-x:hidden;
+
+/* romantic background */
+
 background:
-radial-gradient(circle at 20% 30%,#2b1055,#000000 60%),
-radial-gradient(circle at 80% 70%,#3c1361,#000000 70%);
-}
+radial-gradient(circle at 20% 30%, #ff9a9e 0%, transparent 40%),
+radial-gradient(circle at 80% 70%, #fad0c4 0%, transparent 40%),
+linear-gradient(135deg,#ff758c,#ff7eb3,#ff4d6d);
 
-/* STARS */
-
-.star{
-position:fixed;
-width:2px;
-height:2px;
-background:white;
-opacity:0.8;
-}
-
-/* SHOOTING STAR */
-
-.shooting{
-position:fixed;
-width:2px;
-height:2px;
-background:white;
-box-shadow:0 0 10px white;
-animation:shoot 3s linear infinite;
-}
-
-@keyframes shoot{
-
-0%{
-transform:translateX(-100vw) translateY(0);
-opacity:1;
-}
-
-100%{
-transform:translateX(100vw) translateY(200px);
-opacity:0;
-}
-
+background-attachment:fixed;
 }
 
 /* HERO */
 
 .hero{
-padding:120px 20px;
-background:linear-gradient(180deg,transparent,rgba(0,0,0,0.4));
+padding:100px 20px;
 }
 
 .hero h1{
-font-size:50px;
-animation:fadeUp 2s ease;
+font-size:48px;
 }
 
 .hero p{
-opacity:0.8;
 font-size:20px;
-animation:fadeUp 3s ease;
-}
-
-@keyframes fadeUp{
-
-from{
-opacity:0;
-transform:translateY(40px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-
+opacity:0.9;
 }
 
 /* CONTAINER */
@@ -94,15 +48,15 @@ transform:translateY(0);
 .container{
 max-width:1000px;
 margin:auto;
-padding:60px 20px;
+padding:40px 20px;
 }
 
 /* HEART */
 
 .heart-main{
 width:200px;
-animation:heartbeat 1.3s infinite;
-filter:drop-shadow(0 0 25px #ff4d6d);
+animation:heartbeat 1.4s infinite;
+filter:drop-shadow(0 0 30px #ff4d6d);
 }
 
 @keyframes heartbeat{
@@ -120,10 +74,10 @@ filter:drop-shadow(0 0 25px #ff4d6d);
 .timer{
 margin-top:20px;
 font-size:20px;
-background:rgba(255,255,255,0.15);
+background:rgba(255,255,255,0.2);
 display:inline-block;
-padding:10px 25px;
-border-radius:25px;
+padding:12px 25px;
+border-radius:30px;
 backdrop-filter:blur(10px);
 }
 
@@ -156,7 +110,7 @@ width:100%;
 border-radius:10px;
 }
 
-/* HEART FLOAT */
+/* FLOAT HEART */
 
 .heart{
 position:fixed;
@@ -179,7 +133,7 @@ opacity:0;
 
 }
 
-/* FLOWERS */
+/* FLOWER */
 
 .flower{
 position:fixed;
@@ -189,34 +143,60 @@ animation:fall linear forwards;
 }
 
 @keyframes fall{
+
 to{
 transform:translateY(110vh) rotate(360deg);
 }
+
 }
 
-/* MUSIC PLAYER */
+/* SPARKLE */
+
+.spark{
+position:fixed;
+width:4px;
+height:4px;
+background:white;
+border-radius:50%;
+animation:sparkle 3s infinite;
+}
+
+@keyframes sparkle{
+
+0%{opacity:0.3; transform:scale(0.6)}
+50%{opacity:1; transform:scale(1.2)}
+100%{opacity:0.3; transform:scale(0.6)}
+
+}
+
+/* MUSIC */
 
 .music{
 position:fixed;
 bottom:20px;
 right:20px;
-background:rgba(255,255,255,0.1);
+background:rgba(0,0,0,0.3);
 backdrop-filter:blur(10px);
-padding:12px 18px;
+padding:10px 18px;
 border-radius:30px;
 display:flex;
-gap:10px;
+gap:12px;
 align-items:center;
 }
 
 .disk{
+
 width:45px;
 height:45px;
+
 border-radius:50%;
+
 background:url("preview/disks.png");
 background-size:cover;
+
 animation:spin 5s linear infinite;
 animation-play-state:paused;
+
 }
 
 @keyframes spin{
@@ -226,7 +206,7 @@ to{transform:rotate(360deg)}
 .play{
 background:#ff4d6d;
 border:none;
-padding:6px 12px;
+padding:6px 14px;
 border-radius:20px;
 color:white;
 cursor:pointer;
@@ -245,8 +225,6 @@ font-size:14px;
 </head>
 
 <body>
-
-<!-- HERO -->
 
 <div class="hero">
 
@@ -268,14 +246,21 @@ font-size:14px;
 <div class="grid">
 
 <div class="card">
+
 <a href="wt/001/" target="_blank">
+
 <img src="preview/001.png">
-<h3>💌 001 Love Letter</h3>
+
+<h3>💌 001 Love</h3>
+
 </a>
+
 </div>
 
 <div class="card">
+
 <h3>Coming soon 🌸</h3>
+
 </div>
 
 </div>
@@ -323,23 +308,14 @@ var s = Math.floor(diff / 1000) % 60
 
 document.getElementById("timer").innerHTML =
 
-"<div style='font-size:20px;margin-bottom:6px'>Quang Quân ❤️ Quỳnh Trang</div>" +
+"Quang Quân ❤️ Quỳnh Trang<br>" +
 
-"<div style='font-size:16px;opacity:0.9;margin-bottom:10px'>Kỷ niệm từ: 12-03-2026</div>" +
+"Đã bên nhau: " +
 
-"<div style='font-size:22px;font-weight:bold'>" +
-
-d + " ngày • " +
-
-h + " giờ • " +
-
-m + " phút • " +
-
-s + " giây" +
-
-"</div>"
+d+" ngày "+h+" giờ "+m+" phút "+s+" giây"
 
 }
+
 setInterval(update,1000)
 update()
 
@@ -391,9 +367,9 @@ setTimeout(()=>e.remove(),8000)
 
 }
 
-setInterval(heart,300)
+setInterval(heart,400)
 
-/* FLOWERS */
+/* FLOWER */
 
 function flower(){
 
@@ -407,7 +383,7 @@ e.innerHTML=items[Math.floor(Math.random()*items.length)]
 
 e.style.left=Math.random()*100+"vw"
 
-e.style.animationDuration=(4+Math.random()*5)+"s"
+e.style.animationDuration=(5+Math.random()*4)+"s"
 
 document.body.appendChild(e)
 
@@ -415,62 +391,24 @@ setTimeout(()=>e.remove(),9000)
 
 }
 
-setInterval(flower,800)
+setInterval(flower,900)
 
-/* HEART EXPLOSION */
+/* SPARKLE */
 
-document.addEventListener("click",e=>{
-
-for(let i=0;i<12;i++){
-
-let h=document.createElement("div")
-
-h.className="heart"
-
-h.innerHTML="💖"
-
-h.style.left=e.clientX+"px"
-h.style.top=e.clientY+"px"
-h.style.bottom="auto"
-
-h.style.animationDuration="2s"
-
-document.body.appendChild(h)
-
-setTimeout(()=>h.remove(),2000)
-
-}
-
-})
-
-/* STARS */
-
-for(let i=0;i<80;i++){
+for(let i=0;i<60;i++){
 
 let s=document.createElement("div")
-s.className="star"
+
+s.className="spark"
 
 s.style.left=Math.random()*100+"vw"
 s.style.top=Math.random()*100+"vh"
 
+s.style.animationDuration=(2+Math.random()*3)+"s"
+
 document.body.appendChild(s)
 
 }
-
-/* SHOOTING STAR */
-
-setInterval(()=>{
-
-let s=document.createElement("div")
-s.className="shooting"
-
-s.style.top=Math.random()*50+"vh"
-
-document.body.appendChild(s)
-
-setTimeout(()=>s.remove(),3000)
-
-},6000)
 
 </script>
 
