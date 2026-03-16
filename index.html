@@ -13,28 +13,80 @@
 
 body{
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+font-family:'Segoe UI',sans-serif;
 color:white;
 text-align:center;
+overflow-x:hidden;
+background:
+radial-gradient(circle at 20% 30%,#2b1055,#000000 60%),
+radial-gradient(circle at 80% 70%,#3c1361,#000000 70%);
+}
+
+/* STARS */
+
+.star{
+position:fixed;
+width:2px;
+height:2px;
+background:white;
+opacity:0.8;
+}
+
+/* SHOOTING STAR */
+
+.shooting{
+position:fixed;
+width:2px;
+height:2px;
+background:white;
+box-shadow:0 0 10px white;
+animation:shoot 3s linear infinite;
+}
+
+@keyframes shoot{
+
+0%{
+transform:translateX(-100vw) translateY(0);
+opacity:1;
+}
+
+100%{
+transform:translateX(100vw) translateY(200px);
+opacity:0;
+}
+
 }
 
 /* HERO */
 
 .hero{
-background:linear-gradient(135deg,#56CCF2,#2F80ED);
-padding:100px 20px;
-box-shadow:0 10px 40px rgba(0,0,0,0.2);
+padding:120px 20px;
+background:linear-gradient(180deg,transparent,rgba(0,0,0,0.4));
 }
 
 .hero h1{
-font-size:46px;
-margin-bottom:10px;
+font-size:50px;
+animation:fadeUp 2s ease;
 }
 
 .hero p{
+opacity:0.8;
 font-size:20px;
-opacity:0.9;
+animation:fadeUp 3s ease;
+}
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
 }
 
 /* CONTAINER */
@@ -45,22 +97,12 @@ margin:auto;
 padding:60px 20px;
 }
 
-/* HEART IMAGE */
+/* HEART */
 
 .heart-main{
-
 width:200px;
-animation:heartbeat 1.2s infinite;
-filter:drop-shadow(0 0 15px #ff4d6d);
-transition:0.3s;
-
-}
-
-.heart-main:hover{
-
-transform:scale(1.15);
-filter:drop-shadow(0 0 35px #ff4d6d);
-
+animation:heartbeat 1.3s infinite;
+filter:drop-shadow(0 0 25px #ff4d6d);
 }
 
 @keyframes heartbeat{
@@ -76,30 +118,13 @@ filter:drop-shadow(0 0 35px #ff4d6d);
 /* TIMER */
 
 .timer{
-
-margin-top:15px;
+margin-top:20px;
 font-size:20px;
-font-weight:bold;
-
-background:rgba(255,255,255,0.2);
-
+background:rgba(255,255,255,0.15);
 display:inline-block;
-
-padding:10px 20px;
-
-border-radius:20px;
-
+padding:10px 25px;
+border-radius:25px;
 backdrop-filter:blur(10px);
-
-box-shadow:0 5px 20px rgba(0,0,0,0.2);
-
-}
-
-/* TITLE */
-
-.section-title{
-font-size:28px;
-margin-top:40px;
 }
 
 /* GRID */
@@ -114,20 +139,16 @@ margin-top:40px;
 /* CARD */
 
 .card{
-
 background:white;
+color:black;
 border-radius:14px;
 padding:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
 transition:0.3s;
-
 }
 
 .card:hover{
-
-transform:translateY(-10px) scale(1.03);
-box-shadow:0 20px 40px rgba(0,0,0,0.25);
-
+transform:translateY(-10px) scale(1.05);
+box-shadow:0 15px 40px rgba(0,0,0,0.4);
 }
 
 .card img{
@@ -135,101 +156,88 @@ width:100%;
 border-radius:10px;
 }
 
-.card h3{
-color:#ff4d6d;
-margin-top:10px;
+/* HEART FLOAT */
+
+.heart{
+position:fixed;
+bottom:-20px;
+font-size:20px;
+animation:floatUp linear forwards;
 }
 
-.card a{
-text-decoration:none;
+@keyframes floatUp{
+
+0%{
+transform:translateY(0);
+opacity:1;
+}
+
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+
+}
+
+/* FLOWERS */
+
+.flower{
+position:fixed;
+top:-10px;
+font-size:20px;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh) rotate(360deg);
+}
 }
 
 /* MUSIC PLAYER */
 
 .music{
-
 position:fixed;
-right:20px;
 bottom:20px;
-
-background:white;
-color:#333;
-
-padding:10px 15px;
+right:20px;
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+padding:12px 18px;
 border-radius:30px;
-
 display:flex;
-align-items:center;
 gap:10px;
-
-box-shadow:0 5px 20px rgba(0,0,0,0.2);
-
+align-items:center;
 }
 
-/* DISK */
-
 .disk{
-
 width:45px;
 height:45px;
-
 border-radius:50%;
-
 background:url("preview/disks.png");
 background-size:cover;
-background-position:center;
-
-animation:spin 4s linear infinite;
+animation:spin 5s linear infinite;
 animation-play-state:paused;
-
 }
 
 @keyframes spin{
-
-from{transform:rotate(0)}
 to{transform:rotate(360deg)}
-
 }
-
-.song{
-font-size:14px;
-}
-
-/* BUTTON */
 
 .play{
-
 background:#ff4d6d;
 border:none;
-color:white;
 padding:6px 12px;
 border-radius:20px;
+color:white;
 cursor:pointer;
-
 }
 
-.play:hover{
-opacity:0.8;
-}
+/* CREDIT */
 
-/* FLOWERS & HEART FALL */
-
-.fall{
-
-position:fixed;
-top:-10px;
-font-size:20px;
-
-animation:fall linear forwards;
-
-}
-
-@keyframes fall{
-
-to{
-transform:translateY(110vh);
-}
-
+.credit{
+margin-top:60px;
+opacity:0.7;
+font-size:14px;
 }
 
 </style>
@@ -243,12 +251,9 @@ transform:translateY(110vh);
 <div class="hero">
 
 <h1>❤️ Dành cho em iu xinh đẹp của anh ❤️</h1>
-
 <p>✨ Romantic coding collection ✨</p>
 
 </div>
-
-<!-- CONTENT -->
 
 <div class="container">
 
@@ -258,16 +263,14 @@ transform:translateY(110vh);
 
 <div id="timer" class="timer"></div>
 
-<p>🌺 Một vài điều nhỏ anh viết cho em 🌺</p>
-
-<div class="section-title">💖 Our Memories 💖</div>
+<p>🌸 Những điều nhỏ anh viết cho em 🌸</p>
 
 <div class="grid">
 
 <div class="card">
-<a href="wt/001/">
+<a href="wt/001/" target="_blank">
 <img src="preview/001.png">
-<h3>001 💌</h3>
+<h3>💌 001 Love Letter</h3>
 </a>
 </div>
 
@@ -275,44 +278,29 @@ transform:translateY(110vh);
 <h3>Coming soon 🌸</h3>
 </div>
 
-<div class="card">
-<h3>Coming soon 💖</h3>
 </div>
 
-<!-- <div class="card">
-<a href="wt/002/">
-<img src="preview/002.png">
-<h3>002 🌸</h3>
-</a>
-</div>
-
-<div class="card">
-<a href="wt/003/">
-<img src="preview/003.png">
-<h3>003 💖</h3>
-</a>
-</div> -->
-
+<div class="credit">
+Created with ❤️ by <b>Anh iuu của em - QT</b>
 </div>
 
 </div>
 
-<!-- MUSIC PLAYER -->
+<!-- MUSIC -->
 
 <div class="music">
 
-<div class="disk" id="disk"></div>
+<div id="disk" class="disk"></div>
 
-<div class="song">
-Perfect 🎵
-</div>
+<div>Perfect 🎵</div>
 
-<button class="play" onclick="toggleMusic()">
+<button id="playBtn" class="play" onclick="toggleMusic()">
 Play
 </button>
 
 </div>
-<audio id="bgm" loop autoplay muted>
+
+<audio id="bgm" loop>
 <source src="audio/Perfect.mp3">
 </audio>
 
@@ -328,37 +316,38 @@ var now = new Date()
 
 var diff = now - start
 
-var days = Math.floor(diff / 1000 / 60 / 60 / 24)
-
-var hours = Math.floor(diff / 1000 / 60 / 60) % 24
-
-var minutes = Math.floor(diff / 1000 / 60) % 60
-
-var seconds = Math.floor(diff / 1000) % 60
+var d = Math.floor(diff / 1000 / 60 / 60 / 24)
+var h = Math.floor(diff / 1000 / 60 / 60) % 24
+var m = Math.floor(diff / 1000 / 60) % 60
+var s = Math.floor(diff / 1000) % 60
 
 document.getElementById("timer").innerHTML =
 
-"Quang Quân ❤️ Quỳnh Trang<br>" +
-"Đã bên nhau: "
+"<div style='font-size:20px;margin-bottom:6px'>Quang Quân ❤️ Quỳnh Trang</div>" +
 
-+ days + " ngày "
+"<div style='font-size:16px;opacity:0.9;margin-bottom:10px'>Kỷ niệm từ: 12-03-2026</div>" +
 
-+ hours + " giờ "
+"<div style='font-size:22px;font-weight:bold'>" +
 
-+ minutes + " phút "
+d + " ngày • " +
 
-+ seconds + " giây"
+h + " giờ • " +
+
+m + " phút • " +
+
+s + " giây" +
+
+"</div>"
 
 }
-
-update()
-
 setInterval(update,1000)
+update()
 
 /* MUSIC */
 
 const music=document.getElementById("bgm")
 const disk=document.getElementById("disk")
+const btn=document.getElementById("playBtn")
 
 function toggleMusic(){
 
@@ -366,31 +355,35 @@ if(music.paused){
 
 music.play()
 disk.style.animationPlayState="running"
+btn.innerHTML="Pause"
 
 }else{
 
 music.pause()
 disk.style.animationPlayState="paused"
+btn.innerHTML="Play"
 
 }
 
 }
 
-/* FLOWERS + HEART RAIN */
+/* HEART FLOAT */
 
-function rain(){
+function heart(){
 
-var e=document.createElement("div")
+let e=document.createElement("div")
 
-e.className="fall"
+e.className="heart"
 
-var items=["💗", "🍀","💞","🌷", "🥰"]
+let items=["❤️","💖","💘","💕"]
 
 e.innerHTML=items[Math.floor(Math.random()*items.length)]
 
 e.style.left=Math.random()*100+"vw"
 
-e.style.animationDuration=(3+Math.random()*5)+"s"
+e.style.fontSize=(15+Math.random()*20)+"px"
+
+e.style.animationDuration=(4+Math.random()*4)+"s"
 
 document.body.appendChild(e)
 
@@ -398,29 +391,88 @@ setTimeout(()=>e.remove(),8000)
 
 }
 
-setInterval(rain,300)
+setInterval(heart,300)
 
+/* FLOWERS */
 
-/* ===== AUTO PLAY FIX ===== */
+function flower(){
 
-window.onload=()=>{
+let e=document.createElement("div")
 
-music.muted=true
+e.className="flower"
 
-music.play().then(()=>{
+let items=["🌸","🍀","🌺","💮"]
 
-disk.style.animationPlayState="running"
-btn.innerHTML="Pause"
+e.innerHTML=items[Math.floor(Math.random()*items.length)]
 
-setTimeout(()=>{
-music.muted=false
-},500)
+e.style.left=Math.random()*100+"vw"
 
-}).catch(()=>{})
+e.style.animationDuration=(4+Math.random()*5)+"s"
+
+document.body.appendChild(e)
+
+setTimeout(()=>e.remove(),9000)
 
 }
+
+setInterval(flower,800)
+
+/* HEART EXPLOSION */
+
+document.addEventListener("click",e=>{
+
+for(let i=0;i<12;i++){
+
+let h=document.createElement("div")
+
+h.className="heart"
+
+h.innerHTML="💖"
+
+h.style.left=e.clientX+"px"
+h.style.top=e.clientY+"px"
+h.style.bottom="auto"
+
+h.style.animationDuration="2s"
+
+document.body.appendChild(h)
+
+setTimeout(()=>h.remove(),2000)
+
+}
+
+})
+
+/* STARS */
+
+for(let i=0;i<80;i++){
+
+let s=document.createElement("div")
+s.className="star"
+
+s.style.left=Math.random()*100+"vw"
+s.style.top=Math.random()*100+"vh"
+
+document.body.appendChild(s)
+
+}
+
+/* SHOOTING STAR */
+
+setInterval(()=>{
+
+let s=document.createElement("div")
+s.className="shooting"
+
+s.style.top=Math.random()*50+"vh"
+
+document.body.appendChild(s)
+
+setTimeout(()=>s.remove(),3000)
+
+},6000)
+
 </script>
 
 </body>
-
 </html>

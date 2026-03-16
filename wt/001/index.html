@@ -13,19 +13,80 @@
 
 body{
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
+font-family:'Segoe UI',sans-serif;
 text-align:center;
 color:white;
-background:linear-gradient(135deg,#ff758c,#ff7eb3);
-overflow:hidden;
+overflow-x:hidden;
+background:
+radial-gradient(circle at 20% 30%,#1a2a6c,#000 60%),
+radial-gradient(circle at 80% 70%,#16222A,#000 70%);
+}
+
+/* ===== STARS ===== */
+
+.star{
+position:fixed;
+width:2px;
+height:2px;
+background:white;
+border-radius:50%;
+animation:twinkle 3s infinite;
+}
+
+@keyframes twinkle{
+0%{opacity:0.2}
+50%{opacity:1}
+100%{opacity:0.2}
+}
+
+/* ===== SHOOTING STAR ===== */
+
+.shooting{
+position:fixed;
+width:2px;
+height:2px;
+background:white;
+box-shadow:0 0 10px white;
+animation:shoot 2s linear forwards;
+}
+
+@keyframes shoot{
+
+0%{
+transform:translateX(-10vw) translateY(0);
+opacity:1;
+}
+
+100%{
+transform:translateX(110vw) translateY(200px);
+opacity:0;
+}
+
 }
 
 /* ===== TITLE ===== */
 
 .title{
-margin-top:60px;
-font-size:42px;
+margin-top:70px;
+font-size:46px;
 font-weight:bold;
+}
+
+.cinematic{
+
+background:linear-gradient(90deg,#fff,#ff9a9e,#fff);
+background-size:200%;
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+animation:shine 6s linear infinite;
+
+}
+
+@keyframes shine{
+0%{background-position:-200%}
+100%{background-position:200%}
 }
 
 .subtitle{
@@ -40,17 +101,18 @@ opacity:0.9;
 position:relative;
 width:200px;
 height:200px;
-margin:90px auto;
+
+margin:80px auto;
 
 transform:rotate(45deg);
 
 background:#ff2e63;
 
-animation:beat 1s infinite;
+animation:beat 1.2s infinite;
 
 cursor:pointer;
 
-box-shadow:0 0 50px #ff2e63;
+box-shadow:0 0 60px #ff2e63;
 
 }
 
@@ -71,12 +133,10 @@ border-radius:50%;
 
 #heart:before{
 top:-100px;
-left:0;
 }
 
 #heart:after{
 left:-100px;
-top:0;
 }
 
 @keyframes beat{
@@ -87,31 +147,47 @@ top:0;
 
 }
 
+/* ===== HEART EXPLOSION ===== */
+
+.explode-heart{
+position:fixed;
+font-size:22px;
+pointer-events:none;
+animation:explode 1.2s ease-out forwards;
+}
+
+@keyframes explode{
+
+0%{
+opacity:1;
+transform:translate(0,0) scale(0.5);
+}
+
+100%{
+opacity:0;
+transform:translate(var(--x),var(--y)) scale(1.8);
+}
+
+}
+
+/* ===== TIMER ===== */
+
+#timer{
+margin-top:20px;
+font-size:22px;
+background:rgba(255,255,255,0.2);
+display:inline-block;
+padding:12px 22px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+}
+
 /* ===== MESSAGE ===== */
 
 #message{
 display:none;
 font-size:28px;
 margin-top:20px;
-}
-
-/* ===== TIMER ===== */
-
-#timer{
-
-margin-top:20px;
-font-size:22px;
-
-background:rgba(255,255,255,0.2);
-
-display:inline-block;
-
-padding:12px 22px;
-
-border-radius:20px;
-
-backdrop-filter:blur(10px);
-
 }
 
 /* ===== FLOWER RAIN ===== */
@@ -124,7 +200,7 @@ animation:fall linear forwards;
 }
 
 @keyframes fall{
-to{transform:translateY(110vh);}
+to{transform:translateY(110vh) rotate(360deg);}
 }
 
 /* ===== HEART FOLLOW MOUSE ===== */
@@ -149,12 +225,15 @@ width:6px;
 height:6px;
 background:white;
 border-radius:50%;
-animation:spark 1s linear infinite;
+animation:spark 1s infinite;
 }
 
 @keyframes spark{
-0%{opacity:1}
-100%{opacity:0}
+
+0%{opacity:1; transform:scale(0.6)}
+50%{opacity:1; transform:scale(1.2)}
+100%{opacity:0; transform:scale(0.4)}
+
 }
 
 /* ===== MUSIC PLAYER ===== */
@@ -162,23 +241,23 @@ animation:spark 1s linear infinite;
 .music-player{
 
 position:fixed;
-
-right:20px;
 bottom:20px;
+left:50%;
+transform:translateX(-50%);
 
 display:flex;
 align-items:center;
-gap:10px;
+gap:15px;
 
-background:rgba(255,255,255,0.25);
+background:rgba(0,0,0,0.6);
 
-padding:10px 15px;
+padding:12px 20px;
 
-border-radius:30px;
+border-radius:50px;
 
-backdrop-filter:blur(10px);
+backdrop-filter:blur(15px);
 
-box-shadow:0 10px 30px rgba(0,0,0,0.3);
+box-shadow:0 10px 40px rgba(0,0,0,0.6);
 
 }
 
@@ -190,29 +269,50 @@ height:50px;
 border-radius:50%;
 
 background:url("preview/music.png");
-
 background-size:cover;
 
 border:3px solid rgba(255,255,255,0.7);
 
 animation:spin 4s linear infinite;
-
 animation-play-state:paused;
 
 }
 
 @keyframes spin{
-from{transform:rotate(0)}
 to{transform:rotate(360deg)}
 }
 
+.song-title{
+font-size:14px;
+}
+
 .play{
-background:#ff4d6d;
+
+background:#1db954;
+
 border:none;
+
 color:white;
-padding:6px 12px;
-border-radius:20px;
+
+width:40px;
+height:40px;
+
+border-radius:50%;
+
 cursor:pointer;
+
+font-size:16px;
+
+}
+
+/* ===== CREDIT ===== */
+
+.credit{
+position:fixed;
+bottom:5px;
+right:10px;
+font-size:12px;
+opacity:0.6;
 }
 
 </style>
@@ -221,7 +321,7 @@ cursor:pointer;
 
 <body>
 
-<div class="title">💕 Quỳnh Trang 💕</div>
+<div class="title cinematic">💕 Quỳnh Trang 💕</div>
 
 <div class="subtitle">
 Every time I see you, my heart beats faster
@@ -241,27 +341,92 @@ Anh yêu em rất nhiều 💖
 
 <div class="disk" id="disk"></div>
 
-<div>Tình cờ tôi thích em 🎵</div>
+<div class="song-title">
+Tình cờ tôi thích em 🎵
+</div>
 
-<button class="play" id="btn" onclick="toggleMusic()">Play</button>
+<button class="play" id="btn" onclick="toggleMusic()">▶</button>
 
 </div>
 
 <audio id="bgm" loop autoplay muted>
-<source src="audio/tinhcotoithichem.mp3" type="audio/mpeg">
+<source src="audio/tinhcotoithichem.mp3">
 </audio>
+
+<div class="credit">
+Created with ❤️ by <b>quantq</b>
+</div>
 
 <script>
 
+/* ===== GALAXY STARS ===== */
+
+for(let i=0;i<120;i++){
+
+const star=document.createElement("div")
+
+star.className="star"
+
+star.style.left=Math.random()*100+"vw"
+star.style.top=Math.random()*100+"vh"
+
+star.style.animationDuration=(2+Math.random()*3)+"s"
+
+document.body.appendChild(star)
+
+}
+
+/* ===== SHOOTING STAR ===== */
+
+setInterval(()=>{
+
+const s=document.createElement("div")
+
+s.className="shooting"
+
+s.style.top=Math.random()*50+"vh"
+
+document.body.appendChild(s)
+
+setTimeout(()=>s.remove(),2000)
+
+},6000)
+
 /* ===== HEART CLICK ===== */
 
-document.getElementById("heart").onclick=()=>{
+document.getElementById("heart").onclick=(e)=>{
+
 document.getElementById("message").style.display="block"
+
+for(let i=0;i<35;i++){
+
+setTimeout(()=>{
+
+const h=document.createElement("div")
+
+h.className="explode-heart"
+
+h.innerHTML=["💖","💗","💕","💘"][Math.floor(Math.random()*4)]
+
+h.style.left=e.clientX+"px"
+h.style.top=e.clientY+"px"
+
+h.style.setProperty("--x",(Math.random()*200-100)+"px")
+h.style.setProperty("--y",(Math.random()*200-100)+"px")
+
+document.body.appendChild(h)
+
+setTimeout(()=>h.remove(),1200)
+
+},i*20)
+
+}
+
 }
 
 /* ===== TIMER ===== */
 
-var start=new Date("2026-03-12T00:00:00")
+var start=new Date("2026-03-12")
 
 function update(){
 
@@ -269,32 +434,34 @@ var now=new Date()
 
 var diff=now-start
 
-var d=Math.floor(diff/1000/60/60/24)
-var h=Math.floor(diff/1000/60/60)%24
-var m=Math.floor(diff/1000/60)%60
+var d=Math.floor(diff/86400000)
+var h=Math.floor(diff/3600000)%24
+var m=Math.floor(diff/60000)%60
 var s=Math.floor(diff/1000)%60
 
 document.getElementById("timer").innerHTML=
-"Quang Quân ❤️ Quỳnh Trang<br>Đã bên nhau: "
-+d+" ngày "+h+" giờ "+m+" phút "+s+" giây"
+"Quang Quân ❤️ Quỳnh Trang<br>Đã bên nhau: "+
+d+" ngày "+h+" giờ "+m+" phút "+s+" giây"
 
 }
 
-update()
 setInterval(update,1000)
+update()
 
 /* ===== FLOWER RAIN ===== */
 
 function rain(){
 
 var e=document.createElement("div")
+
 e.className="fall"
 
-var icons=["🌸","💕","💖","😍"]
+var icons=["🌸","🍀","💖","💗"]
 
 e.innerHTML=icons[Math.floor(Math.random()*icons.length)]
 
 e.style.left=Math.random()*100+"vw"
+
 e.style.animationDuration=(3+Math.random()*5)+"s"
 
 document.body.appendChild(e)
@@ -303,15 +470,24 @@ setTimeout(()=>e.remove(),8000)
 
 }
 
-setInterval(rain,250)
+setInterval(rain,450)
 
 /* ===== HEART FOLLOW MOUSE ===== */
 
+let last=0
+
 document.onmousemove=(e)=>{
+
+const now=Date.now()
+
+if(now-last<40) return
+
+last=now
 
 var h=document.createElement("div")
 
 h.className="mouse-heart"
+
 h.innerHTML="💗"
 
 h.style.left=e.pageX+"px"
@@ -348,22 +524,25 @@ function toggleMusic(){
 
 if(music.paused){
 
-music.play().then(()=>{
+music.play()
+
 disk.style.animationPlayState="running"
-btn.innerHTML="Pause"
-})
+
+btn.innerHTML="⏸"
 
 }else{
 
 music.pause()
+
 disk.style.animationPlayState="paused"
-btn.innerHTML="Play"
+
+btn.innerHTML="▶"
 
 }
 
 }
 
-/* ===== AUTO PLAY FIX ===== */
+/* ===== AUTO PLAY ===== */
 
 window.onload=()=>{
 
@@ -372,11 +551,9 @@ music.muted=true
 music.play().then(()=>{
 
 disk.style.animationPlayState="running"
-btn.innerHTML="Pause"
+btn.innerHTML="⏸"
 
-setTimeout(()=>{
-music.muted=false
-},500)
+setTimeout(()=>music.muted=false,800)
 
 }).catch(()=>{})
 
@@ -385,5 +562,4 @@ music.muted=false
 </script>
 
 </body>
-
 </html>
