@@ -144,15 +144,33 @@ filter:drop-shadow(0 0 25px #ff4d6d);
 
 <!-- HERO -->
 
-<audio autoplay loop>
-<source src="audio/Perfect.mp3" type="audio/mpeg">
+<button onclick="toggleMusic()">🎵</button>
+
+<audio id="bgm" loop>
+<source src="audio/Perfect.mp3">
 </audio>
+
+<script>
+
+const music=document.getElementById("bgm")
+
+function toggleMusic(){
+
+if(music.paused){
+music.play()
+}else{
+music.pause()
+}
+
+}
+
+</script>
 
 <div class="hero">
 
-<h1>Dành cho em iu xinh đẹp của anh ơiiii</h1>
+<h1>Dành cho em iu xinh đẹp của anh ơiiii ❤️</h1>
 
-<p>✨ Romantic coding projects collection ❤️</p>
+<p>✨ Romantic coding projects collection 💖</p>
 
 </div>
 
@@ -160,7 +178,7 @@ filter:drop-shadow(0 0 25px #ff4d6d);
 
 <div class="container">
 
-<img class="heart-main" src="preview/heart-main1.png">
+<img class="heart-main" src="preview/heart-main.png">
 
 <h2>✨ My Love - Quỳnh Trang ✨</h2>
 

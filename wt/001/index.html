@@ -143,10 +143,27 @@ Anh yêu em rất nhiều 💖
 
 <div id="timer"></div>
 
-<audio autoplay loop>
-<source src="audio/noinaycoanh.mp3" type="audio/mpeg">
+<button onclick="toggleMusic()">🎵</button>
+
+<audio id="bgm" loop>
+<source src="audio/noinaycoanh.mp3">
 </audio>
 
+<script>
+
+const music=document.getElementById("bgm")
+
+function toggleMusic(){
+
+if(music.paused){
+music.play()
+}else{
+music.pause()
+}
+
+}
+
+</script>
 <script>
 
 /* click heart */
