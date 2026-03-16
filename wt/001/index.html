@@ -4,8 +4,7 @@
 <head>
 
 <meta charset="UTF-8">
-<title>Quỳnh Trang ❤️</title>
-
+<title>💖 Quỳnh Trang 💖</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
 <style>
@@ -35,29 +34,25 @@ opacity:0.9;
 /* HEART */
 
 #heart{
-
 position:relative;
 width:200px;
 height:200px;
-margin:120px auto;
+margin:100px auto;
 transform:rotate(45deg);
 background:#ff2e63;
 animation:beat 1s infinite;
 cursor:pointer;
 box-shadow:0 0 40px #ff2e63;
-
 }
 
 #heart:before,
 #heart:after{
-
 content:'';
 position:absolute;
 width:200px;
 height:200px;
 background:#ff2e63;
 border-radius:50%;
-
 }
 
 #heart:before{
@@ -71,48 +66,114 @@ top:0;
 }
 
 @keyframes beat{
-
 0%{transform:scale(1) rotate(45deg)}
 50%{transform:scale(1.1) rotate(45deg)}
 100%{transform:scale(1) rotate(45deg)}
-
 }
 
 /* MESSAGE */
 
 #message{
-
 display:none;
 font-size:28px;
-margin-top:30px;
-
+margin-top:20px;
 }
 
 /* TIMER */
 
 #timer{
-
 margin-top:20px;
 font-size:22px;
+}
 
+/* BUTTON GO */
+
+.go-btn{
+margin-top:30px;
+display:inline-block;
+padding:12px 30px;
+background:white;
+color:#ff2e63;
+font-weight:bold;
+border-radius:30px;
+text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+
+.go-btn:hover{
+transform:scale(1.1);
 }
 
 /* FLOWERS */
 
 .flower{
-
 position:absolute;
 top:-10px;
 font-size:20px;
 animation:fall linear infinite;
-
 }
 
 @keyframes fall{
-
 to{
 transform:translateY(110vh);
 }
+}
+
+/* MUSIC PLAYER */
+
+.music-player{
+
+position:fixed;
+right:20px;
+bottom:20px;
+
+display:flex;
+align-items:center;
+gap:10px;
+
+background:rgba(255,255,255,0.2);
+padding:10px 15px;
+border-radius:30px;
+backdrop-filter:blur(10px);
+
+}
+
+/* DISK */
+
+.disk{
+
+width:50px;
+height:50px;
+border-radius:50%;
+background:url("preview/music.png");
+background-size:cover;
+
+animation:spin 4s linear infinite;
+animation-play-state:paused;
+
+}
+
+@keyframes spin{
+from{transform:rotate(0)}
+to{transform:rotate(360deg)}
+}
+
+/* SONG NAME */
+
+.song-name{
+font-size:14px;
+}
+
+/* PLAY BUTTON */
+
+.play-btn{
+
+background:white;
+border:none;
+border-radius:20px;
+padding:6px 12px;
+cursor:pointer;
 
 }
 
@@ -123,7 +184,7 @@ transform:translateY(110vh);
 <body>
 
 <div class="title">
-Quỳnh Trang ❤️
+💕 Quỳnh Trang 💕
 </div>
 
 <div class="subtitle">
@@ -136,37 +197,35 @@ Every time I see you, my heart beats faster
 Anh yêu em rất nhiều 💖
 </div>
 
-<div id="message">
-*•.¸♡ ♡¸.•*
-</div>
-
-
 <div id="timer"></div>
 
-<button onclick="toggleMusic()">🎵</button>
+<a class="go-btn" href="001/">
+💌 Xem điều anh chuẩn bị cho em
+</a>
+
+<!-- MUSIC PLAYER -->
+
+<div class="music-player">
+
+<div class="disk" id="disk"></div>
+
+<div class="song-name">
+Tình cờ tôi thích em 🎵
+</div>
+
+<button class="play-btn" onclick="toggleMusic()">
+Play
+</button>
+
+</div>
 
 <audio id="bgm" loop>
-<source src="audio/noinaycoanh.mp3">
+<source src="audio/tinhcotoithichem.mp3">
 </audio>
 
 <script>
 
-const music=document.getElementById("bgm")
-
-function toggleMusic(){
-
-if(music.paused){
-music.play()
-}else{
-music.pause()
-}
-
-}
-
-</script>
-<script>
-
-/* click heart */
+/* HEART CLICK */
 
 document.getElementById("heart").onclick=function(){
 
@@ -174,7 +233,7 @@ document.getElementById("message").style.display="block"
 
 }
 
-/* timer */
+/* TIMER */
 
 var start=new Date("2026-03-12")
 
@@ -208,7 +267,7 @@ document.getElementById("timer").innerHTML=
 
 setInterval(update,1000)
 
-/* flowers */
+/* FLOWERS */
 
 function flower(){
 
@@ -229,15 +288,13 @@ setTimeout(()=>f.remove(),8000)
 }
 
 
-/* flowers */
-
 function flower1(){
 
 var f=document.createElement("div")
 
 f.className="flower"
 
-f.innerHTML="🌷͙֒"
+f.innerHTML="😍"
 
 f.style.left=Math.random()*100+"vw"
 
@@ -248,6 +305,7 @@ document.body.appendChild(f)
 setTimeout(()=>f.remove(),8000)
 
 }
+
 
 function heart(){
 
@@ -255,7 +313,7 @@ var f=document.createElement("div")
 
 f.className="flower"
 
-f.innerHTML="🌷͙֒"
+f.innerHTML="💕"
 
 f.style.left=Math.random()*100+"vw"
 
@@ -267,11 +325,55 @@ setTimeout(()=>f.remove(),8000)
 
 }
 
-setInterval(flower,320)
+function heart1(){
 
-setInterval(flower1,300)
+var f=document.createElement("div")
 
-setInterval(heart,330)
+f.className="flower"
+
+f.innerHTML="💖"
+
+f.style.left=Math.random()*100+"vw"
+
+f.style.animationDuration=(3+Math.random()*5)+"s"
+
+document.body.appendChild(f)
+
+setTimeout(()=>f.remove(),8000)
+
+}
+
+
+setInterval(flower,300)
+
+
+setInterval(flower1,200)
+
+setInterval(heart,300)
+
+
+setInterval(heart1,200)
+
+/* MUSIC */
+
+const music=document.getElementById("bgm")
+const disk=document.getElementById("disk")
+
+function toggleMusic(){
+
+if(music.paused){
+
+music.play()
+disk.style.animationPlayState="running"
+
+}else{
+
+music.pause()
+disk.style.animationPlayState="paused"
+
+}
+
+}
 
 </script>
 
