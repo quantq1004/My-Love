@@ -144,7 +144,7 @@ Anh yêu em rất nhiều 💖
 <div id="timer"></div>
 
 <audio autoplay loop>
-<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_9f0a2c0df7.mp3">
+<source src="audio/noinaycoanh.mp3" type="audio/mpeg">
 </audio>
 
 <script>
@@ -211,7 +211,50 @@ setTimeout(()=>f.remove(),8000)
 
 }
 
-setInterval(flower,300)
+
+/* flowers */
+
+function flower1(){
+
+var f=document.createElement("div")
+
+f.className="flower"
+
+f.innerHTML="🌷͙֒"
+
+f.style.left=Math.random()*100+"vw"
+
+f.style.animationDuration=(3+Math.random()*5)+"s"
+
+document.body.appendChild(f)
+
+setTimeout(()=>f.remove(),8000)
+
+}
+
+function heart(){
+
+var f=document.createElement("div")
+
+f.className="flower"
+
+f.innerHTML="🌷͙֒"
+
+f.style.left=Math.random()*100+"vw"
+
+f.style.animationDuration=(3+Math.random()*5)+"s"
+
+document.body.appendChild(f)
+
+setTimeout(()=>f.remove(),8000)
+
+}
+
+setInterval(flower,320)
+
+setInterval(flower1,300)
+
+setInterval(heart,330)
 
 </script>
 
