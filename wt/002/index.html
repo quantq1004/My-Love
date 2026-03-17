@@ -60,13 +60,9 @@
     
     <div class="music">
 
-    <div id="disk" class="disk"></div>
+        <div id="disk" class="disk"></div>
 
-    <div>Ở trong khu rừng 🎵</div>
-
-    <button id="playBtn" class="play" onclick="toggleMusic()">
-    Pause
-    </button>
+        <div>Ở trong khu rừng 🎵</div>
 
     </div>
 
@@ -77,18 +73,13 @@
                 /* ===== MUSIC ===== */
         const music = document.getElementById("bgm")
         const disk = document.getElementById("disk")
-        const btn = document.getElementById("playBtn")
 
-        function toggleMusic() {
-            if (music.paused) {
-                music.play()
-                disk.style.animationPlayState = "running"
-                btn.innerHTML = "Pause"
-            } else {
-                music.pause()
-                disk.style.animationPlayState = "paused"
-                btn.innerHTML = "Play"
-            }
+        music.onplay = () => {
+            disk.style.animationPlayState = "running"
+        }
+
+        music.onpause = () => {
+            disk.style.animationPlayState = "paused"
         }
 
         (function () {
