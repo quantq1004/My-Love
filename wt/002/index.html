@@ -66,11 +66,11 @@
 
     <div id="disk" class="disk"></div>
 
-    <div>Ở trong khu rừng 🎵</div>
+    <div>🎵 Ở trong khu rừng 🎵</div>
 
-    <button id="playBtn" class="play" onclick="toggleMusic()">
+    <!-- <button id="playBtn" class="play" onclick="toggleMusic()">
     Play
-    </button>
+    </button> -->
 
     </div>
 
@@ -83,17 +83,17 @@
         const disk = document.getElementById("disk")
         const btn = document.getElementById("playBtn")
 
-        function toggleMusic() {
-            if (music.paused) {
-                music.play()
-                disk.style.animationPlayState = "running"
-                btn.innerHTML = "Pause"
-            } else {
-                music.pause()
-                disk.style.animationPlayState = "paused"
-                btn.innerHTML = "Play"
-            }
-        }
+        // function toggleMusic() {
+        //     if (music.paused) {
+        //         music.play()
+        //         disk.style.animationPlayState = "running"
+        //         btn.innerHTML = "Pause"
+        //     } else {
+        //         music.pause()
+        //         disk.style.animationPlayState = "paused"
+        //         btn.innerHTML = "Play"
+        //     }
+        // }
 
         (function () {
 
