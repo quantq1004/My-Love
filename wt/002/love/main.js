@@ -1,40 +1,99 @@
-// ===== PASSWORD =====
-function checkPassword() {
-    const pass = document.getElementById("password").value;
+// ===== DOM READY =====
+document.addEventListener("DOMContentLoaded", () => {
 
-    if (pass === "emiuanh") {
-        document.getElementById("lockScreen").style.display = "none";
-        document.getElementById("main").classList.remove("hidden");
+    // ===== PASSWORD =====
+    document.getElementById("unlockBtn").onclick = () => {
+        const pass = document.getElementById("password").value;
 
-        setTimeout(showPopup, 2000);
-    } else {
-        document.getElementById("error").innerText = "Nhầm rồi ạ";
-    }
-}
+        if (pass === "38") {
+            document.getElementById("lockScreen").style.display = "none";
+            document.getElementById("main").classList.remove("hidden");
+
+            setTimeout(showPopup, 1500);
+            typeWriter();
+        } else {
+            document.getElementById("error").innerText = "Em iu nhầm rồi ạ ^^";
+        }
+    };
+
+    // ===== POPUP =====
+    document.getElementById("closePopupBtn").onclick = closePopup;
+
+    // ===== MUSIC =====
+    document.getElementById("musicBtn").onclick = toggleMusic;
+
+    // ===== INPUT HEART =====
+    const input = document.getElementById("loveInput");
+    const heart = document.getElementById("heart");
+
+    input.addEventListener("input", () => {
+        heart.style.opacity = input.value ? 1 : 0;
+    });
+
+    initHeartTree();
+});
 
 
 // ===== POPUP =====
 function showPopup() {
     document.getElementById("popup").classList.remove("hidden");
 }
-
 function closePopup() {
     document.getElementById("popup").classList.add("hidden");
 }
 
 
-// ===== TYPE TEXT =====
-const text = "💞 Anh không giỏi nói nhiều... nhưng anh yêu em 💞";
-let i = 0;
+// ===== TYPE WRITER (FULL TEXT) =====
+const lines = [
+"Gửi Quỳnh Trang đáng yêu của anh,",
+"",
+"Anh biết chắc chắn rằng anh yêu em.",
+"",
+"Anh biết em là một cô gái đáng yêu, giỏi giang, xinh đẹp, tốt bụng và dịu dàng.",
+"",
+"Anh cảm nhận được rằng ngày mà em đến chính là định mệnh giữa anh và em.",
+"",
+"Mong chúng ta sẽ thật hạnh phúc,",
+"",
+"Anh thực sự chỉ muốn nói với em từ tận đáy lòng:",
+"",
+"Anh thích em, anh yêu em, anh thương em",
+"",
+"Cảm ơn định mệnh đã cho anh và em gặp nhau",
+"",
+"Cảm ơn em đã hiện diện trong cuộc đời của anh",
+"",
+"Anh rất hạnh phúc khi gặp được em, người mà anh yêu.",
+"",
+"Anh thực sự hy vọng rằng em cũng yêu anh như cách anh yêu em.",
+"",
+"Anh yêu em rất nhiều, cô gái nhỏ của anh.",
+"",
+"Chúng mình phải thật hạnh phúc nhaaaa.",
+"",
+"- Anh iu của em iu xinh đẹp, Anh ơiiii."
+];
 
-function typing() {
-    if (i < text.length) {
-        document.getElementById("typing").innerHTML += text[i];
-        i++;
-        setTimeout(typing, 50);
+
+let lineIndex = 0;
+let charIndex = 0;
+
+function typeWriter() {
+    if (lineIndex < lines.length) {
+        let line = lines[lineIndex];
+
+        if (charIndex < line.length) {
+            document.getElementById("code").innerHTML += line[charIndex];
+            charIndex++;
+            setTimeout(typeWriter, 25);
+        } else {
+            document.getElementById("code").innerHTML += "<br/>";
+            lineIndex++;
+            charIndex = 0;
+            setTimeout(typeWriter, 200);
+        }
     }
 }
-typing();
 
 
 // ===== MUSIC =====
@@ -52,54 +111,44 @@ function toggleMusic() {
 }
 
 
-// ===== HEART TREE (Canvas) =====
-const canvas = document.getElementById("heartCanvas");
-const ctx = canvas.getContext("2d");
+// ===== HEART TREE =====
+function initHeartTree() {
+    const canvas = document.getElementById("heartCanvas");
+    const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = 300;
+    canvas.width = canvas.offsetWidth;
+    canvas.height = 300;
 
-function drawHeart(x, y, size) {
-    ctx.beginPath();
-    ctx.moveTo(x, y);
-    ctx.bezierCurveTo(x, y - size, x - size, y - size, x - size, y);
-    ctx.bezierCurveTo(x - size, y + size, x, y + size, x, y + size*2);
-    ctx.bezierCurveTo(x, y + size, x + size, y + size, x + size, y);
-    ctx.bezierCurveTo(x + size, y - size, x, y - size, x, y);
-    ctx.fillStyle = "pink";
-    ctx.fill();
+    function heart(t) {
+        return {
+            x: 16 * Math.pow(Math.sin(t), 3),
+            y: 13 * Math.cos(t) - 5*Math.cos(2*t) - 2*Math.cos(3*t) - Math.cos(4*t)
+        };
+    }
+
+    let points = [];
+    for (let t = 0; t < Math.PI * 2; t += 0.05) {
+        let p = heart(t);
+        points.push({
+            x: canvas.width/2 + p.x * 10,
+            y: canvas.height/2 - p.y * 10,
+            alpha: 0
+        });
+    }
+
+    function draw() {
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+
+        points.forEach(p => {
+            if (p.alpha < 1) p.alpha += 0.01;
+            ctx.fillStyle = `rgba(255,105,180,${p.alpha})`;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, 2, 0, Math.PI*2);
+            ctx.fill();
+        });
+
+        requestAnimationFrame(draw);
+    }
+
+    draw();
 }
-
-let hearts = [];
-
-for (let i = 0; i < 50; i++) {
-    hearts.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 5 + 5,
-        speed: Math.random() * 1 + 0.5
-    });
-}
-
-function animateHearts() {
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-
-    hearts.forEach(h => {
-        drawHeart(h.x, h.y, h.size);
-        h.y -= h.speed;
-        if (h.y < 0) h.y = canvas.height;
-    });
-
-    requestAnimationFrame(animateHearts);
-}
-
-animateHearts();
-
-
-// ===== INPUT HEART =====
-const input = document.getElementById("loveInput");
-const heart = document.getElementById("heart");
-
-input.addEventListener("input", () => {
-    heart.style.opacity = input.value ? 1 : 0;
-});
