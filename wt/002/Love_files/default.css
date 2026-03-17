@@ -2,13 +2,11 @@ body {
 	margin: 0;
 	padding: 0;
 
-	/* nền đẹp hơn */
 	background: linear-gradient(135deg, #ffc0cb, #ff9aa2);
 
 	font-size: 24px;
 
-	/* font hệ thống đẹp nhất */
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 	color: #c9184a;
 
@@ -18,7 +16,6 @@ body {
 a {
 	color: #ff4d6d;
 	font-size: 18px;
-	text-decoration: none;
 }
 
 #main {
@@ -114,7 +111,7 @@ height:45px;
 
 border-radius:50%;
 
-background:url("./heart2.png");
+background:url("./heart-main1.png");
 background-size:cover;
 
 animation:spin 5s linear infinite;
