@@ -1,52 +1,56 @@
+
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>Gửi em iuu 💞</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./love/style.css">
+<meta charset="UTF-8">
+<title>Gửi em iuu 💞</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- LOCK -->
 <div id="lockScreen">
     <div class="lock-box">
         <h2>🔐 Mời em iu nhập mật khẩu 💖</h2>
-        <input type="password" id="password" placeholder="Mật khẩu...">
-        <button id="unlockBtn">Mở khóa *･῾⁺◦✧❤️️✧◦⁺.*</button>
+        <input type="password" id="password">
+        <button id="unlockBtn">Mở khóa ❤️</button>
         <p id="error"></p>
     </div>
 </div>
 
-<!-- MAIN -->
 <div id="main" class="hidden">
 
-    <h1 class="title">🌷 Gửi đến em</h1>
+    <h1 class="title">💖 Dành cho em 💖</h1>
 
     <div class="content">
         <div id="text-box">
             <div id="code"></div>
         </div>
 
-        <canvas id="heartCanvas"></canvas>
-    </div>
-
-    <div class="input-box">
-        <input type="text" id="loveInput" placeholder="Nhập điều em muốn nói với anh...">
-        <span id="heart">💟</span>
-    </div>
-
-    <div class="music-box">
-        <div class="disc" id="disc"></div>
-        <p>🎵 Ở Trong Khu Rừng</p>
-        <button id="musicBtn">▶️</button>
+        <canvas id="canvas"></canvas>
     </div>
 
 </div>
 
-<audio id="audio" src="./otrongkhurung.mp3" loop></audio>
+<!-- MUSIC -->
+<div class="music">
 
-<script src="./love/main.js"></script>
+    <div id="disk" class="disk"></div>
+
+    <div>Perfect 🎵</div>
+
+    <button id="playBtn" class="play">
+        ▶️
+    </button>
+
+</div>
+
+<audio id="bgm" loop>
+    <source src="otrongkhurung.mp3">
+</audio>
+
+<script src="main.js"></script>
 </body>
 </html>
