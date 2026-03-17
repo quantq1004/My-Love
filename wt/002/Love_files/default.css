@@ -2,18 +2,15 @@ body {
 	margin: 0;
 	padding: 0;
 	background: #ffc0cb;
-	font-size: 20px;
-
-	/* FONT MỚI ĐẸP */
-	font-family: 'Quicksand', 'Segoe UI', Tahoma, sans-serif;
-
+	font-size: 24px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	color: #000000;
-	overflow: auto;
+	overflow: auto
 }
 
 a {
 	color: #000;
-	font-size: 14px;
+	font-size: 18px;
 }
 
 #main {
@@ -36,13 +33,9 @@ a {
 	position: absolute;
 }
 
-/* chữ tỏ tình */
 #code {
 	display: none;
 	font-size: 16px;
-
-	/* FONT VIẾT TAY */
-	font-family: 'Dancing Script', cursive;
 }
 
 #clock-box {
@@ -90,41 +83,6 @@ a {
 .space {
 	margin-right: 150px;
 }
-
-@media (max-width: 768px){
-
-    #wrap{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    canvas{
-        width: 100% !important;
-        height: auto !important;
-    }
-
-    #text{
-        order: 2;
-        width: 90%;
-        margin-top: 20px;
-        text-align: center;
-    }
-
-    #canvas{
-        order: 1;
-    }
-
-    #code{
-        font-size: 16px;
-        line-height: 26px;
-
-        /* vẫn giữ font viết tay trên mobile */
-        font-family: 'Dancing Script', cursive;
-    }
-}
-
-
 
 /* MUSIC */
 
