@@ -5,12 +5,16 @@
     <meta charset="UTF-8">
     <title>Một món quà dành tặng cho em 🥰</title>
 
-<link rel="icon" type="image/png" href="heart.png">
+    <!-- icon -->
+    <link rel="icon" type="image/png" href="heart.png">
 
     <meta name="language" content="vi">
     <meta name="title" content="Gửi đến em yêu của anh 💞">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="./Love_files/default.css">
 
+    <!-- JS -->
     <script src="./Love_files/jquery.min.js"></script>
     <script src="./Love_files/jscex.min.js"></script>
     <script src="./Love_files/jscex-parser.js"></script>
@@ -23,15 +27,18 @@
 </head>
 
 <body>
-    <div id="main">
 
-        <div id="error">
-            Em iuu ơi, trình duyệt bạn đang dùng không hỗ trợ hiệu ứng này<br>
-            Hãy thử mở bằng Chrome hoặc Firefox nhaaa!
-        </div>
+    <!-- ===== MUSIC UI ===== -->
+    <div id="musicBox">
+        <div id="disk"></div>
+        <button id="playBtn" onclick="toggleMusic()">▶️</button>
+    </div>
+
+    <div id="main">
 
         <div id="wrap">
 
+            <!-- TEXT -->
             <div id="text">
                 <div id="code">
 
@@ -57,20 +64,35 @@
                 </div>
             </div>
 
-            <div id="clock-box">
-                <a href="#" target="_blank">Anh</a> và
-                <a href="#" target="_blank">Em</a> đã bên nhau 💕
-                <div id="clock"></div>
-            </div>
-
+            <!-- CANVAS -->
             <canvas id="canvas" width="1100" height="680"></canvas>
         </div>
     </div>
 
-    <!-- Nhạc -->
-    <audio preload="auto" autoplay loop id="media" src="otrongkhurung.mp3"></audio>
+    <!-- ===== MUSIC ===== -->
+    <audio id="bgm" loop src="otrongkhurung.mp3"></audio>
 
+    <!-- ===== JS ===== -->
     <script>
+
+        /* ===== MUSIC ===== */
+        const music = document.getElementById("bgm")
+        const disk = document.getElementById("disk")
+        const btn = document.getElementById("playBtn")
+
+        function toggleMusic() {
+            if (music.paused) {
+                music.play()
+                disk.style.animationPlayState = "running"
+                btn.innerHTML = "⏸️"
+            } else {
+                music.pause()
+                disk.style.animationPlayState = "paused"
+                btn.innerHTML = "▶️"
+            }
+        }
+
+        /* ===== TREE EFFECT ===== */
         (function () {
 
             var canvas = $('#canvas');
@@ -137,11 +159,6 @@
                     canvas.unbind("mousemove");
                     canvas.removeClass('hand');
                 }
-            }).mousemove(function (e) {
-                var offset = canvas.offset(), x, y;
-                x = e.pageX - offset.left;
-                y = e.pageY - offset.top;
-                canvas.toggleClass('hand', seed.hover(x, y));
             });
 
             var seedAnimate = eval(Jscex.compile("async", function () {
@@ -174,22 +191,6 @@
                 } while (tree.canFlower());
             }));
 
-            var moveAnimate = eval(Jscex.compile("async", function () {
-                tree.snapshot("p1", 240, 0, 610, 680);
-                while (tree.move("p1", 500, 0)) {
-                    foot.draw();
-                    $await(Jscex.Async.sleep(10));
-                }
-                foot.draw();
-                tree.snapshot("p2", 500, 0, 610, 680);
-
-                canvas.parent().css("background",
-                    "url(" + tree.toDataURL('image/png') + ")");
-                canvas.css("background", "#ffc0cb");
-                $await(Jscex.Async.sleep(300));
-                canvas.css("background", "none");
-            }));
-
             var jumpAnimate = eval(Jscex.compile("async", function () {
                 while (true) {
                     tree.ctx.clearRect(0, 0, width, height);
@@ -200,26 +201,18 @@
             }));
 
             var textAnimate = eval(Jscex.compile("async", function () {
-                var together = new Date();
-                together.setFullYear(2026, 3, 12);
-                together.setHours(0);
-                together.setMinutes(0);
-                together.setSeconds(0);
 
                 $("#code").show().typewriter();
                 $("#clock-box").fadeIn(500);
 
-                while (true) {
-                    timeElapse(together);
-                    $await(Jscex.Async.sleep(1000));
-                }
+                $("#clock").html("Chúng mình cùng nhau cố gắng nhaaa 💖");
+
             }));
 
             var runAsync = eval(Jscex.compile("async", function () {
                 $await(seedAnimate());
                 $await(growAnimate());
                 $await(flowAnimate());
-                $await(moveAnimate());
 
                 textAnimate().start();
                 $await(jumpAnimate());
