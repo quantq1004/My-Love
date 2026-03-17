@@ -59,33 +59,37 @@
 
     
     <div class="music">
-        <div id="disk" class="disk"></div>
-        <div> 💝 Ở trong khu rừng 💝</div>
+
+    <div id="disk" class="disk"></div>
+
+    <div> 🍀 Ở trong khu rừng 🍀</div>
+
+    <button id="playBtn" class="play" onclick="toggleMusic()">
+    Play
+    </button>
+
     </div>
 
-    <audio id="bgm" loop preload="auto" src="otrongkhurung.mp3"></audio>
-
     <!-- Nhạc -->
-    <audio preload="auto" autoplay loop id="bgm" src="otrongkhurung.mp3"></audio>
+    <audio loop id="bgm" src="otrongkhurung.mp3"></audio>
 
     <script>
                 /* ===== MUSIC ===== */
         const music = document.getElementById("bgm")
         const disk = document.getElementById("disk")
+        const btn = document.getElementById("playBtn")
 
-        function playMusic() {
-            music.play().then(() => {
+        function toggleMusic() {
+            if (music.paused) {
+                music.play()
                 disk.style.animationPlayState = "running"
-            }).catch(() => {
-                document.addEventListener("click", () => {
-                    music.play()
-                    disk.style.animationPlayState = "running"
-                }, { once: true })
-            })
+                btn.innerHTML = "Pause"
+            } else {
+                music.pause()
+                disk.style.animationPlayState = "paused"
+                btn.innerHTML = "Play"
+            }
         }
-
-        // chạy khi load trang
-        window.addEventListener("load", playMusic)
 
         (function () {
 
