@@ -12,23 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("lockScreen").style.display = "none";
             document.getElementById("main").classList.remove("hidden");
 
-            setTimeout(showPopup, 1500);
-            typeWriter();
+            typeWriter(); // chạy text luôn
         } else {
             document.getElementById("error").innerText = "Em iu nhầm rồi ạ ^^";
         }
     };
-
-    // ===== POPUP =====
-    document.getElementById("closePopupBtn").onclick = closePopup;
-
-    function showPopup() {
-        document.getElementById("popup").classList.remove("hidden");
-    }
-
-    function closePopup() {
-        document.getElementById("popup").classList.add("hidden");
-    }
 
     // ===== TYPE WRITER =====
     const lines = [
@@ -57,6 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "Anh yêu em rất nhiều, cô gái nhỏ của anh.",
         "",
         "Chúng mình phải thật hạnh phúc nhaaaa.",
+        "",
+        "Yêu emm,",
         "",
         "- Anh iu của em iu xinh đẹp, Anh ơiiii."
     ];
