@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg, #89f7fe, #ff9a9e);
+    color: white;
+    overflow-x: hidden;
+}
+
+.hidden { display: none; }
+
+/* LOCK */
+#lockScreen {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lock-box {
+    background: rgba(255,255,255,0.2);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+input {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    margin: 10px;
+}
+
+/* MAIN */
+#main {
+    text-align: center;
+    padding: 20px;
+}
+
+.title {
+    font-size: 32px;
+}
+
+#heartCanvas {
+    width: 100%;
+    height: 300px;
+}
+
+/* DISC */
+.disc {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: black;
+    margin: 20px auto;
+    animation: spin 5s linear infinite;
+    animation-play-state: paused;
+}
+
+@keyframes spin {
+    from { transform: rotate(0); }
+    to { transform: rotate(360deg); }
+}
+
+/* POPUP */
+#popup {
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.6);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.popup-content {
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .title { font-size: 24px; }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Gửi em iuu 💖</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./love/style.css">
+</head>
+
+<body>
+
+<!-- LOCK -->
+<div id="lockScreen">
+    <div class="lock-box">
+        <h2>🔐 Xin mời em nhập mật khẩu 💖</h2>
+        <input type="password" id="password" placeholder="Mật khẩu...">
+        <button onclick="checkPassword()">Mở khóa *･῾⁺◦✧❤️️✧◦⁺.*</button>
+        <p id="error"></p>
+    </div>
+</div>
+
+<!-- MAIN -->
+<div id="main" class="hidden">
+
+    <h1 class="title">💟 Gửi đến em</h1>
+
+    <!-- HEART TREE -->
+    <canvas id="heartCanvas"></canvas>
+
+    <!-- TEXT -->
+    <p id="typing"></p>
+
+    <!-- INPUT -->
+    <div class="input-box">
+        <input type="text" id="loveInput" placeholder="Nhập điều em muốn nói...">
+        <span id="heart">💕</span>
+    </div>
+
+    <!-- MUSIC -->
+    <div class="music-box">
+        <div class="disc" id="disc"></div>
+        <p>🎵 Ở Trong Khu Rừng</p>
+        <button onclick="toggleMusic()">▶️ / ⏸️</button>
+    </div>
+
+</div>
+
+<!-- POPUP -->
+<div id="popup" class="hidden">
+    <div class="popup-content">
+        <p>💕 Anh yêu em rất nhiều 💕</p>
+        <button onclick="closePopup()">Đóng</button>
+    </div>
+</div>
+
+<audio id="audio" src="./otrongkhurung.mp3" loop></audio>
+
+<script src="./love/main.js"></script>
+</body>
+</html>
