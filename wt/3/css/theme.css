@@ -24,11 +24,11 @@ a {
 
 #div_btn_inner{padding-left:430px;width:500px;color:#fff;text-shadow:1px 1px 1px #000;}
 .div_btn{position:fixed;z-index:999;width:42px;height:42px;border:2px solid #fff;border-radius:50%;text-align:center;font-size:1em;line-height:40px;cursor:pointer;}
-#div_music { bottom: 30px; top: auto; border: none; }
-#div_record { bottom: 100px; top: auto; background-color: rgba(0,0,0,.5); }
-#div_support { bottom: 170px; top: auto; background-color: rgba(0,0,0,.3); }
-.div_music_tips{position:fixed;bottom:70px;z-index:999;}
-.div_record_tips{position:fixed;bottom:140px;z-index:999;}
+#div_music{top:30px;border:none;} 
+#div_record{top:100px;background-color:rgba(0,0,0,.5);} 
+#div_support{top:170px;background-color:rgba(0,0,0,.3);}
+.div_music_tips{position:fixed;top:70px;z-index:999;}
+.div_record_tips{position:fixed;top:140px;z-index:999;}
 .div_btn_big{position:fixed;z-index:999;padding:10px 0;width:52px;border-radius:5px;background-color:rgba(112,128,144,.6);text-align:center;font-size:1.1em;line-height:1.3em;cursor:pointer;}
 #div_s_upload{top:360px;}
 #div_s_sound{top:440px;}
