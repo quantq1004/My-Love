@@ -13,7 +13,6 @@
 <body>
   <div id="div_container">
     <div id="div_start_bg"></div>
-
     <div id="div_onlyyou">
       <div id="div_oy_inner">
         <div class="div_oy_text">
@@ -24,25 +23,41 @@
 
           <ul id="ul_oy_benefit">
             <li class="li_oy_benefit"></li>
+            <li class="li_oy_benefit"></li>
+            <li class="li_oy_benefit"></li>
+            <li class="li_oy_benefit"></li>
+            <li class="li_oy_benefit"></li>
+            <li class="li_oy_benefit"></li>
+            <li class="li_oy_benefit"></li>
+            <li class="li_oy_benefit"></li>
+            <li class="li_oy_benefit"></li>
+            <li class="li_oy_benefit"></li>
+            <li class="li_oy_benefit"></li>
+            <li class="li_oy_benefit"></li>
+            <li class="li_oy_benefit"></li>
+            <li class="li_oy_benefit"></li>
+            <li class="li_oy_benefit"></li>
+            <li class="li_oy_benefit"></li>
+            <li class="li_oy_benefit"></li>
+            <li class="li_oy_benefit"></li>
+            <li class="li_oy_benefit"></li>
+            <li class="li_oy_benefit"></li>
           </ul>
         </div>
-
         <ul id="ul_oy_btn">
+
           <li onclick="oy_go_next()">Yêu anh 💞</li>
           <li onclick="oy_show_benefit()">Iu anh 💓</li>
         </ul>
-
         <div id="div_oy_note" onclick="oy_hide_note()">
-          <img src="images/emoji_kelian.jpg" alt="" /><br />“Em Yêu anhhh”
+          <img src="images/emoji_kelian.jpg" alt="" /><br />Em Yêu anhhh
           <div id="div_oy_note_close">💓</div>
         </div>
-
         <div id="div_oy_yes">
-          <img src="images/emoji_bixin.jpg" alt="" /><br />Thích quá điii! Haha ^^
+          <img src="images/emoji_bixin.jpg" alt="" /><br />Thích quá điii! ^^
         </div>
       </div>
     </div>
-
     <div class="div_pure_words">
       <div class="div_pure_words_bg">
         <div class="div_pure_words_height"></div>
@@ -51,18 +66,17 @@
         <span id="span_pw_typed"></span>
       </div>
     </div>
-
     <div id="div_btn_container">
       <div id="div_btn_inner">
 
+        <div class="div_music_tips"></div>
         <div class="div_btn" id="div_music" onclick="music_switch()">
-          <img id="img_music" src="images/music_note_big.png"
-            style="-webkit-animation: music_play_rotate 1s linear infinite;" />
+          <img id="img_music" src="images/music_note_big.png" />
           <audio id="audio_music" autoplay="autoplay" loop="loop">
             <source type="audio/mpeg" />
           </audio>
         </div>
-
+        <div class="div_record_tips"></div>
         <div class="div_btn" id="div_record" onclick="record_switch()">
           <audio id="audio_record" loop="loop">
             <source type="audio/mpeg" />
@@ -70,39 +84,181 @@
         </div>
 
       </div>
+
     </div>
+
   </div>
+
 
   <script>
     function init_viewport() {
       if (navigator.userAgent.indexOf("Android") != -1) {
-        var width = window.outerWidth == 0 ? window.screen.width : window.outerWidth;
-        var phoneScale = parseInt(width) / 500;
-        document.write('<meta name="viewport" content="width=500, minimum-scale=' + phoneScale + ', maximum-scale=' + phoneScale + '">');
+        var version = parseFloat(RegExp.$1);
+        if (version > 2.3) {
+          var width =
+            window.outerWidth == 0 ? window.screen.width : window.outerWidth;
+          var phoneScale = parseInt(width) / 500;
+          document.write(
+            '<meta name="viewport" content="width=500, minimum-scale = ' +
+            phoneScale +
+            ", maximum-scale = " +
+            phoneScale +
+            ', target-densitydpi=device-dpi">'
+          );
+        } else {
+          document.write(
+            '<meta name="viewport" content="width=500, target-densitydpi=device-dpi, user-scalable=0">'
+          );
+        }
       } else if (navigator.userAgent.indexOf("iPhone") != -1) {
         var phoneScale = parseInt(window.screen.width) / 500;
-        document.write('<meta name="viewport" content="width=500, initial-scale=' + phoneScale + ', maximum-scale=' + phoneScale + '">');
+        document.write(
+          '<meta name="viewport" content="width=500, min-height=750, initial-scale=' +
+          phoneScale +
+          ", maximum-scale=" +
+          phoneScale +
+          ', user-scalable=0" /> '
+        ); //0.75   0.82
       } else {
-        document.write('<meta name="viewport" content="width=500, initial-scale=0.64">');
+        document.write(
+          '<meta name="viewport" content="width=500, height=750, initial-scale=0.64" /> '
+        ); //0.75  0.82
       }
     }
     init_viewport();
 
     var theme = "pure_words";
-
+    console.log("theme ->" + theme);
     var theme_content = {
       pure_words_content:
         "Gặp được em là khởi đầu của mọi điều đẹp đẽ trong cuộc đời anh.\nNgay từ cái nhìn đầu tiên, định mệnh đã nói rằng: anh không thể thoát khỏi em.\nQuá khứ của em anh không kịp tham gia, nhưng tương lai anh nhất định sẽ ở bên em đến cùng.\nAnh yêu em! 💕",
       typed_bool: "typed_y",
       cursor_char: "cursor_heart",
       bg_style_pure_words: "bg_opacity",
-      bg_img: "images/coup.png"
+      bg_img: "images/coup.png",
+      simple_page_content: "",
+      video_page_content: "",
     };
+    console.log(theme_content);
+
+    var music_json = {
+      music_select: "m_online",
+      m_online_id: "7",
+      m_online_url: "images/yeuthiyeu.mp3",
+      m_upload_name: "null",
+      m_upload_url: "null",
+    };
+    console.log(music_json);
+    var record_json = {
+      record_bool: "r_false",
+      r_wechat_time: "null",
+      r_wechat_url: "null",
+      r_wechat_amr: "null",
+    };
+    console.log(record_json);
 
     var main_title = "Anh yêu em 💕";
 
+    if (main_title == "" || main_title == "null") {
+      document.title = "Falling You";
+    }
+
+    var window_height = $(window).height();
+    console.log("window_height ->" + window_height);
+    var pure_words_content = theme_content["pure_words_content"];
+    var str_cursorChar;
+    var typed_bool;
+    var interval_pw_height;
+    var height_div_pw = $(".div_pure_words_height").height();
+    function init_pure_words() {
+      $(".div_pure_words_height").html(pure_words_content + "22222");
+      if (
+        typeof theme_content["bg_style_pure_words"] != "undefined" &&
+        theme_content["bg_style_pure_words"] == "bg_opacity"
+      ) {
+        if (
+          typeof theme_content["bg_img"] != "undefined" &&
+          theme_content["bg_img"] != ""
+        ) {
+          $(".div_pure_words_bg").css({
+            "background-image": "url(" + theme_content["bg_img"] + ")",
+          });
+        }
+      }
+      if (
+        typeof theme_content["cursor_char"] != "undefined" &&
+        theme_content["cursor_char"] != ""
+      ) {
+        switch (
+        theme_content["cursor_char"]
+        ) {
+          case "cursor_heart":
+            str_cursorChar = '<um style="color: #F44336;">❤</um>';
+            break;
+          case "cursor_sub":
+            str_cursorChar = "_";
+            break;
+          case "cursor_music":
+            str_cursorChar = "♫";
+            break;
+          case "cursor_star":
+            str_cursorChar = "★";
+            break;
+          case "cursor_sun":
+            str_cursorChar = "☀";
+            break;
+          default:
+            str_cursorChar = "|";
+        }
+      } else {
+        str_cursorChar = "❤";
+      }
+      if (
+        typeof theme_content["typed_bool"] != "undefined" &&
+        theme_content["typed_bool"] != ""
+      ) {
+        typed_bool = theme_content["typed_bool"] == "typed_y" ? true : false;
+      } else {
+        typed_bool = false; 
+      }
+      display_pure_words();
+      $(".div_pure_words").fadeIn();
+      interval_pw_height = setInterval(function () {
+        console.log(
+          "div_pure_words_height -> " + $(".div_pure_words_height").height()
+        );
+        var least_height_div_pw = $(".div_pure_words_height").height();
+        if (least_height_div_pw > height_div_pw) {
+          height_div_pw = least_height_div_pw;
+        } else {
+          clearInterval(interval_pw_height);
+          $(".div_pure_words_height").height(least_height_div_pw + 100);
+          if ($(".div_pure_words_height").height() < window_height) {
+            $(".div_pure_words_height").height(window_height);
+            console.log("let us be high as window");
+          }
+        }
+      }, 100);
+    }
+
+    function display_pure_words() {
+      if (typed_bool) {
+        var typed_pure_words = new Typed("#span_pw_typed", {
+          strings: [pure_words_content],
+          typeSpeed: 120,
+          cursorChar: str_cursorChar,
+          contentType: "html",
+          onComplete: function (abc) {
+            console.log("finished typing words");
+          },
+        });
+      } else {
+        $("#span_pw_typed").html(pure_words_content).fadeIn();
+      }
+      init_attachment();
+    }
     var start_content = {
-      chase_title: "Chúng mình phải thật hạnh phúc nhaaa!",
+      chase_title: "Quang Quân 💕 Quỳnh Trang",
       chase_text:
         "Cảm ơn em đã hiện hiện trong cuộc đời anh.\nAnh mong rằng sau này em sẽ dùng tên anh để từ chối những người khác 💕",
       chase_benefit: [
@@ -118,17 +274,68 @@
       img_bool: "img_true",
       img_src: "images/3.gif"
     };
-
+    var start_id;
     $(function () {
-      $("#div_onlyyou").show();
-      init_onlyyou();
+      start_id = "onlyyou"; 
+      init_start(start_id);
     });
-  </script>
+    function init_start(start_id) {
+      console.log("init_start ->" + start_id);
+      switch (start_id) {
+        case "loveformat":
+          $(".div_loveformat").show();
+          init_loveformat();
+          break;
+        case "hearttree":
+          $("#div_hearttree").show();
+          init_hearttree();
+          break;
+        case "courage":
+          $("#div_courage").show();
+          init_courage();
+          break;
+        case "birthdaycake":
+          $("#div_dbcake").show();
+          init_birthdaycake();
+          break;
+        case "intersect":
+          $("#div_intersect").show();
+          init_intersect();
+          break;
+        case "onlyyou":
+          $("#div_onlyyou").show();
+          init_onlyyou();
+          break;
+        default:
+          init_theme();
+      }
+    }
+    function init_theme() {
+      console.log("init_theme");
+      $("#div_start_bg").fadeOut();
+      init_pure_words();
+    }
+    var attachment = "null";
+    var attached_content = {
+      bool_save: false,
+    }; 
+    console.log(attached_content);
 
+    function init_attachment() {
+      console.log("init_attachment ->" + attachment);
+      switch (attachment) {
+        case "timer":
+          init_at_timer();
+          break;
+        default:
+          return;
+      }
+    }
+  </script>
   <script src="js/typed.min.js"></script>
   <script src="js/start_onlyyou.js"></script>
   <script src="js/jweixin-1.2.0.js"></script>
   <script src="js/theme_common.js"></script>
-
 </body>
+
 </html>
