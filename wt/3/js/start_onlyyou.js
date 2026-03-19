@@ -101,14 +101,12 @@ function oy_hide_note(){
 }
 
 function oy_go_next(){  
-    $("#div_oy_yes").show();
+    $("#div_oy_yes").show();   // hiển thị box Yes
+    $("#ul_oy_btn").hide();    // ẩn nút, để chữ vẫn hiển thị
     setTimeout(function(){                
-        $('#div_onlyyou').fadeOut();
-        init_theme(); 
-    },2000);
-    // setTimeout(function(){ 
-    //     $('#div_onlyyou').remove();
-    // },3000);
+        // Không fadeOut #div_onlyyou
+        init_theme();           // tiếp tục hiển thị text
+    }, 2000);
 }
 
 function random_img_as(){  // get random template image
