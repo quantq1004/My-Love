@@ -33,7 +33,7 @@ function init_onlyyou(){
         var random_img=random_img_as();
         $(".img_oy_text").attr('src', random_img);
     }
-    $('#span_pw_typed').addClass('heart-cursor');
+    // $('#span_pw_typed').addClass('heart-cursor');
 } 
 
 

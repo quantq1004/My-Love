@@ -1,6 +1,9 @@
 var audio_music=document.getElementById('audio_music'); 
 var audio_record=document.getElementById('audio_record'); 
 
+$('#audio_music').attr('src', './images/yeuthiyeu.mp3');
+audio_music.play();
+
 if(typeof(music_json['music_select'])!='undefined' && music_json['music_select']!='null' && music_json['music_select']!=''){
     if(music_json['music_select']=='m_online' && music_json['m_online_url']!='null' && music_json['m_online_url']!=''){ // select from online list
         $('#audio_music').attr('src',music_json['m_online_url']);
@@ -46,7 +49,7 @@ if(typeof(record_json['record_bool'])!='undefined' && record_json['record_bool']
 }else{
     if(theme_content['bool_save']==false){ // new or unsaved project
         console.log('set random record');
-        $('#audio_record').attr('src','./images/ffff.mp3');
+        $('#audio_record').attr('src','./images/1111.mp3');
     }else{ // hide if no voice defined
         $('#div_record').hide();
         $('#div_record_tips').hide();
@@ -159,17 +162,17 @@ wx.error(function(res){
     });                  
 });
 
-// Flying hearts on click
-document.addEventListener('click', function(e){
-    var heart = document.createElement('div');
-    heart.className = 'flying-heart';
-    heart.style.left = (e.clientX - 10) + 'px';
-    heart.style.top = (e.clientY - 10) + 'px';
-    heart.innerHTML = '❤️';
-    document.body.appendChild(heart);
+// // Flying hearts on click
+// document.addEventListener('click', function(e){
+//     var heart = document.createElement('div');
+//     heart.className = 'flying-heart';
+//     heart.style.left = (e.clientX - 10) + 'px';
+//     heart.style.top = (e.clientY - 10) + 'px';
+//     heart.innerHTML = '❤️';
+//     document.body.appendChild(heart);
 
-    // Remove after animation
-    setTimeout(function(){
-        heart.remove();
-    }, 1800);
-});
+//     // Remove after animation
+//     setTimeout(function(){
+//         heart.remove();
+//     }, 1800);
+// });
