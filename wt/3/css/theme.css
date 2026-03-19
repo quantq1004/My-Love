@@ -65,24 +65,25 @@ a {
 }
 
 /* LI là các nút */
+/* LI là các nút - màu sắc xinh hơn */
 #ul_oy_btn li {
     padding: 10px 20px;
-    border: 1px solid #fff;
-    border-radius: 5px;
-    background-color: rgba(0,0,0,0.6);
-    color: #fff;
+    border: 2px solid #ff69b4;          /* viền hồng nổi bật */
+    border-radius: 12px;                 /* bo tròn mềm mại */
+    background: linear-gradient(135deg, #ffb6c1, #ff69b4); /* gradient hồng nhạt -> hồng đậm */
+    color: #fff;                         /* chữ trắng nổi bật */
     font-size: 1.4em;
     cursor: pointer;
-    white-space: nowrap;        /* tránh xuống dòng chữ trong nút */
-    transition: 0.3s;
+    white-space: nowrap;                 /* tránh xuống dòng chữ */
+    transition: all 0.3s ease;           /* hiệu ứng mượt khi hover */
+    box-shadow: 0 4px 10px rgba(255,105,180,0.3); /* bóng nhẹ 3D */
 }
 
-/* Hover hiệu ứng nhẹ */
+/* Hover hiệu ứng vui mắt */
 #ul_oy_btn li:hover {
-    background-color: rgba(255,192,203,0.6);
-    border-color: #ff69b4;
-    color: #ff69b4;
-    transform: scale(1.05);
+    background: linear-gradient(135deg, #ff69b4, #ff1493); /* gradient đậm hơn khi hover */
+    transform: scale(1.05);       /* phóng to nhẹ */
+    box-shadow: 0 6px 14px rgba(255,20,147,0.4);
 }
 #div_oy_note,#div_oy_yes{position:relative;display:none;margin:-60px auto;padding:5% 0;width:100%;height:180px;border-radius:5px;background-color:#fff;color:gray;text-align:center;font-size:1.4em;}
 #div_oy_note_close{position:absolute;top:20px;right:20px;width:40px;height:40px;}
