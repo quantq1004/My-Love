@@ -11,7 +11,24 @@ a{color:#fff;text-decoration:none;}
 
 #div_btn_inner{padding-left:430px;width:500px;color:#fff;text-shadow:1px 1px 1px #000;}
 .div_btn{position:fixed;z-index:999;width:42px;height:42px;border:2px solid #fff;border-radius:50%;text-align:center;font-size:1em;line-height:40px;cursor:pointer;}
-#div_music{top:30px;border:none;}
+/* Nút nhạc nhỏ */
+#div_music {
+    width: 45px;          /* chiều ngang */
+    height: 45px;         /* chiều cao */
+    padding: 0;           /* bỏ padding nếu có */
+    border-width: 1px;    /* viền mỏng hơn */
+    border-radius: 50%;   /* giữ hình tròn */
+    top: 30px;            /* vị trí từ trên */
+    right: 30px;          /* vị trí từ phải */
+}
+
+/* Hình đĩa nhạc bên trong */
+#img_music {
+    width: 32px;          /* thu nhỏ hình */
+    height: 32px;
+    line-height: 32px;    /* nếu cần căn giữa */
+    -webkit-animation: music_play_rotate 1s linear infinite; /* giữ hiệu ứng xoay */
+}
 #div_record{top:100px;background-color:rgba(0,0,0,.5);}
 #div_support{top:170px;background-color:rgba(0,0,0,.3);}
 .div_music_tips{position:fixed;top:70px;z-index:999;}

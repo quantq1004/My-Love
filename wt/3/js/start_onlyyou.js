@@ -106,9 +106,9 @@ function oy_go_next(){
         $('#div_onlyyou').fadeOut();
         init_theme(); 
     },2000);
-    setTimeout(function(){ 
-        $('#div_onlyyou').remove();
-    },3000);
+    // setTimeout(function(){ 
+    //     $('#div_onlyyou').remove();
+    // },3000);
 }
 
 function random_img_as(){  // get random template image
