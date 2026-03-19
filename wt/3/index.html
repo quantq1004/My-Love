@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>💕 Gửi em yêu của anh 💕</title>
+  <meta name="language" content="vi">
+  <meta name="title" content="Tình yêu của anh - Quỳnh Trang 🥰">
+  <link rel="icon" type="image/png" href="gif.png">
+  <link type="text/css" rel="stylesheet" href="css/theme.css" />
+  <script src="js/jquery-2.0.3.min.js"></script>
+</head>
+
+<body>
+  <div id="div_container">
+    <div id="div_start_bg"></div>
+
+    <div id="div_onlyyou">
+      <div id="div_oy_inner">
+        <div class="div_oy_text">
+          <h1></h1>
+          <img class="img_oy_text" src="" />
+          <p class="p_oy_text"></p>
+          <div></div>
+
+          <ul id="ul_oy_benefit">
+            <li class="li_oy_benefit"></li>
+          </ul>
+        </div>
+
+        <ul id="ul_oy_btn">
+          <li onclick="oy_go_next()">Yêu anh 💞/li>
+          <li onclick="oy_show_benefit()">Iu anh 💓</li>
+        </ul>
+
+        <div id="div_oy_note" onclick="oy_hide_note()">
+          <img src="images/emoji_kelian.jpg" alt="" /><br />Hãy nói “Yêu anh” nheee
+          <div id="div_oy_note_close">💓</div>
+        </div>
+
+        <div id="div_oy_yes">
+          <img src="images/emoji_bixin.jpg" alt="" /><br />Thích quá điii! Haha ^^
+        </div>
+      </div>
+    </div>
+
+    <div class="div_pure_words">
+      <div class="div_pure_words_bg">
+        <div class="div_pure_words_height"></div>
+      </div>
+      <div class="div_pw_typed">
+        <span id="span_pw_typed"></span>
+      </div>
+    </div>
+
+    <div id="div_btn_container">
+      <div id="div_btn_inner">
+
+        <div class="div_btn" id="div_music" onclick="music_switch()">
+          <img id="img_music" src="images/music_note_big.png"
+            style="-webkit-animation: music_play_rotate 1s linear infinite;" />
+          <audio id="audio_music" autoplay="autoplay" loop="loop">
+            <source type="audio/mpeg" />
+          </audio>
+        </div>
+
+        <div class="div_btn" id="div_record" onclick="record_switch()">
+          <audio id="audio_record" loop="loop">
+            <source type="audio/mpeg" />
+          </audio>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function init_viewport() {
+      if (navigator.userAgent.indexOf("Android") != -1) {
+        var width = window.outerWidth == 0 ? window.screen.width : window.outerWidth;
+        var phoneScale = parseInt(width) / 500;
+        document.write('<meta name="viewport" content="width=500, minimum-scale=' + phoneScale + ', maximum-scale=' + phoneScale + '">');
+      } else if (navigator.userAgent.indexOf("iPhone") != -1) {
+        var phoneScale = parseInt(window.screen.width) / 500;
+        document.write('<meta name="viewport" content="width=500, initial-scale=' + phoneScale + ', maximum-scale=' + phoneScale + '">');
+      } else {
+        document.write('<meta name="viewport" content="width=500, initial-scale=0.64">');
+      }
+    }
+    init_viewport();
+
+    var theme = "pure_words";
+
+    var theme_content = {
+      pure_words_content:
+        "Gặp được em là khởi đầu của mọi điều đẹp đẽ trong cuộc đời anh.\nNgay từ cái nhìn đầu tiên, định mệnh đã nói rằng: anh không thể thoát khỏi em.\nQuá khứ của em anh không kịp tham gia, nhưng tương lai anh nhất định sẽ ở bên em đến cùng.\nAnh yêu em! 💕",
+      typed_bool: "typed_y",
+      cursor_char: "cursor_heart",
+      bg_style_pure_words: "bg_opacity",
+      bg_img: "images/love.png"
+    };
+
+    var main_title = "Anh yêu em 💕";
+
+    var start_content = {
+      chase_title: "Chúng mình cùng nhau hạnh phúc và phát triển nhaaa!",
+      chase_text:
+        "Cảm ơn em đã hiện hiện trong cuộc đời anh.\nAnh mong rằng sau này em sẽ dùng tên anh để từ chối những người khác 💕",
+      chase_benefit: [
+        "Dù mệt đến đâu anh vẫn muốn nói chuyện với em",
+        "Em ở trong trái tim và tâm trí của anh hàng ngày",
+        "Em là động lực để anh cố gắng mỗi ngày",
+        "Dù còn 1% pin anh vẫn muốn nhắn cho em",
+        "Em là giấc mơ anh không muốn tỉnh lại",
+        "Anh yêu em nhiều lắm 💞"
+      ],
+      bg_style: "bg_custom",
+      bg_img: "images/swans.png",
+      img_bool: "img_true",
+      img_src: "images/1.gif"
+    };
+
+    $(function () {
+      $("#div_onlyyou").show();
+      init_onlyyou();
+    });
+  </script>
+
+  <script src="js/typed.min.js"></script>
+  <script src="js/start_onlyyou.js"></script>
+  <script src="js/jweixin-1.2.0.js"></script>
+  <script src="js/theme_common.js"></script>
+
+</body>
+</html>
