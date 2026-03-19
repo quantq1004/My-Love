@@ -3,7 +3,7 @@ body {
     background: linear-gradient(135deg, rgba(30, 60, 114,0.6) 0%, rgba(42, 82, 152,0.5) 50%, rgba(142, 197, 252,0.4) 100%);
     background-size: cover;
     background-attachment: fixed;
-    color: #ffb6c1; /* chữ màu hồng nhạt nổi bật */
+    color: #ff69b4; /* chữ màu hồng nhạt nổi bật */
     font-family: "Microsoft YaHei", Arial, sans-serif; /* font đẹp */
     min-height: 100vh;
     text-align: center;
@@ -11,7 +11,7 @@ body {
 
 /* Link màu hồng nổi bật */
 a {
-    color: #ff69b4;
+    color: #ff1493;
     text-decoration: none;
 }
 #div_container{position:relative;margin:0 auto;width:500px;font-size:1em;}
@@ -24,9 +24,9 @@ a {
 
 #div_btn_inner{padding-left:430px;width:500px;color:#fff;text-shadow:1px 1px 1px #000;}
 .div_btn{position:fixed;z-index:999;width:42px;height:42px;border:2px solid #fff;border-radius:50%;text-align:center;font-size:1em;line-height:40px;cursor:pointer;}
-#div_music{top:30px;border:none;}
-#div_record{top:100px;background-color:rgba(0,0,0,.5);}
-#div_support{top:170px;background-color:rgba(0,0,0,.3);}
+#div_music { bottom: 50px; top: auto; border: none; }
+#div_record { bottom: 100px; top: auto; background-color: rgba(0,0,0,.5); }
+#div_support { bottom: 170px; top: auto; background-color: rgba(0,0,0,.3); }
 .div_music_tips{position:fixed;top:70px;z-index:999;}
 .div_record_tips{position:fixed;top:140px;z-index:999;}
 .div_btn_big{position:fixed;z-index:999;padding:10px 0;width:52px;border-radius:5px;background-color:rgba(112,128,144,.6);text-align:center;font-size:1.1em;line-height:1.3em;cursor:pointer;}
