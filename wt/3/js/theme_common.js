@@ -162,17 +162,3 @@ wx.error(function(res){
     });                  
 });
 
-// // Flying hearts on click
-// document.addEventListener('click', function(e){
-//     var heart = document.createElement('div');
-//     heart.className = 'flying-heart';
-//     heart.style.left = (e.clientX - 10) + 'px';
-//     heart.style.top = (e.clientY - 10) + 'px';
-//     heart.innerHTML = '❤️';
-//     document.body.appendChild(heart);
-
-//     // Remove after animation
-//     setTimeout(function(){
-//         heart.remove();
-//     }, 1800);
-// });
