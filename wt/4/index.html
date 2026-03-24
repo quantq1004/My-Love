@@ -367,6 +367,13 @@ playBtn.onclick = (e) => {
 /* ❌ NO */
 function moveNo() {
     noBtn.style.position = "fixed";
+
+    noBtn.style.pointerEvents = "none";
+    setTimeout(() => {
+        noBtn.style.pointerEvents = "auto";
+    }, 200);
+
+
     attempt++;
     question.innerText = texts[Math.min(attempt, texts.length - 1)];
 
@@ -384,10 +391,12 @@ function moveNo() {
     yesBtn.style.transform = `scale(${yesScale})`;
 
     if (navigator.vibrate) navigator.vibrate(100);
-
-    // document.body.classList.add("shake");
-    // setTimeout(() => document.body.classList.remove("shake"), 300);
 }
+
+noBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+});
 
 noBtn.addEventListener("mouseover", moveNo);
 noBtn.addEventListener("touchstart", moveNo);
