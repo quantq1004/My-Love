@@ -10,8 +10,9 @@ body {
     height: 100vh;
     background: linear-gradient(135deg, #ff9a9e, #fad0c4);
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    padding-top: 120px;   
     font-family: Arial;
     overflow: hidden;
     transition: 1s;
@@ -22,6 +23,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.btn-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
 }
 
 h1 {
@@ -123,7 +130,10 @@ h1 {
 
 .music-box div {
     color: white;
-    font-size: 14px;
+    font-size: 16px;  
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
 }
 
 /* play button */
@@ -185,7 +195,11 @@ h1 {
 
 /* 📸 couple */
 .couple {
-    width: 260px;
+    width: 320px;     
+    max-width: 75%;   
+    max-height: 40vh; 
+    object-fit: cover;
+
     border-radius: 20px;
     margin-top: 20px;
     box-shadow: 0 0 30px pink;
@@ -198,26 +212,28 @@ h1 {
 }
 
 /* 📱 shake */
-@keyframes shake {
+/* @keyframes shake {
     0% { transform: translate(0,0); }
     25% { transform: translate(-5px,5px); }
     50% { transform: translate(5px,-5px); }
     75% { transform: translate(-5px,5px); }
     100% { transform: translate(0,0); }
-}
+} */
 
-.shake {
+/* .shake {
     animation: shake 0.3s;
-}
+} */
 </style>
 </head>
 
 <body>
 
 <div class="container">
-    <h1 id="question">Em iu yêu anh iu nhiều lắm đúng không ạaaa 💕</h1>
-    <button id="yes" class="btn">Có ạaaa 💖</button>
-    <button id="no" class="btn">Khongg 😅</button>
+    <h1 id="question">Em iu có yêu anh iu nhiều lắm đúng không ạaaa 💕</h1>
+    <div class="btn-group">
+        <button id="yes" class="btn">Có ạaaa 💖</button>
+        <button id="no" class="btn">Khongg 😅</button>
+    </div>
 </div>
 
 <!-- 🎵 MUSIC BOX -->
@@ -248,13 +264,14 @@ let playing = false;
 let attempt = 0;
 
 const texts = [
-    "Em có iu bồ em nhiều không 😍",
+    "Em có iu bồ em nhiều đúng không 😍",
     "Bồ suy nghĩ kỹ chưaa 😂",
     "Chọn lại đi mờ 🎀",
-    "Đừng bấm -Khongg- mòoo 😭",
+    "Đừng bấm 'Khongg' mòoo 😭",
     "Thôi mòoo 🎉",
-    "Không có -Khongg- đâu nháaa 😆",
-    "Chỉ có -Có ạaaa- thoii em iu 💕"
+    "Không có 'Khongg' đâu nháaa 😆",
+    "Chỉ có 'Có ạaaa' thoi em iu ạaa 🌌",
+    "Em rất yêu anh ạaaa💕"
 ];
 
 /* 🎵 play */
@@ -291,8 +308,8 @@ function moveNo() {
 
     if (navigator.vibrate) navigator.vibrate(100);
 
-    document.body.classList.add("shake");
-    setTimeout(() => document.body.classList.remove("shake"), 300);
+    // document.body.classList.add("shake");
+    // setTimeout(() => document.body.classList.remove("shake"), 300);
 }
 
 noBtn.addEventListener("mouseover", moveNo);
@@ -322,9 +339,19 @@ yesBtn.onclick = () => {
         <div style="max-width:600px;margin:auto;font-size:18px;line-height:1.6;">
             If I could choose how to start every day 💖, 
             it would always be with you on my mind and in my heart 😍
-            You are my happiness in the simplest form 💗.
-            Love you, my bea 💝 
+            You are my happiness in the simplest form 💗
+            Love you, my beaaa 💝 
         </div>
+        
+        <br><br>
+
+        <button onclick="goBack()" style="
+            padding:10px 20px;
+            border:none;
+            border-radius:10px;
+            background:white;
+            cursor:pointer;
+        ">Reload 🔃</button>
     `;
 
     document.body.appendChild(loveScreen);
