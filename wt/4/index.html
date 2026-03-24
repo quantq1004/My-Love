@@ -8,7 +8,7 @@
 body {
     margin: 0;
     height: 100vh;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,7 +34,7 @@ h1 {
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    margin: 10px;
+    margin: 30px;
     transition: 0.3s;
 }
 
@@ -126,6 +126,21 @@ h1 {
     font-weight: bold;
     letter-spacing: 1px;
     box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+.love-text {
+    font-weight: 500;
+    max-width: 600px;
+    margin: 20px auto;
+    font-size: 24px;
+    line-height: 1.7;
+    padding: 0 20px;
+    color: #e0f2ff;
+    text-shadow: 
+        0 0 8px rgba(255,255,255,0.6),
+        0 0 16px rgba(100,180,255,0.6),
+        0 0 24px rgba(100,180,255,0.4);
+        
 }
 
 /* play button */
@@ -255,12 +270,12 @@ let attempt = 0;
 
 const texts = [
     "Em có iu bồ em nhiều đúng không 😍",
-    "Bồ suy nghĩ kỹ chưaa 😂",
+    "Bồ suy nghĩ kỹ chưaa 🍀",
     "Chọn lại đi mờ 🎀",
     "Đừng bấm 'Khongg' mòoo 😭",
     "Thôi mòoo 🎉",
     "Không có 'Khongg' đâu nháaa 😆",
-    "Chỉ có 'Có ạaaa' thoi em iu ạaa 🌌",
+    "Chỉ có 'Có ạaaa' thoi em iu ạaa 🌺",
     "Em rất yêu anh ạaaa💕"
 ];
 
@@ -326,7 +341,7 @@ yesBtn.onclick = () => {
 
         <br><br>
 
-        <div style="max-width:600px;margin:auto;font-size:18px;line-height:1.6;">
+        <div style="max-width:600px;margin:auto;font-size:24px;line-height:1.6;">
             If I could choose how to start every day 💖, 
             it would always be with you on my mind and in my heart 😍
             You are my happiness in the simplest form 💗
@@ -339,9 +354,10 @@ yesBtn.onclick = () => {
             padding:10px 20px;
             border:none;
             border-radius:10px;
+            font-size:20px
             background:white;
             cursor:pointer;
-        ">Reload 🔃</button>
+        ">Reload</button>
     `;
 
     document.body.appendChild(loveScreen);
