@@ -333,7 +333,7 @@ const texts = [
     "Thôi mòoo 🎉",
     "Không có 'Khongg' đâu nháaa 😆",
     "Chỉ có 'Có ạaaa' thoi em iu ạaa 🌺",
-    "Em rất yêu anh ạaaa💕"
+    "Em rất yêu anh ạaaa 💕"
 ];
 
 /* 🎵 play */
@@ -353,7 +353,6 @@ playBtn.onclick = () => {
 /* ❌ NO */
 function moveNo() {
     noBtn.style.position = "fixed";
-    noBtn.style.transition = "0.2s";
     attempt++;
     question.innerText = texts[Math.min(attempt, texts.length - 1)];
 
@@ -396,7 +395,7 @@ yesBtn.onclick = () => {
     loveScreen.className = "love-screen";
 
     loveScreen.innerHTML = `
-        <div class="love-title">💖 I Love You So Much💖</div>
+        <div class="love-title">💖 I Love You So Much 💖</div>
 
         <img src="couple.jpeg" class="couple">
 
@@ -449,7 +448,7 @@ function createStars() {
 
 /* 💕 hearts */
 function createHeart() {
-    const hearts = ["💘","🌷","💗","🍒","💞","❤️","🍓","🐱","😊","🌹","🌸","🍊"];
+    const hearts = ["💌","🌷","💗","🍒","💞","❤️","🍓","🐱","😊","🌹","🌸","🍊"];
 
     const heart = document.createElement("div");
     heart.className = "heart";
