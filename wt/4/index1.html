@@ -21,19 +21,19 @@ body {
 .container {
     text-align: center;
     z-index: 2;
-    position: relative;
 }
 
+/* text */
 h1 {
     color: white;
 }
 
-/* buttons */
+/* button */
 .btn {
     padding: 12px 25px;
     font-size: 18px;
     border: none;
-    border-radius: 12px;
+    border-radius: 10px;
     cursor: pointer;
     margin: 10px;
     transition: 0.3s;
@@ -50,13 +50,13 @@ h1 {
     position: absolute;
 }
 
-/* 💿 disk nhỏ */
+/* 💿 disk */
 .disk {
-    width: 90px;
-    height: 90px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     background: url("morning-glory.png") center/cover no-repeat;
-    margin: 10px auto;
+    margin: 20px auto;
     position: relative;
     animation: spin 3s linear infinite;
     animation-play-state: paused;
@@ -64,8 +64,8 @@ h1 {
 
 .disk::after {
     content: "";
-    width: 14px;
-    height: 14px;
+    width: 20px;
+    height: 20px;
     background: white;
     border-radius: 50%;
     position: absolute;
@@ -78,54 +78,28 @@ h1 {
     100% { transform: rotate(360deg); }
 }
 
-/* 🎵 music box */
-.music-box {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(10px);
-    padding: 12px;
-    border-radius: 16px;
-    text-align: center;
-    z-index: 5;
-}
-
-.music-box div {
-    color: white;
-    font-size: 14px;
-}
-
-/* play button */
-#playBtn {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-#playBtn img {
-    width: 30px;
-}
-
-/* 🌌 nền galaxy xanh */
-.night {
-    background: radial-gradient(circle at top, #1e3c72, #2a5298, #0f2027);
-}
-
-/* ✨ stars */
-.star {
+/* 💕 hearts */
+.heart {
     position: absolute;
-    width: 2px;
-    height: 2px;
-    background: white;
-    animation: twinkle 2s infinite alternate;
+    animation: floatUp 4s linear forwards;
+    pointer-events: none;
 }
 
-@keyframes twinkle {
-    from { opacity: 0.3; }
-    to { opacity: 1; }
-}
+@keyframes floatUp {
+    0% {
+        transform: translate(0, 0) scale(0.8) rotate(0deg);
+        opacity: 1;
+    }
 
+    50% {
+        transform: translate(20px, -400px) scale(1.2) rotate(180deg);
+    }
+
+    100% {
+        transform: translate(-20px, -800px) scale(1.5) rotate(360deg);
+        opacity: 0;
+    }
+}
 /* 💘 confetti */
 .confetti {
     position: absolute;
@@ -141,16 +115,23 @@ h1 {
     }
 }
 
-/* 💕 hearts */
-.heart {
-    position: absolute;
-    animation: floatUp 4s linear forwards;
-    pointer-events: none;
+/* 🌌 night */
+.night {
+    background: radial-gradient(circle at top, #0b1a40, #000);
 }
 
-@keyframes floatUp {
-    0% { transform: translate(0,0) scale(0.8); opacity:1;}
-    100% { transform: translate(-20px,-800px) scale(1.5); opacity:0;}
+/* ✨ stars */
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
 }
 
 /* 📸 couple */
@@ -187,17 +168,16 @@ h1 {
 <div class="container">
     <h1 id="question">Em iu có yêu anh iu không ạ 💕</h1>
 
-    <button id="yes" class="btn">Có ạaaa 💖</button>
-    <button id="no" class="btn">Khongg 😅</button>
-</div>
-
-<!-- 🎵 MUSIC BOX -->
-<div class="music-box">
     <div id="disk" class="disk"></div>
-    <div>✨ Ngàn năm ánh sáng ✨</div>
-    <button id="playBtn">
-        <img id="playIcon" src="play.png">
+
+    <div style="color:white;">✨ Ngàn năm ánh sáng ✨ </div>
+    <button id="playBtn" class="btn">
+        <img id="playIcon" src="play.png" width="24">
     </button>
+    <br><br>
+
+    <button id="yes" class="btn">Yes 💖</button>
+    <button id="no" class="btn">No 😅</button>
 </div>
 
 <audio id="music" loop>
@@ -211,32 +191,36 @@ const question = document.getElementById("question");
 const music = document.getElementById("music");
 const disk = document.getElementById("disk");
 const playBtn = document.getElementById("playBtn");
-const playIcon = document.getElementById("playIcon");
 
 let noScale = 1;
 let yesScale = 1;
 let playing = false;
 let attempt = 0;
 
+/* 💬 text thay đổi */
 const texts = [
     "Em có iu bồ em nhiều không 😍",
     "Bồ suy nghĩ kỹ chưaa 😂",
     "Chọn lại đi mờ 🎀",
-    "Đừng bấm -Khongg- mòoo 😭",
+    "Đừng bấm No mòoo 😭",
     "Thôi mòoo 🎉",
-    "Không có -Khongg- đâu nháaa 😆",
-    "Chỉ có -Có ạaaa- thoii em iu 💕"
+    "Không có No đâu nháaa 😆",
+    "Chỉ có Yes thoii em iu 💕"
 ];
 
 /* 🎵 play */
+const playIcon = document.getElementById("playIcon");
+
 playBtn.onclick = () => {
     if (!playing) {
         music.play();
         disk.style.animationPlayState = "running";
+
         playIcon.src = "pause.png";
     } else {
         music.pause();
         disk.style.animationPlayState = "paused";
+
         playIcon.src = "play.png";
     }
     playing = !playing;
@@ -273,43 +257,32 @@ noBtn.addEventListener("touchstart", moveNo);
 yesBtn.onclick = () => {
     document.body.classList.add("night");
 
-    document.querySelector(".container").style.display = "none";
-
     document.body.innerHTML += `
-        <div style="position:absolute;top:15%;width:100%;text-align:center;color:white;font-size:28px;">
+        <div style="position:absolute;top:20%;width:100%;text-align:center;color:white;font-size:30px;">
             💖 I Love You So Much💖
             <br>
             <img src="couple.jpeg" class="couple">
+             <br><br>
 
-            <br><br>
-
-            <div style="max-width:600px;margin:auto;font-size:18px;line-height:1.6;padding:0 20px;">
+            <!-- 📜 TEXT DÀI -->
+            <div style="
+                max-width:600px;
+                margin:auto;
+                font-size:18px;
+                line-height:1.6;
+                padding:0 20px;
+            ">
                 If I could choose how to start every day 💖, 
                 it would always be with you on my mind and in my heart 😍.  
                 You are my happiness in the simplest form 💗. 
-                Love you, my beaaa 💝 
+                Love you, my bea 💝 
             </div>
-
-            <br><br>
-
-            <button onclick="goBack()" style="
-                padding:10px 20px;
-                border:none;
-                border-radius:10px;
-                background:white;
-                cursor:pointer;
-            ">🔙 Quay lại</button>
         </div>
     `;
 
     createConfetti();
     createStars();
 };
-
-/* 🔙 quay lại */
-function goBack() {
-    location.reload();
-}
 
 /* 💘 confetti */
 function createConfetti() {
@@ -337,15 +310,22 @@ function createStars() {
 
 /* 💕 hearts */
 function createHeart() {
-    const hearts = ["💘","🌷","💗","🍒","💞","❤️","🍓","🐱","😊","🌹","🌸","🍊"];
+    const hearts = ["💘","🌷","💗","🍒","💞","❤️","🍓", "🐱", "😊", "🌹", "🌸","🍊"];
 
     const heart = document.createElement("div");
     heart.className = "heart";
 
+    // random loại tim
     heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+
+    // random màu (nhẹ nhàng)
     heart.style.color = `hsl(${Math.random()*360},70%,70%)`;
+
+    // vị trí
     heart.style.left = Math.random() * window.innerWidth + "px";
     heart.style.bottom = "0px";
+
+    // size
     heart.style.fontSize = (Math.random() * 25 + 15) + "px";
 
     document.body.appendChild(heart);
