@@ -72,7 +72,6 @@ h1 {
     border-radius: 14px;
     padding: 12px 28px;
     font-weight: bold;
-    position: fixed;
     box-shadow: 0 4px 12px rgba(255, 143, 171, 0.4);
     transition: all 0.25s ease;
 }
@@ -353,6 +352,8 @@ playBtn.onclick = () => {
 
 /* ❌ NO */
 function moveNo() {
+    noBtn.style.position = "fixed";
+    noBtn.style.transition = "0.2s";
     attempt++;
     question.innerText = texts[Math.min(attempt, texts.length - 1)];
 
@@ -407,7 +408,7 @@ yesBtn.onclick = () => {
         </div>
 
         <button onclick="goBack()" class="reload-btn">
-            Reload 🔃
+            Reload
         </button>
     `;
 
