@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>💖 I Love WT Pro Max 💖</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial;
+    overflow: hidden;
+    transition: 1s;
+}
+
+/* container */
+.container {
+    text-align: center;
+    z-index: 2;
+}
+
+/* text */
+h1 {
+    color: white;
+}
+
+/* button */
+.btn {
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+#yes {
+    background: #ff4d6d;
+    color: white;
+}
+
+#no {
+    background: #333;
+    color: white;
+    position: absolute;
+}
+
+/* 💿 disk */
+.disk {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: url("morning-glory.png") center/cover no-repeat;
+    margin: 20px auto;
+    position: relative;
+    animation: spin 3s linear infinite;
+    animation-play-state: paused;
+}
+
+.disk::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* 💕 hearts */
+.heart {
+    position: absolute;
+    animation: floatUp 4s linear forwards;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translate(0, 0) scale(0.8) rotate(0deg);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(20px, -400px) scale(1.2) rotate(180deg);
+    }
+
+    100% {
+        transform: translate(-20px, -800px) scale(1.5) rotate(360deg);
+        opacity: 0;
+    }
+}
+/* 💘 confetti */
+.confetti {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(800px) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* 🌌 night */
+.night {
+    background: radial-gradient(circle at top, #0b1a40, #000);
+}
+
+/* ✨ stars */
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
+}
+
+/* 📸 couple */
+.couple {
+    width: 260px;
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0 0 30px pink;
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.7); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* 📱 shake */
+@keyframes shake {
+    0% { transform: translate(0,0); }
+    25% { transform: translate(-5px,5px); }
+    50% { transform: translate(5px,-5px); }
+    75% { transform: translate(-5px,5px); }
+    100% { transform: translate(0,0); }
+}
+
+.shake {
+    animation: shake 0.3s;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1 id="question">Em iu có yêu anh iu không ạ 💕</h1>
+
+    <div id="disk" class="disk"></div>
+
+    <div style="color:white;">✨ Ngàn năm ánh sáng ✨ </div>
+    <button id="playBtn" class="btn">
+        <img id="playIcon" src="play.png" width="24">
+    </button>
+    <br><br>
+
+    <button id="yes" class="btn">Yes 💖</button>
+    <button id="no" class="btn">No 😅</button>
+</div>
+
+<audio id="music" loop>
+    <source src="ngannamanhsang.mp3" type="audio/mp3">
+</audio>
+
+<script>
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+const question = document.getElementById("question");
+const music = document.getElementById("music");
+const disk = document.getElementById("disk");
+const playBtn = document.getElementById("playBtn");
+
+let noScale = 1;
+let yesScale = 1;
+let playing = false;
+let attempt = 0;
+
+/* 💬 text thay đổi */
+const texts = [
+    "Em có iu bồ em nhiều không 😍",
+    "Bồ suy nghĩ kỹ chưaa 😂",
+    "Chọn lại đi mờ 🎀",
+    "Đừng bấm No mòoo 😭",
+    "Thôi mòoo 🎉",
+    "Không có No đâu nháaa 😆",
+    "Chỉ có Yes thoii em iu 💕"
+];
+
+/* 🎵 play */
+const playIcon = document.getElementById("playIcon");
+
+playBtn.onclick = () => {
+    if (!playing) {
+        music.play();
+        disk.style.animationPlayState = "running";
+
+        playIcon.src = "pause.png";
+    } else {
+        music.pause();
+        disk.style.animationPlayState = "paused";
+
+        playIcon.src = "play.png";
+    }
+    playing = !playing;
+};
+
+/* ❌ NO */
+function moveNo() {
+    attempt++;
+    question.innerText = texts[Math.min(attempt, texts.length - 1)];
+
+    const x = Math.random() * window.innerWidth * 0.8;
+    const y = Math.random() * window.innerHeight * 0.8;
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+
+    noScale -= 0.1;
+    if (noScale < 0.3) noScale = 0.3;
+    noBtn.style.transform = `scale(${noScale})`;
+
+    yesScale += 0.15;
+    yesBtn.style.transform = `scale(${yesScale})`;
+
+    if (navigator.vibrate) navigator.vibrate(100);
+
+    document.body.classList.add("shake");
+    setTimeout(() => document.body.classList.remove("shake"), 300);
+}
+
+noBtn.addEventListener("mouseover", moveNo);
+noBtn.addEventListener("touchstart", moveNo);
+
+/* ✅ YES */
+yesBtn.onclick = () => {
+    document.body.classList.add("night");
+
+    document.body.innerHTML += `
+        <div style="position:absolute;top:20%;width:100%;text-align:center;color:white;font-size:30px;">
+            💖 I Love You So Much💖
+            <br>
+            <img src="couple.jpeg" class="couple">
+             <br><br>
+
+            <!-- 📜 TEXT DÀI -->
+            <div style="
+                max-width:600px;
+                margin:auto;
+                font-size:18px;
+                line-height:1.6;
+                padding:0 20px;
+            ">
+                If I could choose how to start every day 💖, 
+                it would always be with you on my mind and in my heart 😍.  
+                You are my happiness in the simplest form 💗. 
+                Love you, my bea 💝 
+            </div>
+        </div>
+    `;
+
+    createConfetti();
+    createStars();
+};
+
+/* 💘 confetti */
+function createConfetti() {
+    for (let i = 0; i < 150; i++) {
+        const c = document.createElement("div");
+        c.className = "confetti";
+        c.style.left = Math.random() * window.innerWidth + "px";
+        c.style.top = "-10px";
+        c.style.background = `hsl(${Math.random()*360},100%,50%)`;
+        document.body.appendChild(c);
+        setTimeout(() => c.remove(), 3000);
+    }
+}
+
+/* ✨ stars */
+function createStars() {
+    for (let i = 0; i < 100; i++) {
+        const s = document.createElement("div");
+        s.className = "star";
+        s.style.left = Math.random() * window.innerWidth + "px";
+        s.style.top = Math.random() * window.innerHeight + "px";
+        document.body.appendChild(s);
+    }
+}
+
+/* 💕 hearts */
+function createHeart() {
+    const hearts = ["💘","🌷","💗","🍒","💞","❤️","🍓", "🐱", "😊", "🌹", "🌸","🍊"];
+
+    const heart = document.createElement("div");
+    heart.className = "heart";
+
+    // random loại tim
+    heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+
+    // random màu (nhẹ nhàng)
+    heart.style.color = `hsl(${Math.random()*360},70%,70%)`;
+
+    // vị trí
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.bottom = "0px";
+
+    // size
+    heart.style.fontSize = (Math.random() * 25 + 15) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 4000);
+}
+
+setInterval(createHeart, 250);
+</script>
+
+</body>
+</html>
