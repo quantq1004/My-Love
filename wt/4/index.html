@@ -19,9 +19,18 @@ body {
 
 /* container */
 .container {
-    text-align: center;
-    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* 👉 khoảng cách text ↔ nút luôn cố định */
+}
+
+/* nhóm nút */
+.btn-group {
     position: relative;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
 }
 
 h1 {
@@ -215,10 +224,11 @@ h1 {
 <body>
 
 <div class="container">
-    <h1 id="question">Em iu có yêu anh iu không ạ 💕</h1>
-
-    <button id="yes" class="btn">Có ạaaa 💖</button>
-    <button id="no" class="btn">Khongg 😅</button>
+    <h1 id="question">Em iu yêu anh iu nhiều lắm đúng không ạaaa 💕</h1>
+    <div class="btn-group">
+        <button id="yes" class="btn">Có ạaaa 💖</button>
+        <button id="no" class="btn">Khongg 😅</button>
+    </div>
 </div>
 
 <!-- 🎵 MUSIC BOX -->
@@ -284,7 +294,7 @@ function moveNo() {
     noBtn.style.top = y + "px";
 
     noScale -= 0.1;
-    if (noScale < 0.3) noScale = 0.3;
+    if (noScale < 0.4) noScale = 0.4;
     noBtn.style.transform = `scale(${noScale})`;
 
     yesScale += 0.15;
@@ -315,8 +325,8 @@ yesBtn.onclick = () => {
 
             <div style="max-width:600px;margin:auto;font-size:18px;line-height:1.6;padding:0 20px;">
                 If I could choose how to start every day 💖, 
-                it would always be with you on my mind and in my heart 😍.  
-                You are my happiness in the simplest form 💗. 
+                it would always be with you on my mind and in my heart 😍
+                You are my happiness in the simplest form 💗
                 Love you, my beaaa 💝 
             </div>
 
