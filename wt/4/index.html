@@ -40,14 +40,43 @@ h1 {
 }
 
 #yes {
-    background: #ff4d6d;
+    background: linear-gradient(135deg, #ff4d6d, #ff758f);
     color: white;
+    border-radius: 14px;
+    padding: 12px 28px;
+    font-weight: bold;
+    box-shadow: 0 6px 15px rgba(255, 77, 109, 0.4);
+    transition: all 0.25s ease;
 }
 
+#yes:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(255, 77, 109, 0.6);
+}
+
+#yes:active {
+    transform: scale(0.95);
+}
+
+/* ❌ NO */
 #no {
-    background: #ff8fab;
+    background: linear-gradient(135deg, #ff8fab, #ffc2d1);
     color: white;
+    border-radius: 14px;
+    padding: 12px 28px;
+    font-weight: bold;
     position: fixed;
+    box-shadow: 0 4px 12px rgba(255, 143, 171, 0.4);
+    transition: all 0.25s ease;
+}
+
+#no:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(255, 143, 171, 0.6);
+}
+
+#no:active {
+    transform: scale(0.9);
 }
 
 
