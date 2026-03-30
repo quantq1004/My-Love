@@ -4,7 +4,6 @@ import { AppContainer } from 'react-hot-loader';
 import App from './app';
 import './index.less';
 
-//热更新实现
 const render = Component => {
     ReactDOM.render(
         <AppContainer>
@@ -16,7 +15,6 @@ const render = Component => {
 
 render(App);
 
-// Webpack Hot Module Replacement API
 if (module.hot) {
     module.hot.accept('./app', () => {
         render(App);
