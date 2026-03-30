@@ -5,6 +5,10 @@ function randomNumber(start, end) {
     return start + Math.random() * (end - start);
 }
 
+const HEART_ICONS = [
+    '❤️', '💖', '💗', '💘', '💝', '💞', '💕', '💓', '💟', '❣️'
+];
+
 class Rain extends React.Component {
 
     start = [0, 0];
@@ -47,6 +51,7 @@ class Rain extends React.Component {
 
     render() {
         const { start, endTime } = this;
+        const icon = HEART_ICONS[Math.floor(Math.random() * HEART_ICONS.length)];
         return <span ref={this.saveRef} className="rain" style={{
             left: start[0],
             top: start[1],
@@ -54,7 +59,7 @@ class Rain extends React.Component {
             transitionTimingFunction: 'linear',
             fontSize: 20
         }}>
-            ❤️
+            {icon}
         </span>
     }
 }

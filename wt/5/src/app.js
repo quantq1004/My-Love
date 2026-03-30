@@ -23,27 +23,28 @@ export default class App extends React.Component {
 
     fullStyle = [
         `/*
-* Hi。宝贝！
-* 这么久了。还没和宝贝说过我的工作呢！
-* 我是个前端工程师。俗称程序员。网页相关。
-* 如这个页面。就是个什么也没有的网页。
-* 我的工作就是给这种空白的页面加点儿东西。
-* 嗯。说起来手机和电脑还得区分一下。
-* 你现在用的是。。。${isPc ? '电脑' : '手机'}
+* Hi my baeee ❤️
+* Let me show you what I do 🌺
+* I'm your boyfriend 💝
+* I hope every day brings you happiness and a smile 😍
+* Keep going, you’re doing great — I’m always here for you 💕
+* My job is to make it alive ✨
+* You're currently using: ${isPc ? 'PC 💻' : 'Mobile 📱'}
 */
 
-/* 首先给所有元素加上过渡效果 */
+/* Add smooth transition for all elements */
 * {
   -webkit-transition: all .5s;
   transition: all .5s;
 }
-/* 白色背景太单调了。来点背景 */
+
+/* Set background */
 body, html {
   color: #fff;
   background-color: darkslategray;
 }
 
-/* 文字太近了 */
+/* Code editor style */
 .styleEditor {
   overflow: auto;
   ${ isPc ? `width: 48vw;
@@ -55,14 +56,14 @@ body, html {
   padding: 10px;
 }
 
-/* 这些代码颜色都一样。加点儿高亮区别来 */
+/* Syntax highlight */
 .token.selector{ color: rgb(133,153,0) }
 .token.property{ color: rgb(187,137,0) }
 .token.punctuation{ color: yellow }
 .token.function{ color: rgb(42,161,152) }
 .token.comment{ color: rgb(177,177,177) }
 
-/* 加个 3D 效果 */
+/* Add 3D perspective */
 html{
   perspective: 1000px;
   -webkit-perspective: 1000px;
@@ -77,11 +78,35 @@ html{
 }
 
 /*
-* 宝贝，今天教你写代码。
-* 用代码画一个爱心。
+* Now, let's draw a heart using CSS ❤️
 */
 
-/* 首先，来一个画板 */
+/* Title */
+.title {
+  text-align: center;
+  font-size: 28px;
+  color: pink;
+  margin: 20px 0;
+  animation: fadeIn 1.5s ease;
+}
+
+/* Message */
+.message {
+  position: fixed;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  color: #ff8fa3;
+  animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Create canvas */
 .heartWrapper {
   ${ isPc ? `width: 48vw;
   height: 96vh;` : `width: 96vw;
@@ -98,44 +123,81 @@ html{
   -webkit-transform-origin: 50% 0% 0;`}
 }
 
-/* 画一个方块，当左心室和右心室 */
+/* Main heart shape (center square rotated) */
 .heart {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   position: absolute;
+
+  /* center the heart */
   top: 50%;
   left: 50%;
-  margin: -50px 0 0 -50px;
-  border-radius: 20px;
-  background: #E88D8D;
+  margin: -60px 0 0 -60px;
   transform: rotate(45deg);
+  background: linear-gradient(135deg, #ff4d6d, #ff8fa3);
+  border-radius: 25px;
+  box-shadow: 
+    0 0 20px rgba(255, 77, 109, 0.6),
+    0 0 40px rgba(255, 77, 109, 0.4);
+
+  /* heartbeat animation */
+  animation: heartbeat 1.2s infinite;
 }
 
-/* 画上左心房 */
+/* Left circle (top-left part of heart) */
 .heart::before {
   content: '';
-  background: #E88D8D;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
   position: absolute;
-  left: -38px;
-  top: 1px;
+
+  width: 120px;
+  height: 120px;
+
+  /* inherit gradient color */
+  background: inherit;
+
+  border-radius: 50%;
+
+  left: -60px;
+  top: 0;
 }
 
-/* 再画上右心房 */
+/* Right circle (top-right part of heart) */
 .heart::after {
   content: '';
-  background: #E88D8D;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
   position: absolute;
-  right: -1px;
-  top: -38px;
+
+  width: 120px;
+  height: 120px;
+
+  /* inherit gradient color */
+  background: inherit;
+
+  border-radius: 50%;
+
+  top: -60px;
+  left: 0;
 }
 
-/* 太单调了，让心跳动起来 */
+/* Heartbeat animation (smooth pulse effect) */
+@keyframes heartbeat {
+  0% {
+    transform: scale(1) rotate(45deg);
+  }
+  25% {
+    transform: scale(1.1) rotate(45deg);
+  }
+  40% {
+    transform: scale(0.95) rotate(45deg);
+  }
+  60% {
+    transform: scale(1.15) rotate(45deg);
+  }
+  100% {
+    transform: scale(1) rotate(45deg);
+  }
+}
+
+/* Heart beat animation */
 @keyframes throb {
   0% {
     transform: scale(1) rotate(45deg);
@@ -149,71 +211,93 @@ html{
 }
 
 .bounce {
-  opacity: 0.2;
-  animation: throb 1s infinite linear;
+  opacity: 0.3;
+  animation: throb 1.5s infinite ease-out;
 }
-/*
-* Ok，完成！
-* 宝贝，情人节快乐！
-*/
 
+/*
+* Done!
+* Have a good day 🌸
+* No matter what happens, keep going 😊
+* Because you’re not alone — you have me 💖
+* I love you so much ❤️
+*/
 `
     ]
 
     state = {
         currentStyleCode: '',
         finished: false,
-        heartRains: []
+        heartRains: [],
+        showTitle: false,
+        showMessage: false
     }
 
     interval = 30;
-    // interval = 0;
 
+    /**
+     * Show code progressively (typing effect)
+     */
     async progressiveShowStyle(n = 0) {
-        const {
-            interval,
-            fullStyle
-        } = this;
+        const { interval, fullStyle } = this;
+
         const showStyle = i => new Promise((resolve) => {
             const style = fullStyle[n];
             const char = style[i];
+
             if (!style || !char) {
                 resolve();
                 return;
             }
-            let {
-                currentStyleCode
-            } = this.state;
+
+            let { currentStyleCode } = this.state;
             currentStyleCode += char;
-            this.setState({
-                currentStyleCode
-            });
+
+            this.setState({ currentStyleCode });
+
             if (char === '\n' && this.styleEditor) {
                 this.styleEditor.toBottom();
             }
+
             setTimeout(() => {
                 resolve(showStyle(i + 1))
             }, interval);
         });
+
         return showStyle(0);
     }
 
     async componentDidMount() {
         await this.progressiveShowStyle(0);
-        this.setState({finished: true});
-        this.rain();
+
+        this.setState({ showTitle: true });
+
+        setTimeout(() => {
+            this.setState({ finished: true });
+
+            setTimeout(() => {
+                this.setState({ showMessage: true });
+                this.rain();
+            }, 1500);
+
+        }, 1000);
     }
 
     saveStyleEditorRef = child => this.styleEditor = child;
-    
+
+    /**
+     * Create heart rain effect
+     */
     rain = () => {
         let { heartRains } = this.state;
         const rainNum = 30;
         const stayTime = rainNum * 200 + 1000 + 4000;
         const time = (new Date()).getTime();
+
         if (!heartRains.length || (time - heartRains[heartRains.length - 1].time > (stayTime / 2))) {
-            heartRains.push({time, rainNum});
-            this.setState({heartRains});
+            heartRains.push({ time, rainNum });
+            this.setState({ heartRains });
+
             setTimeout(() => {
                 this.removeRain(time);
             }, stayTime);
@@ -223,19 +307,40 @@ html{
     removeRain(time) {
         let { heartRains } = this.state;
         heartRains = heartRains.filter(item => item.time !== time);
-        this.setState({heartRains});
+        this.setState({ heartRains });
     }
 
     render() {
-        const { currentStyleCode, finished, heartRains } = this.state;
-        return <div>
-            <div style = {{display: isPc ? 'flex' : ''}}>
-                <StyleEditor ref={this.saveStyleEditorRef} code={currentStyleCode}/>
-                <Heart click={finished ? this.rain: null}/>
+    const { currentStyleCode, finished, heartRains, showTitle, showMessage } = this.state;
+
+    return <div>
+
+        {/* TITLE */}
+        {showTitle && (
+            <div className="title">
+                💌 Dear my love 💌
             </div>
-            {
-                heartRains.map(item => <HeartRain num={item.rainNum} key={item.time}/>)
-            }
-        </div>;
-    }
+        )}
+
+        <div style={{ display: isPc ? 'flex' : '' }}>
+            <StyleEditor ref={this.saveStyleEditorRef} code={currentStyleCode} />
+            <Heart click={finished ? this.rain : null} />
+        </div>
+
+        {/* MESSAGE AFTER HEART */}
+        {showMessage && (
+            <div className="message">
+                💖 Let’s always be happy and enjoy every moment together 💖 <br />
+                💗 I love you, you love me — and together we make a happy couple 💗
+            </div>
+        )}
+
+        {
+            heartRains.map(item =>
+                <HeartRain num={item.rainNum} key={item.time} />
+            )
+        }
+
+    </div>;
+}
 }

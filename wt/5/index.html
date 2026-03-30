@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>💞 My baeee - QT 💞</title>
+    <title>💞 My bae - Quỳnh Trang 💞</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,6 +12,33 @@
     <link rel="stylesheet" href="./main.css">
 
     <style>
+        /* 💿 disk nhỏ */
+        .disk {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: url("imgs/musicheart.png") center/cover no-repeat;
+            margin: 10px auto;
+            position: relative;
+            animation: spin 3s linear infinite;
+            animation-play-state: paused;
+        }
+
+        .disk::after {
+            content: "";
+            width: 14px;
+            height: 14px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
         /* 🎵 music box */
         .music-box {
             position: fixed;
@@ -23,10 +50,10 @@
             padding: 12px;
             border-radius: 16px;
 
-            display: flex;              /* ✅ FIX */
-            flex-direction: column;     /* ✅ FIX */
+            display: flex;             
+            flex-direction: column;     
             align-items: center;
-            gap: 12px;                  /* ✅ giờ mới có tác dụng */
+            gap: 12px;                 
 
             text-align: center;
             z-index: 5;
@@ -84,7 +111,7 @@
     <!-- 🎵 MUSIC BOX -->
     <div class="music-box">
         <div id="disk" class="disk"></div>
-        <div class="song-title">💗 Until You 💗</div>
+        <div class="song-title">💕 Until You 💕</div>
         <button id="playBtn">
             <img id="playIcon" src="play.png" alt="play">
         </button>
