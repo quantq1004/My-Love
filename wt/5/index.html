@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>💞 My baeee - QT 💞</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="imgs/love-yourself.png">
+    <link rel="stylesheet" href="./main.css">
+
+    <style>
+        /* 🎵 music box */
+        .music-box {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 12px;
+            border-radius: 16px;
+
+            display: flex;              /* ✅ FIX */
+            flex-direction: column;     /* ✅ FIX */
+            align-items: center;
+            gap: 12px;                  /* ✅ giờ mới có tác dụng */
+
+            text-align: center;
+            z-index: 5;
+            cursor: pointer;
+        }
+
+        .music-box:hover {
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+            transform: scale(1.05);
+            transition: 0.3s;
+        }
+
+        /* 🎵 tên bài */
+        .song-title {
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+
+        .love-text {
+            font-weight: 500;
+            max-width: 600px;
+            margin: 20px auto;
+            font-size: 24px;
+            line-height: 1.7;
+            padding: 0 20px;
+
+            color: #e0f2ff;
+
+            text-shadow:
+                0 0 8px rgba(255,255,255,0.6),
+                0 0 16px rgba(100,180,255,0.6),
+                0 0 24px rgba(100,180,255,0.4);
+        }
+
+        /* play button */
+        #playBtn {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        #playBtn img {
+            width: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <!-- 🎵 MUSIC BOX -->
+    <div class="music-box">
+        <div id="disk" class="disk"></div>
+        <div class="song-title">💗 Until You 💗</div>
+        <button id="playBtn">
+            <img id="playIcon" src="play.png" alt="play">
+        </button>
+    </div>
+
+    <!-- 🎵 AUDIO -->
+    <audio id="music" loop>
+        <source src="UntilYou.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- JS -->
+    <script src="./main.js"></script>
+    <script src="./music.js"></script>
+
+</body>
+
+</html>
