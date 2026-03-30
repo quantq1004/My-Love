@@ -1,2 +1,5 @@
-https://beautifier.io/
 format code
+https://beautifier.io/
+
+minify code
+https://fastminify.com/en/minify-javascript
