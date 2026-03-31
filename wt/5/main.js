@@ -6329,7 +6329,7 @@
                             key: e.time
                         })
                     }),
-                    n && o.a.createElement("div", { className: "message" }, "💗 I love you, you love me — and together we make a happy couple 💗"))
+                    o.a.createElement("div", { className: "message", style: {opacity: n ? 1 : 0} }, "💗 I love you, you love me — and together we make a happy couple 💗"))
                 }
             }]), t
         }(o.a.Component);
