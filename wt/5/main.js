@@ -6313,7 +6313,10 @@
                         t = e.currentStyleCode,
                         n = e.finished,
                         r = e.heartRains;
-                    return o.a.createElement("div", null, n && o.a.createElement("div", { className: "title" }, "💌 Dear My Love - Quỳnh Trang 💌"),
+
+                    var showTitle = t.includes(".title");
+
+                    return o.a.createElement("div", null, showTitle && o.a.createElement("div", { className: "title" }, "💌 Dear My Love - Quỳnh Trang 💌"),
                     o.a.createElement("div", {
                         style: {
                             display: A ? "flex" : ""
