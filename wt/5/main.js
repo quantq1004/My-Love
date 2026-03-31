@@ -6314,8 +6314,8 @@
                         n = e.finished,
                         r = e.heartRains;
 
-                    var showTitle = t.includes(".title") && t.includes("canvas");
-                    var showMs = t.includes(".message") && t.includes("Finished");
+                    var showTitle = t.includes(".title");
+                    var showMs = t.includes(".message");
                     return o.a.createElement("div", null, showTitle && o.a.createElement("div", { className: "title" }, "💌 Dear My Love - Quỳnh Trang 💌"),
                     o.a.createElement("div", {
                         style: {
