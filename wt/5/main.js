@@ -6314,8 +6314,8 @@
                         n = e.finished,
                         r = e.heartRains;
 
-                    var showTitle = t.includes(".title") && t.includes("fadeIn");
-                    var showMs = t.includes(".message") && t.includes("translateX(-50%)");
+                    var showTitle = t.includes(".title") && t.includes("fadeIn 1.5s");
+                    var showMs = t.includes(".message") && t.includes("fadeIn 2s");
                     return o.a.createElement("div", null, showTitle && o.a.createElement("div", { className: "title" }, "💌 Dear My Love - Quỳnh Trang 💌"),
                     o.a.createElement("div", {
                         style: {
