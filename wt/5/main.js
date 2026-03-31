@@ -6316,7 +6316,7 @@
 
                     var showTitle = t.includes(".title");
                     var showMs = t.includes(".message");
-                    return o.a.createElement("div", null, showTitle && o.a.createElement("div", { className: "title" }, "💌 Dear My Love - Quỳnh Trang 💌"),
+                    return o.a.createElement("div", null, n && o.a.createElement("div", { className: "title" }, "💌 Dear My Love - Quỳnh Trang 💌"),
                     o.a.createElement("div", {
                         style: {
                             display: A ? "flex" : ""
@@ -6332,7 +6332,7 @@
                             key: e.time
                         })
                     }),
-                    showMs && o.a.createElement("div", { className: "message" }, "💗 I love you, you love me — and together we make a happy couple 💗"))
+                    n && o.a.createElement("div", { className: "message" }, "💗 I love you, you love me — and together we make a happy couple 💗"))
                 }
             }]), t
         }(o.a.Component);
