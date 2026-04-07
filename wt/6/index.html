@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>💖 Love Memory 💖</title>
+
+<!-- 🌍 Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+    text-align: center;
+}
+
+/* 🎁 GIFT */
+.gift-box {
+    font-size: 80px;
+    cursor: pointer;
+    margin-top: 40px;
+    transition: 0.3s;
+}
+
+.gift-box:hover {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.gift-box.open {
+    transform: scale(1.3) rotate(20deg);
+}
+
+/* 🎁 CONTENT */
+.gift-content {
+    display: none;
+    margin-top: 20px;
+    animation: fadeIn 1s;
+}
+
+.gift-content img {
+    width: 260px;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+.gift-content video {
+    width: 260px;
+    margin: 10px;
+}
+
+.love-text {
+    max-width: 600px;
+    margin: 20px auto;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* 💖 MAP */
+#map {
+    height: 300px;
+    width: 90%;
+    margin: 30px auto;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* animation */
+@keyframes fadeIn {
+    from {opacity:0; transform:scale(0.8);}
+    to {opacity:1; transform:scale(1);}
+}
+</style>
+</head>
+
+<body>
+
+<h1>💞 Những kỷ niệm của anh và em  💞</h1>
+
+<!-- 🎁 GIFT -->
+<div class="gift-box" onclick="openGift()">🎁</div>
+
+<div id="giftContent" class="gift-content">
+    <img src="couple.jpeg">
+    
+    <video controls>
+        <source src="video.mp4">
+    </video>
+
+    <div class="love-text">
+        💖 Hi - My baeee 💖 <br>
+        Cảm ơn em vì đã đến bên anh 💕
+    </div>
+
+    <!-- 💖 MAP -->
+    <div id="map"></div>
+</div>
+
+<script>
+
+/* 🎁 OPEN GIFT */
+function openGift() {
+    const box = document.querySelector(".gift-box");
+    box.classList.add("open");
+    box.innerText = "💖";
+
+    setTimeout(() => {
+        document.getElementById("giftContent").style.display = "block";
+        initMap(); // load map khi mở
+    }, 500);
+}
+
+/* 💖 MAP */
+function initMap() {
+    const map = L.map('map').setView([10.762622, 106.660172], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    const places = [
+        { lat: 10.762622, lng: 106.660172, text: "💖 Nơi mình gặp nhau" },
+        { lat: 10.770, lng: 106.680, text: "🍜 Quán ăn đầu tiên" },
+        { lat: 10.780, lng: 106.700, text: "🎬 Đi chơi cùng nhau" }
+    ];
+
+    places.forEach(p => {
+        L.marker([p.lat, p.lng])
+            .addTo(map)
+            .bindPopup(p.text);
+    });
+}
+
+</script>
+
+</body>
+</html>
