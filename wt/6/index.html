@@ -114,16 +114,15 @@ function openGift() {
 
 /* 💖 MAP */
 function initMap() {
-    const map = L.map('map').setView([10.762622, 106.660172], 13);
+    // Đặt tâm bản đồ tại Quảng trường Hồ Chí Minh, Vinh, Nghệ An
+    const map = L.map('map').setView([18.669840, 105.679140], 14);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap'
     }).addTo(map);
 
     const places = [
-        { lat: 10.762622, lng: 106.660172, text: "💖 Nơi mình gặp nhau" },
-        { lat: 10.770, lng: 106.680, text: "🍜 Quán ăn đầu tiên" },
-        { lat: 10.780, lng: 106.700, text: "🎬 Đi chơi cùng nhau" }
+        { lat: 18.669840, lng: 105.679140, text: "💖 Nơi chúng mình bắt đầu" }
     ];
 
     places.forEach(p => {
@@ -132,7 +131,6 @@ function initMap() {
             .bindPopup(p.text);
     });
 }
-
 </script>
 
 </body>
