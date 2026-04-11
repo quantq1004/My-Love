@@ -3,462 +3,510 @@
 
 <head>
 
-<meta charset="UTF-8">
-<title>💝 My Love Code for WT 💝</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>💝 My Love Code for WT 💝</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<style>
+    <style>
+        /* ===== GLOBAL ===== */
 
-/* ===== GLOBAL ===== */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
 
-body{
-margin:0;
-font-family:'Segoe UI',sans-serif;
-color:white;
-text-align:center;
-overflow-x:hidden;
+            /* romantic background */
 
-/* romantic background */
+            background:
+                radial-gradient(circle at 20% 30%, #ff9a9e 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, #fad0c4 0%, transparent 40%),
+                linear-gradient(135deg, #ff758c, #ff7eb3, #ff4d6d);
 
-background:
-radial-gradient(circle at 20% 30%, #ff9a9e 0%, transparent 40%),
-radial-gradient(circle at 80% 70%, #fad0c4 0%, transparent 40%),
-linear-gradient(135deg,#ff758c,#ff7eb3,#ff4d6d);
+            background-attachment: fixed;
+        }
 
-background-attachment:fixed;
-}
+        /* HERO */
 
-/* HERO */
+        .hero {
+            padding: 100px 80px 20px;
+        }
 
-.hero{
-padding:100px 80px 20px;
-}
+        .hero h1 {
+            font-size: 32px;
+        }
 
-.hero h1{
-font-size:32px;
-}
+        .hero p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
 
-.hero p{
-font-size:20px;
-opacity:0.9;
-}
+        /* CONTAINER */
 
-/* CONTAINER */
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px 20px;
+        }
 
-.container{
-max-width:1000px;
-margin:auto;
-padding:20px 20px;
-}
+        /* HEART */
 
-/* HEART */
+        .heart-main {
+            width: 200px;
+            animation: heartbeat 1.4s infinite;
+            filter: drop-shadow(0 0 30px #ff4d6d);
+        }
 
-.heart-main{
-width:200px;
-animation:heartbeat 1.4s infinite;
-filter:drop-shadow(0 0 30px #ff4d6d);
-}
+        @keyframes heartbeat {
 
-@keyframes heartbeat{
+            0% {
+                transform: scale(1)
+            }
 
-0%{transform:scale(1)}
-25%{transform:scale(1.1)}
-40%{transform:scale(1)}
-60%{transform:scale(1.1)}
-100%{transform:scale(1)}
+            25% {
+                transform: scale(1.1)
+            }
 
-}
+            40% {
+                transform: scale(1)
+            }
 
-/* TIMER */
+            60% {
+                transform: scale(1.1)
+            }
 
-.timer{
-margin-top:20px;
-font-size:20px;
-background:rgba(255,255,255,0.2);
-display:inline-block;
-padding:12px 25px;
-border-radius:30px;
-backdrop-filter:blur(10px);
-}
+            100% {
+                transform: scale(1)
+            }
 
-/* GRID */
+        }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
-gap:30px;
-margin-top:40px;
-}
+        /* TIMER */
 
-/* CARD */
+        .timer {
+            margin-top: 20px;
+            font-size: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+        }
 
-.card{
-background:white;
-color:black;
-border-radius:14px;
-padding:15px;
-transition:0.3s;
-}
+        /* GRID */
 
-.card:hover{
-transform:translateY(-10px) scale(1.05);
-box-shadow:0 15px 40px rgba(0,0,0,0.4);
-}
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
 
-.card img{
-width:100%;
-border-radius:10px;
-}
+        /* CARD */
 
-/* FLOAT HEART */
+        .card {
+            background: white;
+            color: black;
+            border-radius: 14px;
+            padding: 15px;
+            transition: 0.3s;
+        }
 
-.heart{
-position:fixed;
-bottom:-20px;
-font-size:20px;
-animation:floatUp linear forwards;
-}
+        .card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
 
-@keyframes floatUp{
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
 
-0%{
-transform:translateY(0);
-opacity:1;
-}
+        /* FLOAT HEART */
 
-100%{
-transform:translateY(-120vh);
-opacity:0;
-}
+        .heart {
+            position: fixed;
+            bottom: -20px;
+            font-size: 20px;
+            animation: floatUp linear forwards;
+        }
 
-}
+        @keyframes floatUp {
 
-/* FLOWER */
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
 
-.flower{
-position:fixed;
-top:-10px;
-font-size:20px;
-animation:fall linear forwards;
-}
+            100% {
+                transform: translateY(-120vh);
+                opacity: 0;
+            }
 
-@keyframes fall{
+        }
 
-to{
-transform:translateY(110vh) rotate(360deg);
-}
+        /* FLOWER */
 
-}
+        .flower {
+            position: fixed;
+            top: -10px;
+            font-size: 20px;
+            animation: fall linear forwards;
+        }
 
-/* SPARKLE */
+        @keyframes fall {
 
-.spark{
-position:fixed;
-width:4px;
-height:4px;
-background:white;
-border-radius:50%;
-animation:sparkle 3s infinite;
-}
+            to {
+                transform: translateY(110vh) rotate(360deg);
+            }
 
-@keyframes sparkle{
+        }
 
-0%{opacity:0.3; transform:scale(0.6)}
-50%{opacity:1; transform:scale(1.2)}
-100%{opacity:0.3; transform:scale(0.6)}
+        /* SPARKLE */
 
-}
+        .spark {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            animation: sparkle 3s infinite;
+        }
 
-/* MUSIC */
+        @keyframes sparkle {
 
-.music{
-position:fixed;
-bottom:20px;
-right:20px;
-background:rgba(0,0,0,0.3);
-backdrop-filter:blur(10px);
-padding:10px 18px;
-border-radius:30px;
-display:flex;
-gap:12px;
-align-items:center;
-}
+            0% {
+                opacity: 0.3;
+                transform: scale(0.6)
+            }
 
-.disk{
+            50% {
+                opacity: 1;
+                transform: scale(1.2)
+            }
 
-width:45px;
-height:45px;
+            100% {
+                opacity: 0.3;
+                transform: scale(0.6)
+            }
 
-border-radius:50%;
+        }
 
-background:url("preview/disks.png");
-background-size:cover;
+        /* MUSIC */
 
-animation:spin 5s linear infinite;
-animation-play-state:paused;
+        .music {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 10px 18px;
+            border-radius: 30px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
 
-}
+        .disk {
 
-@keyframes spin{
-to{transform:rotate(360deg)}
-}
+            width: 45px;
+            height: 45px;
 
-.play{
-background:#ff4d6d;
-border:none;
-padding:6px 14px;
-border-radius:20px;
-color:white;
-cursor:pointer;
-}
+            border-radius: 50%;
 
-/* CREDIT */
+            background: url("preview/disks.png");
+            background-size: cover;
 
-.credit{
-margin-top:60px;
-opacity:0.7;
-font-size:14px;
-}
+            animation: spin 5s linear infinite;
+            animation-play-state: paused;
 
-</style>
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        .play {
+            background: #ff4d6d;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* CREDIT */
+
+        .credit {
+            margin-top: 60px;
+            opacity: 0.7;
+            font-size: 14px;
+        }
+    </style>
 
 </head>
 
 <body>
 
-<div class="hero">
+    <div class="hero">
 
-<h1>Dành cho em iu xinh đẹp của anh ❤️</h1>
-<p>✨ Romantic coding ✨</p>
+        <h1>Dành cho em iu xinh đẹp của anh ❤️</h1>
+        <p>✨ Romantic coding ✨</p>
 
-</div>
+    </div>
 
-<div class="container">
+    <div class="container">
 
-<img class="heart-main" src="preview/heart-main.png">
+        <img class="heart-main" src="preview/heart-main.png">
 
-<h2>✨ My Love - Quỳnh Trang ✨</h2>
+        <h2>✨ My Love - Quỳnh Trang ✨</h2>
 
-<div id="timer" class="timer"></div>
+        <div id="timer" class="timer"></div>
 
-<p>🌸 Những điều nhỏ anh viết cho em 🌸</p>
+        <p>🌸 Những điều nhỏ anh viết cho em 🌸</p>
 
-<div class="grid">
+        <div class="grid">
 
-<div class="card">
+            <div class="card">
 
-<a href="wt/1/" target="_blank">
+                <a href="wt/1/" target="_blank">
 
-<img src="preview/001.png">
+                    <img src="preview/001.png">
 
-<h3>💌 1 Love 💌</h3>
+                    <h3>💌 1 Love 💌</h3>
 
-</a>
+                </a>
 
-</div>
+            </div>
 
-<div class="card">
+            <div class="card">
 
-<a href="wt/2/" target="_blank">
+                <a href="wt/2/" target="_blank">
 
-<img src="preview/002.png">
+                    <img src="preview/002.png">
 
-<h3>💝 2 Love 💝</h3>
+                    <h3>💝 2 Love 💝</h3>
 
-</a>
+                </a>
 
-</div>
+            </div>
 
-<div class="card">
+            <div class="card">
 
-<a href="wt/3/" target="_blank">
+                <a href="wt/3/" target="_blank">
 
-<img src="preview/003.png">
+                    <img src="preview/003.png">
 
-<h3>🌺 3 Love 🌺</h3>
+                    <h3>🌺 3 Love 🌺</h3>
 
-</a>
+                </a>
 
-</div>
+            </div>
 
-<div class="card">
+            <div class="card">
 
-<a href="wt/4/" target="_blank">
+                <a href="wt/4/" target="_blank">
 
-<img src="preview/004.png">
+                    <img src="preview/004.png">
 
-<h3>😽 4 Love 😽</h3>
+                    <h3>😽 4 Love 😽</h3>
 
-</a>
+                </a>
 
-</div>
+            </div>
 
-<div class="card">
+            <div class="card">
 
-<a href="wt/5/" target="_blank">
+                <a href="wt/5/" target="_blank">
 
-<img src="preview/005.png">
+                    <img src="preview/005.png">
 
-<h3>😊 5 Love 😊</h3>
+                    <h3>😊 5 Love 😊</h3>
 
-</a>
+                </a>
 
-</div>
+            </div>
 
-<div class="card">
+            <div class="card">
 
-<h3>🌸 Coming soon 🌸</h3>
+                <a href="wt/6/" target="_blank">
 
-</div>
+                    <img src="preview/006.png">
 
-</div>
+                    <h3>💞 6 Love 💞</h3>
 
-<div class="credit">
-Created with ❤️ by <b>Anh iuu của em - QT</b>
-</div>
+                </a>
 
-</div>
+            </div>
 
-<!-- MUSIC -->
+            <div class="card">
 
-<div class="music">
+                <h3>🌸 Coming soon 🌸</h3>
 
-<div id="disk" class="disk"></div>
+            </div>
+            <div class="card">
 
-<div>Perfect 🎵</div>
+                <h3>🌸 Coming soon 🌸</h3>
 
-<button id="playBtn" class="play" onclick="toggleMusic()">
-Play
-</button>
+            </div>
+            <div class="card">
 
-</div>
+                <h3>🌸 Coming soon 🌸</h3>
 
-<audio id="bgm" loop>
-<source src="audio/Perfect.mp3">
-</audio>
+            </div>
 
-<script>
+        </div>
 
-/* TIMER */
+        <div class="credit">
+            Created with ❤️ by <b>Anh iuu của em - QT</b>
+        </div>
 
-var start = new Date("2026-03-12T00:00:00")
+    </div>
 
-function update(){
+    <!-- MUSIC -->
 
-var now = new Date()
+    <div class="music">
 
-var diff = now - start
+        <div id="disk" class="disk"></div>
 
-var d = Math.floor(diff / 1000 / 60 / 60 / 24)
-var h = Math.floor(diff / 1000 / 60 / 60) % 24
-var m = Math.floor(diff / 1000 / 60) % 60
-var s = Math.floor(diff / 1000) % 60
+        <div>Perfect 🎵</div>
 
-document.getElementById("timer").innerHTML =
+        <button id="playBtn" class="play" onclick="toggleMusic()">
+            Play
+        </button>
 
-"Quang Quân ❤️ Quỳnh Trang<br>" +
+    </div>
 
-"Đã bên nhau: " +
+    <audio id="bgm" loop>
+        <source src="audio/Perfect.mp3">
+    </audio>
 
-d+" ngày "+h+" giờ "+m+" phút "+s+" giây"
+    <script>
 
-}
+        /* TIMER */
 
-setInterval(update,1000)
-update()
+        var start = new Date("2026-03-12T00:00:00")
 
-/* MUSIC */
+        function update() {
 
-const music=document.getElementById("bgm")
-const disk=document.getElementById("disk")
-const btn=document.getElementById("playBtn")
+            var now = new Date()
 
-function toggleMusic(){
+            var diff = now - start
 
-if(music.paused){
+            var d = Math.floor(diff / 1000 / 60 / 60 / 24)
+            var h = Math.floor(diff / 1000 / 60 / 60) % 24
+            var m = Math.floor(diff / 1000 / 60) % 60
+            var s = Math.floor(diff / 1000) % 60
 
-music.play()
-disk.style.animationPlayState="running"
-btn.innerHTML="Pause"
+            document.getElementById("timer").innerHTML =
 
-}else{
+                "Quang Quân ❤️ Quỳnh Trang<br>" +
 
-music.pause()
-disk.style.animationPlayState="paused"
-btn.innerHTML="Play"
+                "Đã bên nhau: " +
 
-}
+                d + " ngày " + h + " giờ " + m + " phút " + s + " giây"
 
-}
+        }
 
-/* HEART FLOAT */
+        setInterval(update, 1000)
+        update()
 
-function heart(){
+        /* MUSIC */
 
-let e=document.createElement("div")
+        const music = document.getElementById("bgm")
+        const disk = document.getElementById("disk")
+        const btn = document.getElementById("playBtn")
 
-e.className="heart"
+        function toggleMusic() {
 
-let items=["❤️","💖","💘","💕"]
+            if (music.paused) {
 
-e.innerHTML=items[Math.floor(Math.random()*items.length)]
+                music.play()
+                disk.style.animationPlayState = "running"
+                btn.innerHTML = "Pause"
 
-e.style.left=Math.random()*100+"vw"
+            } else {
 
-e.style.fontSize=(15+Math.random()*20)+"px"
+                music.pause()
+                disk.style.animationPlayState = "paused"
+                btn.innerHTML = "Play"
 
-e.style.animationDuration=(4+Math.random()*4)+"s"
+            }
 
-document.body.appendChild(e)
+        }
 
-setTimeout(()=>e.remove(),8000)
+        /* HEART FLOAT */
 
-}
+        function heart() {
 
-setInterval(heart,400)
+            let e = document.createElement("div")
 
-/* FLOWER */
+            e.className = "heart"
 
-function flower(){
+            let items = ["❤️", "💖", "💘", "💕"]
 
-let e=document.createElement("div")
+            e.innerHTML = items[Math.floor(Math.random() * items.length)]
 
-e.className="flower"
+            e.style.left = Math.random() * 100 + "vw"
 
-let items=["🌸","🍀","🌺","💮","🍁"]
+            e.style.fontSize = (15 + Math.random() * 20) + "px"
 
-e.innerHTML=items[Math.floor(Math.random()*items.length)]
+            e.style.animationDuration = (4 + Math.random() * 4) + "s"
 
-e.style.left=Math.random()*100+"vw"
+            document.body.appendChild(e)
 
-e.style.animationDuration=(5+Math.random()*4)+"s"
+            setTimeout(() => e.remove(), 8000)
 
-document.body.appendChild(e)
+        }
 
-setTimeout(()=>e.remove(),9000)
+        setInterval(heart, 400)
 
-}
+        /* FLOWER */
 
-setInterval(flower,900)
+        function flower() {
 
-/* SPARKLE */
+            let e = document.createElement("div")
 
-for(let i=0;i<60;i++){
+            e.className = "flower"
 
-let s=document.createElement("div")
+            let items = ["🌸", "🍀", "🌺", "💮", "🍁"]
 
-s.className="spark"
+            e.innerHTML = items[Math.floor(Math.random() * items.length)]
 
-s.style.left=Math.random()*100+"vw"
-s.style.top=Math.random()*100+"vh"
+            e.style.left = Math.random() * 100 + "vw"
 
-s.style.animationDuration=(2+Math.random()*3)+"s"
+            e.style.animationDuration = (5 + Math.random() * 4) + "s"
 
-document.body.appendChild(s)
+            document.body.appendChild(e)
 
-}
+            setTimeout(() => e.remove(), 9000)
 
-</script>
+        }
+
+        setInterval(flower, 900)
+
+        /* SPARKLE */
+
+        for (let i = 0; i < 60; i++) {
+
+            let s = document.createElement("div")
+
+            s.className = "spark"
+
+            s.style.left = Math.random() * 100 + "vw"
+            s.style.top = Math.random() * 100 + "vh"
+
+            s.style.animationDuration = (2 + Math.random() * 3) + "s"
+
+            document.body.appendChild(s)
+
+        }
+
+    </script>
 
 </body>
+
 </html>
