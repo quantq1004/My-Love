@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Một món quà dành tặng cho em 🥰</title>
 
-<link rel="icon" type="image/png" href="heart.png">
+    <link rel="icon" type="image/png" href="heart.png">
 
     <meta name="language" content="vi">
     <meta name="title" content="Gửi đến em yêu của anh 💞">
@@ -31,7 +31,8 @@
                 <div id="code">
 
                     <span class="say">Gửi Quỳnh Trang yêu dấu của anh 💖,</span><br><br>
-                    <span class="say">Anh biết em là một cô gái đáng yêu, giỏi giang, xinh đẹp, tốt bụng và dịu dàng</span><br>
+                    <span class="say">Anh biết em là một cô gái đáng yêu, giỏi giang, xinh đẹp, tốt bụng và dịu
+                        dàng</span><br>
                     <span class="say">Em là người khiến anh luôn muốn trở nên tốt hơn</span><br>
                     <span class="say">Anh cảm nhận được rằng ngày mà em đến chính là định mệnh giữa anh và em</span><br>
                     <span class="say">Anh thực sự chỉ muốn nói với em từ tận đáy lòng</span><br>
@@ -57,16 +58,16 @@
         </div>
     </div>
 
-    
+
     <div class="music">
 
-    <div id="disk" class="disk"></div>
+        <div id="disk" class="disk"></div>
 
-    <div> 🍀 Ở trong khu rừng 🍀</div>
+        <div>🍀 Ở trong khu rừng 🍀</div>
 
-    <button id="playBtn" class="play" onclick="toggleMusic()">
-    Play
-    </button>
+        <button id="playBtn" class="play" onclick="toggleMusic()">
+            Play
+        </button>
 
     </div>
 
@@ -74,7 +75,7 @@
     <audio loop id="bgm" src="otrongkhurung.mp3"></audio>
 
     <script>
-                /* ===== MUSIC ===== */
+        /* ===== MUSIC ===== */
         const music = document.getElementById("bgm")
         const disk = document.getElementById("disk")
         const btn = document.getElementById("playBtn")
@@ -205,7 +206,7 @@
 
                 canvas.parent().css("background",
                     "url(" + tree.toDataURL('image/png') + ")");
-                canvas.css("background", "#ffc0cb");
+                canvas.css("background", "#90caf9");
                 $await(Jscex.Async.sleep(300));
                 canvas.css("background", "none");
             }));
@@ -245,4 +246,5 @@
     </script>
 
 </body>
+
 </html>
