@@ -1,291 +1,315 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
-<meta charset="UTF-8">
-<title>💖 I Love WT Pro Max 💖</title>
+    <meta charset="UTF-8">
+    <title>💖 I Love WT Pro Max 💖</title>
+    <link rel="icon" href="hairclip.png" type="image/png">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial;
+            overflow: hidden;
+            transition: 1s;
+        }
 
-<style>
-body {
-    margin: 0;
-    height: 100vh;
-    background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial;
-    overflow: hidden;
-    transition: 1s;
-}
+        /* container */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            /* 👈 khoảng cách text ↔ nút LUÔN cố định */
+        }
 
-/* container */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px; /* 👈 khoảng cách text ↔ nút LUÔN cố định */
-}
+        h1 {
+            color: white;
+        }
 
-h1 {
-    color: white;
-}
+        /* buttons */
+        .btn {
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-/* buttons */
-.btn {
-    padding: 12px 25px;
-    font-size: 18px;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: 0.3s;
-}
+        .btn-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
 
-.btn-group {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
+        #yes {
+            background: linear-gradient(135deg, #ff4d6d, #ff758f);
+            color: white;
+            border-radius: 14px;
+            padding: 12px 28px;
+            font-weight: bold;
+            box-shadow: 0 6px 15px rgba(255, 77, 109, 0.4);
+            transition: all 0.25s ease;
+            transform-origin: center;
+        }
 
-#yes {
-    background: linear-gradient(135deg, #ff4d6d, #ff758f);
-    color: white;
-    border-radius: 14px;
-    padding: 12px 28px;
-    font-weight: bold;
-    box-shadow: 0 6px 15px rgba(255, 77, 109, 0.4);
-    transition: all 0.25s ease;
-    transform-origin: center;
-}
+        #yes:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(255, 77, 109, 0.6);
+        }
 
-#yes:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 10px 25px rgba(255, 77, 109, 0.6);
-}
+        #yes:active {
+            transform: scale(0.95);
+        }
 
-#yes:active {
-    transform: scale(0.95);
-}
+        /* ❌ NO */
+        #no {
+            background: linear-gradient(135deg, #ff8fab, #ffc2d1);
+            color: white;
+            border-radius: 14px;
+            padding: 12px 28px;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(255, 143, 171, 0.4);
+            transition: all 0.25s ease;
+        }
 
-/* ❌ NO */
-#no {
-    background: linear-gradient(135deg, #ff8fab, #ffc2d1);
-    color: white;
-    border-radius: 14px;
-    padding: 12px 28px;
-    font-weight: bold;
-    box-shadow: 0 4px 12px rgba(255, 143, 171, 0.4);
-    transition: all 0.25s ease;
-}
+        #no:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(255, 143, 171, 0.6);
+        }
 
-#no:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 20px rgba(255, 143, 171, 0.6);
-}
-
-#no:active {
-    transform: scale(0.9);
-}
-
-
-/* 💿 disk nhỏ */
-.disk {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    background: url("morning-glory.png") center/cover no-repeat;
-    margin: 10px auto;
-    position: relative;
-    animation: spin 3s linear infinite;
-    animation-play-state: paused;
-}
-
-.disk::after {
-    content: "";
-    width: 14px;
-    height: 14px;
-    background: white;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-@keyframes spin {
-    100% { transform: rotate(360deg); }
-}
-
-/* 🎵 music box */
-.music-box {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(10px);
-    padding: 12px;
-    border-radius: 16px;
-    text-align: center;
-    z-index: 5;
-    cursor: pointer; 
-    display: flex;             
-    flex-direction: column;   
-    align-items: center;
-    gap: 12px;     
-}
-
-.music-box:hover {
-    box-shadow: 0 0 20px rgba(255,255,255,0.4);
-    transform: scale(1.05);
-    transition: 0.3s;
-}
-
-.music-box div {
-    color: white;
-    font-size: 16px;  
-    font-weight: bold;
-    letter-spacing: 1px;
-    box-shadow: 0 0 20px rgba(255,255,255,0.2);
-}
-
-.love-text {
-    font-weight: 500;
-    max-width: 600px;
-    margin: 20px auto;
-    font-size: 24px;
-    line-height: 1.7;
-    padding: 0 20px;
-    color: #e0f2ff;
-    text-shadow: 
-        0 0 8px rgba(255,255,255,0.6),
-        0 0 16px rgba(100,180,255,0.6),
-        0 0 24px rgba(100,180,255,0.4);
-        
-}
-
-/* play button */
-#playBtn {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-#playBtn img {
-    width: 30px;
-}
-
-/* 🌌 nền galaxy xanh */
-.night {
-    background: radial-gradient(circle at top, #1e3c72, #2a5298, #0f2027);
-}
-
-/* ✨ stars */
-.star {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background: white;
-    animation: twinkle 2s infinite alternate;
-}
-
-@keyframes twinkle {
-    from { opacity: 0.3; }
-    to { opacity: 1; }
-}
-
-/* 💘 confetti */
-.confetti {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    animation: fall 3s linear forwards;
-}
-
-@keyframes fall {
-    to {
-        transform: translateY(800px) rotate(720deg);
-        opacity: 0;
-    }
-}
-
-/* 💕 hearts */
-.heart {
-    position: absolute;
-    animation: floatUp 4s linear forwards;
-    pointer-events: none;
-}
-
-@keyframes floatUp {
-    0% { transform: translate(0,0) scale(0.8); opacity:1;}
-    100% { transform: translate(-20px,-800px) scale(1.5); opacity:0;}
-}
-
-/* 📸 couple */
-.couple {
-    width: 520px;     
-    max-width: 75%;   
-    max-height: 40vh; 
-    object-fit: cover;
-
-    border-radius: 20px;
-    margin-top: 20px;
-    box-shadow: 0 0 30px pink;
-    animation: fadeIn 2s;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.7); }
-    to { opacity: 1; transform: scale(1); }
-}
+        #no:active {
+            transform: scale(0.9);
+        }
 
 
-/* 🌌 màn sau khi bấm YES */
-.love-screen {
-    position: absolute;
-    top: 12%;
-    width: 100%;
-    text-align: center;
-    color: #e0f2ff; /* 👈 hợp nền galaxy */
-}
+        /* 💿 disk nhỏ */
+        .disk {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: url("morning-glory.png") center/cover no-repeat;
+            margin: 10px auto;
+            position: relative;
+            animation: spin 3s linear infinite;
+            animation-play-state: paused;
+        }
 
-/* 💖 title */
-.love-title {
-    font-size: 32px;
-    font-weight: bold;
-    text-shadow: 0 0 15px rgba(255,255,255,0.8);
-}
+        .disk::after {
+            content: "";
+            width: 14px;
+            height: 14px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
 
-/* 💬 text */
-.love-text {
-    max-width: 600px;
-    margin: 20px auto;
-    font-size: 20px;
-    line-height: 1.7;
-    padding: 0 20px;
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
 
-    color: #e0f2ff;
+        /* 🎵 music box */
+        .music-box {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 12px;
+            border-radius: 16px;
+            text-align: center;
+            z-index: 5;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
 
-    text-shadow: 
-        0 0 8px rgba(255,255,255,0.6),
-        0 0 16px rgba(100,180,255,0.6);
-}
+        .music-box:hover {
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+            transform: scale(1.05);
+            transition: 0.3s;
+        }
 
-/* 🔘 nút reload */
-.reload-btn {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    background: linear-gradient(135deg, #89f7fe, #66a6ff);
-    color: #0f2027;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
+        .music-box div {
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
 
-.reload-btn:hover {
-    transform: scale(1.1);
-}
+        .love-text {
+            font-weight: 500;
+            max-width: 600px;
+            margin: 20px auto;
+            font-size: 24px;
+            line-height: 1.7;
+            padding: 0 20px;
+            color: #e0f2ff;
+            text-shadow:
+                0 0 8px rgba(255, 255, 255, 0.6),
+                0 0 16px rgba(100, 180, 255, 0.6),
+                0 0 24px rgba(100, 180, 255, 0.4);
 
-/* 📱 shake */
-/* @keyframes shake {
+        }
+
+        /* play button */
+        #playBtn {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        #playBtn img {
+            width: 30px;
+        }
+
+        /* 🌌 nền galaxy xanh */
+        .night {
+            background: radial-gradient(circle at top, #1e3c72, #2a5298, #0f2027);
+        }
+
+        /* ✨ stars */
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            animation: twinkle 2s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            from {
+                opacity: 0.3;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* 💘 confetti */
+        .confetti {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            animation: fall 3s linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(800px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* 💕 hearts */
+        .heart {
+            position: absolute;
+            animation: floatUp 4s linear forwards;
+            pointer-events: none;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translate(0, 0) scale(0.8);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(-20px, -800px) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        /* 📸 couple */
+        .couple {
+            width: 520px;
+            max-width: 75%;
+            max-height: 40vh;
+            object-fit: cover;
+
+            border-radius: 20px;
+            margin-top: 20px;
+            box-shadow: 0 0 30px pink;
+            animation: fadeIn 2s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.7);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+
+        /* 🌌 màn sau khi bấm YES */
+        .love-screen {
+            position: absolute;
+            top: 12%;
+            width: 100%;
+            text-align: center;
+            color: #e0f2ff;
+            /* 👈 hợp nền galaxy */
+        }
+
+        /* 💖 title */
+        .love-title {
+            font-size: 32px;
+            font-weight: bold;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+        }
+
+        /* 💬 text */
+        .love-text {
+            max-width: 600px;
+            margin: 20px auto;
+            font-size: 20px;
+            line-height: 1.7;
+            padding: 0 20px;
+
+            color: #e0f2ff;
+
+            text-shadow:
+                0 0 8px rgba(255, 255, 255, 0.6),
+                0 0 16px rgba(100, 180, 255, 0.6);
+        }
+
+        /* 🔘 nút reload */
+        .reload-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #89f7fe, #66a6ff);
+            color: #0f2027;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .reload-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* 📱 shake */
+        /* @keyframes shake {
     0% { transform: translate(0,0); }
     25% { transform: translate(-5px,5px); }
     50% { transform: translate(5px,-5px); }
@@ -293,137 +317,137 @@ h1 {
     100% { transform: translate(0,0); }
 } */
 
-/* .shake {
+        /* .shake {
     animation: shake 0.3s;
 } */
-</style>
+    </style>
 </head>
 
 <body>
 
-<div class="container">
-    <h1 id="question">Em iu có yêu anh iu nhiều lắm đúng không ạaaa 💕</h1>
-    <div class="btn-group">
-        <button id="yes" class="btn">Có ạaaa 💖</button>
-        <button id="no" class="btn">Khongg 😅</button>
+    <div class="container">
+        <h1 id="question">Em iu có yêu anh iu nhiều lắm đúng không ạaaa 💕</h1>
+        <div class="btn-group">
+            <button id="yes" class="btn">Có ạaaa 💖</button>
+            <button id="no" class="btn">Khongg 😅</button>
+        </div>
     </div>
-</div>
 
-<!-- 🎵 MUSIC BOX -->
-<div class="music-box">
-    <div id="disk" class="disk"></div>
-    <div>✨ Không thời gian ✨</div>
-    <button id="playBtn">
-        <img id="playIcon" src="play.png">
-    </button>
-</div>
+    <!-- 🎵 MUSIC BOX -->
+    <div class="music-box">
+        <div id="disk" class="disk"></div>
+        <div>✨ Không thời gian ✨</div>
+        <button id="playBtn">
+            <img id="playIcon" src="play.png">
+        </button>
+    </div>
 
-<audio id="music" loop>
-    <source src="4khongthoigian.mp3" type="audio/mp3">
-</audio>
+    <audio id="music" loop>
+        <source src="4khongthoigian.mp3" type="audio/mp3">
+    </audio>
 
-<script>
-const noBtn = document.getElementById("no");
-const yesBtn = document.getElementById("yes");
-const question = document.getElementById("question");
-const music = document.getElementById("music");
-const disk = document.getElementById("disk");
-const playBtn = document.getElementById("playBtn");
-const playIcon = document.getElementById("playIcon");
+    <script>
+        const noBtn = document.getElementById("no");
+        const yesBtn = document.getElementById("yes");
+        const question = document.getElementById("question");
+        const music = document.getElementById("music");
+        const disk = document.getElementById("disk");
+        const playBtn = document.getElementById("playBtn");
+        const playIcon = document.getElementById("playIcon");
 
-let noScale = 1;
-let yesScale = 1;
-let playing = false;
-let attempt = 0;
+        let noScale = 1;
+        let yesScale = 1;
+        let playing = false;
+        let attempt = 0;
 
-const texts = [
-    "Em có iu bồ em nhiều đúng không 😍",
-    "Bồ suy nghĩ kỹ chưaa 🍀",
-    "Chọn lại đi mờ 🎀",
-    "Đừng bấm 'Khongg' mòoo 😭",
-    "Thôi mòoo 🎉",
-    "Không có 'Khongg' đâu nháaa 😆",
-    "Chỉ có 'Có ạaaa' thoi em iu ạaa 🌺",
-    "Em rất yêu anh ạaaa 💕"
-];
+        const texts = [
+            "Em có iu bồ em nhiều đúng không 😍",
+            "Bồ suy nghĩ kỹ chưaa 🍀",
+            "Chọn lại đi mờ 🎀",
+            "Đừng bấm 'Khongg' mòoo 😭",
+            "Thôi mòoo 🎉",
+            "Không có 'Khongg' đâu nháaa 😆",
+            "Chỉ có 'Có ạaaa' thoi em iu ạaa 🌺",
+            "Em rất yêu anh ạaaa 💕"
+        ];
 
-/* 🎵 play */
-const musicBox = document.querySelector(".music-box");
+        /* 🎵 play */
+        const musicBox = document.querySelector(".music-box");
 
-function toggleMusic() {
-    if (!playing) {
-        music.play();
-        disk.style.animationPlayState = "running";
-        playIcon.src = "pause.png";
-    } else {
-        music.pause();
-        disk.style.animationPlayState = "paused";
-        playIcon.src = "play.png";
-    }
-    playing = !playing;
-}
+        function toggleMusic() {
+            if (!playing) {
+                music.play();
+                disk.style.animationPlayState = "running";
+                playIcon.src = "pause.png";
+            } else {
+                music.pause();
+                disk.style.animationPlayState = "paused";
+                playIcon.src = "play.png";
+            }
+            playing = !playing;
+        }
 
-musicBox.onclick = toggleMusic;
+        musicBox.onclick = toggleMusic;
 
-playBtn.onclick = (e) => {
-    e.stopPropagation();
-    toggleMusic();
-};
-
-
-function moveNo() {
-    noBtn.style.position = "fixed";
-
-    noBtn.style.pointerEvents = "none";
-    setTimeout(() => {
-        noBtn.style.pointerEvents = "auto";
-    }, 200);
+        playBtn.onclick = (e) => {
+            e.stopPropagation();
+            toggleMusic();
+        };
 
 
-    attempt++;
-    question.innerText = texts[Math.min(attempt, texts.length - 1)];
+        function moveNo() {
+            noBtn.style.position = "fixed";
 
-    const x = Math.random() * window.innerWidth * 0.8;
-    const y = Math.random() * window.innerHeight * 0.8;
+            noBtn.style.pointerEvents = "none";
+            setTimeout(() => {
+                noBtn.style.pointerEvents = "auto";
+            }, 200);
 
-    noBtn.style.left = x + "px";
-    noBtn.style.top = y + "px";
 
-    noScale -= 0.1;
-    if (noScale < 0.4) noScale = 0.4;
-    noBtn.style.transform = `scale(${noScale})`;
+            attempt++;
+            question.innerText = texts[Math.min(attempt, texts.length - 1)];
 
-    yesScale += 0.15;
-    yesBtn.style.transform = `scale(${yesScale})`;
+            const x = Math.random() * window.innerWidth * 0.8;
+            const y = Math.random() * window.innerHeight * 0.8;
 
-    if (navigator.vibrate) navigator.vibrate(100);
-}
+            noBtn.style.left = x + "px";
+            noBtn.style.top = y + "px";
 
-noBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    e.preventDefault();
-});
+            noScale -= 0.1;
+            if (noScale < 0.4) noScale = 0.4;
+            noBtn.style.transform = `scale(${noScale})`;
 
-noBtn.addEventListener("mouseover", moveNo);
-noBtn.addEventListener("touchstart", moveNo);
+            yesScale += 0.15;
+            yesBtn.style.transform = `scale(${yesScale})`;
 
-/* ✅ YES */
-yesBtn.onclick = () => {
-    document.body.classList.add("night");
+            if (navigator.vibrate) navigator.vibrate(100);
+        }
 
-    document.querySelector(".container").style.display = "none";
+        noBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+        });
 
-    const loveScreen = document.createElement("div");
+        noBtn.addEventListener("mouseover", moveNo);
+        noBtn.addEventListener("touchstart", moveNo);
 
-    loveScreen.style.position = "absolute";
-    loveScreen.style.top = "15%";
-    loveScreen.style.width = "100%";
-    loveScreen.style.textAlign = "center";
-    loveScreen.style.color = "white";
+        /* ✅ YES */
+        yesBtn.onclick = () => {
+            document.body.classList.add("night");
 
-    loveScreen.className = "love-screen";
+            document.querySelector(".container").style.display = "none";
 
-    loveScreen.innerHTML = `
+            const loveScreen = document.createElement("div");
+
+            loveScreen.style.position = "absolute";
+            loveScreen.style.top = "15%";
+            loveScreen.style.width = "100%";
+            loveScreen.style.textAlign = "center";
+            loveScreen.style.color = "white";
+
+            loveScreen.className = "love-screen";
+
+            loveScreen.innerHTML = `
         <div class="love-title">💖 I Love You So Much 💖</div>
 
         <img src="couple.jpeg" class="couple">
@@ -440,61 +464,62 @@ yesBtn.onclick = () => {
         </button>
     `;
 
-    document.body.appendChild(loveScreen);
+            document.body.appendChild(loveScreen);
 
-    createConfetti();
-    createStars();
-};
+            createConfetti();
+            createStars();
+        };
 
-/* 🔙 quay lại */
-function goBack() {
-    location.reload();
-}
+        /* 🔙 quay lại */
+        function goBack() {
+            location.reload();
+        }
 
-/* 💘 confetti */
-function createConfetti() {
-    for (let i = 0; i < 150; i++) {
-        const c = document.createElement("div");
-        c.className = "confetti";
-        c.style.left = Math.random() * window.innerWidth + "px";
-        c.style.top = "-10px";
-        c.style.background = `hsl(${Math.random()*360},100%,50%)`;
-        document.body.appendChild(c);
-        setTimeout(() => c.remove(), 3000);
-    }
-}
+        /* 💘 confetti */
+        function createConfetti() {
+            for (let i = 0; i < 150; i++) {
+                const c = document.createElement("div");
+                c.className = "confetti";
+                c.style.left = Math.random() * window.innerWidth + "px";
+                c.style.top = "-10px";
+                c.style.background = `hsl(${Math.random() * 360},100%,50%)`;
+                document.body.appendChild(c);
+                setTimeout(() => c.remove(), 3000);
+            }
+        }
 
-/* ✨ stars */
-function createStars() {
-    for (let i = 0; i < 100; i++) {
-        const s = document.createElement("div");
-        s.className = "star";
-        s.style.left = Math.random() * window.innerWidth + "px";
-        s.style.top = Math.random() * window.innerHeight + "px";
-        document.body.appendChild(s);
-    }
-}
+        /* ✨ stars */
+        function createStars() {
+            for (let i = 0; i < 100; i++) {
+                const s = document.createElement("div");
+                s.className = "star";
+                s.style.left = Math.random() * window.innerWidth + "px";
+                s.style.top = Math.random() * window.innerHeight + "px";
+                document.body.appendChild(s);
+            }
+        }
 
-/* 💕 hearts */
-function createHeart() {
-    const hearts = ["💌","🌷","💗","🍒","💞","❤️","🍓","🐱","😊","🌹","🌸","🍊"];
+        /* 💕 hearts */
+        function createHeart() {
+            const hearts = ["💌", "🌷", "💗", "🍒", "💞", "❤️", "🍓", "🐱", "😊", "🌹", "🌸", "🍊"];
 
-    const heart = document.createElement("div");
-    heart.className = "heart";
+            const heart = document.createElement("div");
+            heart.className = "heart";
 
-    heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
-    heart.style.color = `hsl(${Math.random()*360},70%,70%)`;
-    heart.style.left = Math.random() * window.innerWidth + "px";
-    heart.style.bottom = "0px";
-    heart.style.fontSize = (Math.random() * 25 + 15) + "px";
+            heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+            heart.style.color = `hsl(${Math.random() * 360},70%,70%)`;
+            heart.style.left = Math.random() * window.innerWidth + "px";
+            heart.style.bottom = "0px";
+            heart.style.fontSize = (Math.random() * 25 + 15) + "px";
 
-    document.body.appendChild(heart);
+            document.body.appendChild(heart);
 
-    setTimeout(() => heart.remove(), 4000);
-}
+            setTimeout(() => heart.remove(), 4000);
+        }
 
-setInterval(createHeart, 250);
-</script>
+        setInterval(createHeart, 250);
+    </script>
 
 </body>
+
 </html>
