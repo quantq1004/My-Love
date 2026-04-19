@@ -131,7 +131,6 @@
         textIndex = 0
       }
       text = texts[textIndex]
-      console.log(textIndex)
     }, false)
 
     document.addEventListener('touchstart', function (e) {
@@ -140,7 +139,6 @@
         textIndex = 0
       }
       text = texts[textIndex]
-      console.log(textIndex)
     }, false)
   }
 
@@ -208,10 +206,20 @@
     }
   }
   
-  var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-    if(!isChrome){
-      $('#iframeAudio').remove()
-  }
+  // var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+  //   if(!isChrome){
+  //     $('#iframeAudio').remove()
+  // }
+    const music = document.getElementById("bgMusic");
+
+    function playMusic() {
+      music.play();
+      document.removeEventListener("click", playMusic);
+      document.removeEventListener("touchstart", playMusic);
+    }
+
+    document.addEventListener("click", playMusic);
+    document.addEventListener("touchstart", playMusic);
   
     init()  
 })(window)
