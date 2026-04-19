@@ -69,7 +69,7 @@
                 console.log('switch music to play');
                 audio_music.play();
                 audio_record.pause(); 
-                img_music.style.webkitAnimation="music_play_rotate 1s linear infinite";
+                img_music.style.webkitAnimation="music_play_rotate 3s linear infinite";
                 $(".div_music_tips").html("Playing").show();                
                 timeout_music=setTimeout(function(){$(".div_music_tips").hide()}, 2500);
             }else{
@@ -90,14 +90,14 @@
                 audio_record.play();
                 audio_music.pause(); //
                 img_music.style.webkitAnimation="";
-                div_record.style.webkitAnimation="btn_rotate 1s linear infinite";
+                div_record.style.webkitAnimation="btn_rotate 3s linear infinite";
                 $(".div_record_tips").html("Playing").show(); 
                 timeout_record=setTimeout(function(){$(".div_record_tips").hide()}, 2500);
             }else{
                 console.log('switch record to pause');  
                 audio_record.pause();
                 audio_music.play();                
-                img_music.style.webkitAnimation="music_play_rotate 1s linear infinite";
+                img_music.style.webkitAnimation="music_play_rotate 3s linear infinite";
                 div_record.style.webkitAnimation="";
                 $(".div_record_tips").html("Paused").show();  
                 timeout_record=setTimeout(function(){$(".div_record_tips").hide()}, 2500); 
