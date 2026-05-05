@@ -77,10 +77,18 @@
       font-size: 24px;
       color: #cc0052;
       text-shadow: 1px 1px 2px rgba(204, 0, 82, 0.1);
-      margin-top: 10px;
+      margin-top: 20px;
       opacity: 0;
       animation: fadeIn 2.5s ease-in-out 1.5s forwards;
     }
+
+    .message1 {
+      font-family: "Times New Roman", serif;
+      font-size: 16px;
+      color: #d7296e;
+      text-shadow: 1px 1px 2px rgba(204, 0, 82, 0.1);
+    }
+
 
     @keyframes fadeIn {
       to {
@@ -470,7 +478,7 @@
     function floatFlower() {
       let e = document.createElement("div");
       e.className = "flower";
-      let items = ["🌸", "🍀", "🌺", "💮", "🍁", "🌹"];
+      let items = ["🌸", "🍀", "🌺", "💮", "🍁", "🌹", "🌿"];
       e.innerHTML = items[Math.floor(Math.random() * items.length)];
       e.style.left = Math.random() * 100 + "vw";
       e.style.animationDuration = (5 + Math.random() * 4) + "s";
@@ -492,6 +500,7 @@
   <div class="namebox">
     <h1>Quang Quân &#10084;&#65039; Quỳnh Trang</h1>
     <p class="message">💕 Happiness 💕</p>
+    <p class="message1">𝄞 In Love 𝄞</p>
   </div>
 </body>
 
