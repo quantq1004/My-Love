@@ -1,0 +1,963 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta http-equiv='Pragma' content='no-cache' />
+	<meta charset="UTF-8">
+	<title>💕 Chuyện tình của đôi ta 💕</title>
+	<meta name="language" content="vi-VN">
+	<meta name="title" content="Gửi Quỳnh Trang Xinh Đẹp">
+	<link rel="stylesheet" href="all.min.css">
+
+	<!-- Google Fonts Premium & Romantics -->
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Great+Vibes&display=swap"
+		rel="stylesheet">
+
+	<style>
+		/* Custom Style Overrides - Premium and Romantic Feel */
+		body,
+		p,
+		span,
+		div,
+		.text,
+		.top-text,
+		.center-text {
+			font-family: 'Quicksand', sans-serif !important;
+			font-weight: 600;
+		}
+
+		/* Overriding dark background to a beautiful soft romantic rosy gradient */
+		body,
+		.flowtime,
+		.ft-section,
+		.ft-page {
+			background: linear-gradient(135deg, #fff0f3 0%, #ffccd5 100%) !important;
+			background-color: #fff0f3 !important;
+		}
+
+		h2,
+		h3,
+		.center-img,
+		.text1 {
+			font-family: 'Great Vibes', cursive !important;
+			font-weight: bold !important;
+			font-size: 2.0rem !important;
+			color: #c9184a !important;
+			text-shadow: 0 0 10px rgba(255, 77, 109, 0.2) !important;
+		}
+
+		.text1 span {
+			font-family: 'Great Vibes', cursive !important;
+			font-weight: bold !important;
+			font-size: 2.4rem !important;
+		}
+
+		/* Premium Light Glassmorphism for Text Containers - Super readable and aesthetic */
+		.ft-page p,
+		.ft-page h2,
+		.ft-page h3,
+		.ft-page .text {
+			background: rgba(255, 255, 255, 0.8) !important;
+			backdrop-filter: blur(10px) !important;
+			-webkit-backdrop-filter: blur(10px) !important;
+			border: 2px solid rgba(255, 77, 109, 0.25) !important;
+			border-radius: 18px !important;
+			padding: 10px 22px !important;
+			box-shadow: 0 8px 24px rgba(255, 77, 109, 0.12) !important;
+			color: #800f2f !important;
+			display: block !important;
+			text-align: center;
+			text-shadow: none !important;
+			box-sizing: border-box;
+			max-width: 85% !important;
+			width: fit-content !important;
+			min-width: 280px !important;
+			font-size: 1.6rem !important;
+			/* Cỡ chữ bằng nhau trên tất cả các trang */
+			transition: all 0.3s ease;
+			margin-left: auto !important;
+			margin-right: auto !important;
+			margin-bottom: 110px !important;
+			/* Tránh bị che bởi đĩa nhạc và trái tim ở 2 góc dưới */
+			position: relative !important;
+			z-index: 100 !important;
+			/* Đảm bảo text luôn nổi lên trên ảnh, không bị lỗi mất chữ */
+			white-space: normal !important;
+			word-wrap: break-word !important;
+			word-break: break-word !important;
+		}
+
+		.ft-page h2,
+		.ft-page h3 {
+			font-family: 'Great Vibes', cursive !important;
+			font-size: 1.6rem !important;
+			/* Đồng nhất cỡ chữ 1.6rem */
+			font-weight: bold !important;
+			color: #c9184a !important;
+			text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+		}
+
+		.ft-page p:hover,
+		.ft-page .text:hover {
+			border-color: #ff4d6d !important;
+			box-shadow: 0 12px 32px rgba(255, 77, 109, 0.25) !important;
+			transform: translateY(-2px);
+		}
+
+		/* Smooth layout adjustments */
+		.top-text {
+			margin-top: 25px !important;
+			/* Trả về khoảng cách thanh lịch mặc định do đĩa nhạc đã chuyển xuống góc dưới */
+		}
+
+		.center-text,
+		.ft-page h3 {
+			margin-top: 20px !important;
+		}
+
+		/* Floating Hearts Background styling */
+		.floating-heart {
+			position: fixed;
+			bottom: -30px;
+			z-index: 999;
+			pointer-events: none;
+			animation: floatUp linear forwards;
+			font-family: Arial, sans-serif !important;
+		}
+
+		@keyframes floatUp {
+			0% {
+				transform: translateY(0) rotate(0deg) scale(0.6);
+				opacity: 0.8;
+			}
+
+			100% {
+				transform: translateY(-105vh) rotate(360deg) scale(1.2);
+				opacity: 0;
+			}
+		}
+
+		/* Beautiful Custom Vinyl Record (Music Disc) in Top-Right corner */
+		.mPower {
+			position: fixed !important;
+			bottom: 25px !important;
+			/* Chuyển đĩa nhạc xuống góc dưới bên phải */
+			right: 25px !important;
+			top: auto !important;
+			left: auto !important;
+			width: 80px !important;
+			height: 80px !important;
+			z-index: 99999 !important;
+			background: rgba(255, 248, 249, 0.95) !important;
+			/* Solid elegant creamy-pink glass backing to hide background text */
+			backdrop-filter: blur(12px) !important;
+			-webkit-backdrop-filter: blur(12px) !important;
+			border-radius: 50% !important;
+			border: 3.5px solid #ff4d6d !important;
+			display: flex !important;
+			align-items: center !important;
+			justify-content: center !important;
+			box-sizing: border-box !important;
+			transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+			/* Breathing neon LED glow */
+			animation: pulseGlow 2s infinite alternate ease-in-out !important;
+		}
+
+		.mPower:hover {
+			transform: scale(1.08);
+			border-color: #ff758f !important;
+		}
+
+		#on,
+		#off {
+			width: 66px !important;
+			height: 66px !important;
+			border-radius: 50% !important;
+			margin: 0 !important;
+			cursor: pointer !important;
+			position: absolute !important;
+			/* Absolute center positioning inside mPower base */
+			top: 50% !important;
+			left: 50% !important;
+			transform: translate(-50%, -50%);
+			/* ĐÃ LOẠI BỎ !important để kích hoạt xoay CSS transform! */
+			box-shadow: inset 0 0 8px rgba(255, 77, 109, 0.3) !important;
+			box-sizing: border-box !important;
+			border: none !important;
+			outline: none !important;
+			display: inline-block;
+			/* Bỏ !important để jQuery .show()/.hide() hoạt động chính xác! */
+		}
+
+		#on {
+			/* Spin fast and lively when playing */
+			animation: vinylSpin 4s linear infinite !important;
+			background:
+				/* Vệt phản quang ánh sáng góc chéo tạo chiều sâu 3D thực tế khi xoay */
+				conic-gradient(from 0deg,
+					rgba(255, 255, 255, 0.08) 0deg,
+					rgba(255, 255, 255, 0.28) 45deg,
+					rgba(255, 255, 255, 0.08) 90deg,
+					transparent 130deg,
+					rgba(255, 255, 255, 0.12) 180deg,
+					rgba(255, 255, 255, 0.32) 225deg,
+					rgba(255, 255, 255, 0.08) 270deg,
+					transparent 315deg,
+					rgba(255, 255, 255, 0.08) 360deg),
+				radial-gradient(circle,
+					#ff4d6d 0%, #ff4d6d 10%,
+					/* Center red circle label */
+					#ff758f 11%, #ffccd5 12%,
+					/* Inner gold-rose ring */
+					#c9184a 13%, #a4133c 22%,
+					/* Rosy red body */
+					#ff4d6d 23%, #ffccd5 24%,
+					/* Middle groove */
+					#a4133c 25%, #800f2f 40%,
+					/* Outer ruby red body */
+					#c9184a 41%, #ff758f 42%,
+					/* Second groove */
+					#800f2f 43%, #590d22 100%
+					/* Deep dark ruby edge */
+				) !important;
+		}
+
+		#off {
+			opacity: 0.95 !important;
+			/* Spin extremely slowly and dreamily even when paused to feel alive! */
+			animation: vinylSpin 25s linear infinite !important;
+			background:
+				/* Vệt phản quang ánh sáng dịu hơn khi tạm dừng */
+				conic-gradient(from 0deg,
+					rgba(255, 255, 255, 0.06) 0deg,
+					rgba(255, 255, 255, 0.22) 45deg,
+					rgba(255, 255, 255, 0.06) 90deg,
+					transparent 130deg,
+					rgba(255, 255, 255, 0.1) 180deg,
+					rgba(255, 255, 255, 0.25) 225deg,
+					rgba(255, 255, 255, 0.06) 270deg,
+					transparent 315deg,
+					rgba(255, 255, 255, 0.06) 360deg),
+				radial-gradient(circle,
+					#ffccd5 0%, #ffccd5 10%,
+					/* Soft pink center */
+					#ffb3c1 11%, #ffe5ec 12%,
+					#ff8fa3 13%, #ff758f 22%,
+					#ffb3c1 23%, #ffe5ec 24%,
+					#ff758f 25%, #ff4d6d 40%,
+					#ff8fa3 41%, #ffb3c1 42%,
+					#ff4d6d 43%, #c9184a 100%) !important;
+		}
+
+		#on::after,
+		#off::after {
+			content: "" !important;
+			/* Dùng SVG thay cho text emoji */
+			position: absolute !important;
+			top: 50% !important;
+			left: 50% !important;
+			transform: translate(-50%, -50%) !important;
+			background-size: contain !important;
+			background-repeat: no-repeat !important;
+			background-position: center !important;
+		}
+
+		#on::after {
+			width: 14px !important;
+			height: 14px !important;
+			background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffffff"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>') !important;
+			filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8)) !important;
+			/* Animate width/height thay vì transform/font-size để tối ưu hóa render trên Chrome/Windows */
+			animation: beat 1.2s infinite alternate ease-in-out !important;
+		}
+
+		#off::after {
+			width: 15px !important;
+			height: 15px !important;
+			background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffccd5"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>') !important;
+			filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5)) !important;
+			animation: none !important;
+		}
+
+		@keyframes vinylSpin {
+			0% {
+				transform: translate(-50%, -50%) rotate(0deg);
+			}
+
+			100% {
+				transform: translate(-50%, -50%) rotate(360deg);
+			}
+		}
+
+		@keyframes beat {
+			0% {
+				width: 13px !important;
+				height: 13px !important;
+			}
+
+			100% {
+				width: 18px !important;
+				height: 18px !important;
+			}
+		}
+
+		@keyframes pulseGlow {
+			0% {
+				box-shadow: 0 0 10px rgba(255, 77, 109, 0.35) !important;
+				border-color: #ff4d6d !important;
+			}
+
+			100% {
+				box-shadow: 0 0 22px rgba(255, 77, 109, 0.65) !important;
+				border-color: #ff758f !important;
+			}
+		}
+
+		/* Vinyl Needles styling - Realistic continuous tonearm design */
+		.disc-needle {
+			position: absolute;
+			top: -10px;
+			right: -2px;
+			width: 30px;
+			height: 60px;
+			z-index: 100000;
+			transform-origin: 20px 8px;
+			/* swing center around pivot point */
+			transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+			pointer-events: none;
+			transform: rotate(-30deg);
+			/* Default paused */
+		}
+
+		.mPower.playing .disc-needle {
+			transform: rotate(0deg);
+			/* active */
+		}
+
+		.needle-pivot {
+			position: absolute;
+			top: 0;
+			right: 2px;
+			width: 16px;
+			height: 16px;
+			background: radial-gradient(circle, #fff 20%, #ccc 60%, #666 100%);
+			border-radius: 50%;
+			border: 1.5px solid #ff4d6d;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+		}
+
+		.needle-body {
+			position: absolute;
+			top: 10px;
+			right: 9px;
+			width: 2.5px;
+			height: 38px;
+			background: linear-gradient(to bottom, #fff, #bbb, #777);
+			transform: rotate(-10deg);
+			transform-origin: top center;
+			box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+		}
+
+		.needle-head {
+			position: absolute;
+			top: 44px;
+			right: 17px;
+			width: 6px;
+			height: 12px;
+			background: #c9184a;
+			/* matched premium theme color */
+			border-radius: 2px 1px 1px 2px;
+			transform: rotate(-10deg);
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+		}
+
+		/* Căn giữa tên ở trang đầu tiên */
+		.page-1 {
+			display: flex !important;
+			flex-direction: column !important;
+			justify-content: center !important;
+			align-items: center !important;
+			text-align: center !important;
+			height: 100% !important;
+		}
+
+		/* Icon trái tim Flaticon giữa hai tên - kích thước cân đối và thẳng hàng ngang */
+		.name-heart-icon {
+			width: 28px !important;
+			height: 28px !important;
+			max-width: 28px !important;
+			max-height: 28px !important;
+			vertical-align: middle !important;
+			margin: 0 12px !important;
+			display: inline-block !important;
+			position: relative !important;
+			top: -4px !important;
+			/* Dịch lên một chút để thẳng hàng với font chữ uốn lượn */
+			clear: none !important;
+			float: none !important;
+			border: none !important;
+			box-shadow: none !important;
+			border-radius: 0 !important;
+			background: none !important;
+			animation: heartBeatCustom 1.2s infinite alternate ease-in-out !important;
+		}
+
+		/* Đảm bảo dòng tên hiển thị theo hàng ngang */
+		.page-1 .text1 {
+			display: flex !important;
+			flex-direction: row !important;
+			justify-content: center !important;
+			align-items: center !important;
+			white-space: nowrap !important;
+			width: fit-content !important;
+			max-width: 95% !important;
+			margin: 0 auto 20px auto !important;
+			border: none !important;
+			background: none !important;
+			box-shadow: none !important;
+			backdrop-filter: none !important;
+			-webkit-backdrop-filter: none !important;
+		}
+
+		.page-1 .text1 span {
+			font-family: 'Great Vibes', cursive !important;
+			font-size: 2.6rem !important;
+			color: #c9184a !important;
+			display: inline-block !important;
+		}
+
+		@keyframes heartBeatCustom {
+			0% {
+				transform: scale(0.9);
+				filter: drop-shadow(0 0 5px rgba(255, 77, 109, 0.4));
+			}
+
+			100% {
+				transform: scale(1.1);
+				filter: drop-shadow(0 0 15px rgba(255, 77, 109, 0.8));
+			}
+		}
+
+		/* Chuyển nút điều hướng trái tim của Flowtime sang góc dưới bên trái */
+		.ft-default-progress {
+			bottom: 90px !important;
+			/* Cho trái tim ảnh cao hơn */
+			left: 25px !important;
+			right: auto !important;
+			opacity: 0.85 !important;
+			z-index: 99999 !important;
+			transition: all 0.3s ease !important;
+		}
+
+		.ft-default-progress:hover {
+			opacity: 1 !important;
+			transform: scale(1.05) !important;
+		}
+
+		/* Hủy bỏ hoàn toàn thuộc tính absolute positioning, float từ file CSS cũ */
+		.ft-page p,
+		.ft-page h2,
+		.ft-page h3,
+		.ft-page .text,
+		.ft-page img,
+		.ft-page .center-text,
+		.left-img img,
+		.left-img p,
+		.left-img h3,
+		.left-img .text,
+		.right-img img,
+		.right-img .text,
+		.full-img img,
+		.full-img h3,
+		.full-img .text,
+		.full-img .center-text,
+		.bottom-text img,
+		.bottom-text h3 {
+			position: relative !important;
+			top: auto !important;
+			bottom: auto !important;
+			left: auto !important;
+			right: auto !important;
+			float: none !important;
+			clear: both !important;
+			z-index: 10 !important;
+			text-align: center !important;
+			box-sizing: border-box !important;
+		}
+
+		/* Cấu trúc trang Flexbox xếp dọc, căn giữa */
+		.ft-page {
+			display: flex !important;
+			flex-direction: column !important;
+			justify-content: center !important;
+			/* Căn giữa nội dung theo chiều dọc */
+			align-items: center !important;
+			/* Căn giữa nội dung theo chiều ngang */
+			padding: 40px 24px !important;
+			height: 100% !important;
+			box-sizing: border-box !important;
+		}
+
+		/* Phong cách chữ sang trọng và đồng nhất */
+		.ft-page p,
+		.ft-page h2,
+		.ft-page h3,
+		.ft-page .text {
+			background: rgba(255, 255, 255, 0.82) !important;
+			backdrop-filter: blur(10px) !important;
+			-webkit-backdrop-filter: blur(10px) !important;
+			border: 2px solid rgba(255, 77, 109, 0.25) !important;
+			border-radius: 18px !important;
+			padding: 12px 24px !important;
+			box-shadow: 0 8px 24px rgba(255, 77, 109, 0.12) !important;
+			color: #800f2f !important;
+			max-width: 85% !important;
+			width: fit-content !important;
+			min-width: 280px !important;
+			font-size: 1.6rem !important;
+			margin: 0 auto 20px auto !important;
+			/* Khoảng cách lề dưới chữ */
+			white-space: normal !important;
+			word-wrap: break-word !important;
+			word-break: break-word !important;
+			line-height: 1.5 !important;
+			display: block !important;
+		}
+
+		/* Phong cách ảnh chống co dãn, méo móp, không bị che bởi đĩa nhạc/trái tim */
+		.ft-page img:not(.name-heart-icon) {
+			max-width: 90% !important;
+			max-height: 50vh !important;
+			/* Chiều cao ảnh vừa vặn */
+			width: auto !important;
+			height: auto !important;
+			object-fit: contain !important;
+			/* Đảm bảo tỷ lệ ảnh gốc hoàn hảo */
+			border-radius: 20px !important;
+			border: 4px solid rgba(255, 255, 255, 0.9) !important;
+			box-shadow: 0 12px 36px rgba(255, 77, 109, 0.18) !important;
+			margin: 10px auto 0 auto !important;
+			/* Khoảng cách với chữ ở trên */
+			display: block !important;
+			transition: all 0.3s ease !important;
+		}
+
+		.ft-page img:not(.name-heart-icon):hover {
+			transform: scale(1.02) !important;
+			box-shadow: 0 16px 48px rgba(255, 77, 109, 0.28) !important;
+		}
+
+		/* Căn chỉnh riêng biệt cho các trang chứa nhiều ảnh */
+		.ft-page .img1,
+		.ft-page .img2 {
+			max-width: 44% !important;
+			max-height: 35vh !important;
+			display: inline-block !important;
+			margin: 10px 8px 0 8px !important;
+			vertical-align: middle !important;
+		}
+
+		/* Sửa lỗi chữ bị xếp dọc ở các trang 8, 46, 47 do quy định width: 1em của file CSS gốc */
+		.page-8 h3 span,
+		.page-46 h3 span,
+		.page-47 h3 span {
+			display: block !important;
+			width: auto !important;
+			height: auto !important;
+			vertical-align: baseline !important;
+			white-space: normal !important;
+			word-wrap: normal !important;
+			word-break: normal !important;
+			margin: 6px auto !important;
+			text-align: center !important;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="flowtime">
+		<div class="ft-section section-1" data-id="section-1">
+			<div id="/section-1/page-1" class="ft-page page-1" data-id="page-1">
+				<p class="text1"><span id="text-75">Trịnh Quân</span> <img src="flaticon/heart.png"
+						class="name-heart-icon" alt="Heart"> <span id="text-76">Quỳnh Trang</span></p>
+				<br>
+				<br>
+				<p class="text2">Em yêu xinh đẹp của anh nhấn phím "↓" hoặc vuốt xuống <span id="text-78">để bắt đầu xem
+						và lắng
+						nghe chuyện tình của chúng ta nhaaa</span></p>
+			</div>
+			<div id="/section-1/page-2" class="ft-page page-2" data-id="page-2">
+				<p class="top-text" id="text-1">Hi, tình yêu của anh, anh thật sự rất may mắn khi có em
+					bên cạnh đó ạaa</p>
+				<img src="imgs/1.jpg" tppabs="imgs/1.jpg" alt="Thật may mắn khi anh có em bên cạnh" />
+			</div>
+			<div id="/section-1/page-3" class="ft-page page-3 left-img" data-id="page-3">
+				<h2 class="text" id="text-2">Mỗi ngày anh đều hạnh phúc khi nghĩ về emm</h2>
+				<img src="imgs/46.jpg" tppabs="imgs/46.jpg" alt="Nghĩ về em" />
+			</div>
+			<div id="/section-1/page-4" class="ft-page page-4 full-img" data-id="page-4">
+				<h2 class="center-text" id="text-3">Từ ngày có em bên cạnh, những chiều hoàng hôn lộng gió đều trở nên
+					thật ấm áp và ngọt ngào lạ kỳ...</h2>
+				<img src="imgs/iali3.jpg" tppabs="imgs/iali3.jpg" alt="Ngọn đồi lộng gió" />
+			</div>
+		</div>
+		<div class="ft-section section-2" data-id="section-2">
+			<div id="/section-2/page-1" class="ft-page page-5 full-img" data-id="page-1">
+				<h2 class="center-text" id="text-4">Dù là giữa chuyến xe đông đúc hay trên đường phố tấp nập, anh vẫn
+					thấy bình yên vì biết luôn có em chờ đón...</h2>
+				<img src="imgs/20.jpg" tppabs="imgs/20.jpg" alt="Chuyến tàu bình yên" />
+			</div>
+			<div id="/section-2/page-2" class="ft-page page-6" data-id="page-2">
+				<h2 class="center-text" id="text-5">Mọi ngõ ngách, nơi mình từng đi qua đều ghi dấu những nụ cười
+					rạng rỡ và hạnh phúc của hai ta...</h2>
+				<img src="imgs/27.jpg" tppabs="imgs/27.jpg" alt="Công viên hạnh phúc" />
+			</div>
+			<div id="/section-2/page-3" class="ft-page page-7" data-id="page-3">
+				<h3 id="text-6">Anh thầm cảm ơn định mệnh đã mang hai ta đến bên nhau, để anh có cơ hội nâng niu và yêu
+					thương em mỗi ngày...</h3>
+				<img src="imgs/iali53.jpg" tppabs="imgs/iali53.jpg" alt="Cảm ơn định mệnh" />
+			</div>
+			<div id="/section-2/page-4" class="ft-page page-8 full-img" data-id="page-4">
+				<h3 id="text-7">Dù cuộc sống ngoài kia đôi lúc có nhiều giông bão, khó khăn mỏi mệt ra sao...</h3>
+				<img src="imgs/7.jpg" tppabs="imgs/7.jpg" alt="Cuộc sống giông bão" />
+			</div>
+			<div id="/section-2/page-5" class="ft-page page-9" data-id="page-5">
+				<h3 id="text-8">Chỉ cần cái ôm ấm áp và ánh mắt tin tưởng từ em yêu...</h3>
+				<img src="imgs/52.jpg" tppabs="imgs/52.jpg" />
+			</div>
+			<div id="/section-2/page-6" class="ft-page page-10" data-id="page-6">
+				<h3 id="text-9">Anh tin hai đứa mình có thể vượt qua mọi thử thách một cách kiên cường nhất ạaaa</h3>
+				<img src="imgs/53.jpg" tppabs="imgs/53.jpg" />
+			</div>
+		</div>
+		<div class="ft-section section-3" data-id="section-3">
+			<div id="/section-3/page-1" class="ft-page page-11 full-img" data-id="page-1">
+				<h3 id="text-10">Con đường tương lai dẫu có đôi lúc gập ghềnh hay không bằng phẳng...</h3>
+				<img src="imgs/39.jpg" tppabs="imgs/39.jpg" />
+			</div>
+			<div id="/section-3/page-2" class="ft-page page-12" data-id="page-2">
+				<h3><span id="text-11">Chúng mình vẫn sẽ luôn nắm chặt tay nhau,</span><br /><span id="text-12">cùng
+						dũng cảm bước qua mọi khó khăn phía trước.</span></h3>
+				<img src="imgs/12.jpg" tppabs="imgs/8.jpg" />
+			</div>
+			<div id="/section-3/page-3" class="ft-page page-13" data-id="page-3">
+				<h3 id="text-13">Bởi vì nụ cười của em chính là nguồn động lực và là ngọn hải đăng soi sáng cho anh.
+				</h3>
+				<img src="imgs/32.jpg" tppabs="imgs/32.jpg" alt='Nụ cười của em' />
+			</div>
+			<div id="/section-3/page-4" class="ft-page page-14 left-img" data-id="page-4">
+				<h3 id="text-14">Mỗi ngày bên em, anh đều thấy mình hoàn thiện hơn, cố gắng trở thành phiên bản tốt nhất
+					vì em.</h3>
+				<img src="imgs/54.jpg" tppabs="imgs/54.jpg" />
+			</div>
+			<div id="/section-3/page-5" class="ft-page page-15 left-img" data-id="page-5">
+				<h3><span id="text-15">Anh muốn nói với cả thế giới này rằng:</span><br /><span id="text-16">Anh đang sở
+						hữu món quà quý giá nhất trần đời - đó chính là em!</span></h3>
+				<img src="imgs/44.jpg" tppabs="imgs/44.jpg" />
+			</div>
+			<div id="/section-3/page-6" class="ft-page page-16 left-img" data-id="page-6">
+				<h3><span id="text-17">Dù đông lạnh giá hay hè nắng cháy,</span><br /><span id="text-18">chỉ cần có
+						Bồ Trang xinh đẹp bên cạnh, lòng anh luôn tràn ngập nắng ấm.</span></h3>
+				<img src="imgs/19.jpg" tppabs="imgs/19.jpg" />
+			</div>
+			<div id="/section-3/page-7" class="ft-page page-17 top-text" data-id="page-7">
+				<h3 id="text-19">Thật hạnh phúc biết bao từ ngày hai đứa mình chính thức thuộc về nhau!</h3>
+				<img src="imgs/iali12.jpg" tppabs="imgs/iali12.jpg" />
+			</div>
+		</div>
+		<div class="ft-section section-4" data-id="section-4">
+			<div id="/section-4/page-1" class="ft-page page-18 full-img" data-id="page-1">
+				<p class="text" id="text-20">Anh thương mọi điều thuộc về emm, thương từ nụ cười tỏa nắng đến những cử
+					chỉ quan tâm dịu dàng của em mỗi ngày.</p>
+				<img src="imgs/4.jpg" tppabs="imgs/4.jpg" />
+			</div>
+			<div id="/section-4/page-2" class="ft-page page-19" data-id="page-2">
+				<h3 id="text-21">Em có biết mỗi khoảnh khắc được ở cạnh em, được ngắm nhìn em cười, lòng anh lại rung
+					động biết bao</h3>
+				<img src="imgs/18.jpg" tppabs="imgs/18.jpg" />
+			</div>
+			<div id="/section-4/page-3" class="ft-page page-20" data-id="page-3">
+				<img src="imgs/34.jpg" tppabs="imgs/34.jpg" />
+				<h3 id="text-22">Anh luôn suy nghĩ và tự hỏi làm sao để mang lại thật nhiều niềm vui và hạnh phúc cho
+					công chúa của anh.</h3>
+				<img src="imgs/9.jpg" tppabs="imgs/9.jpg" />
+			</div>
+			<div id="/section-4/page-21" class="ft-page page-21" data-id="page-4">
+				<h3 id="text-23">Trong thâm tâm anh, anh luôn ước mong được nắm tay em yêu đi hết cuộc đời này</h3>
+				<img src="imgs/35.jpg" tppabs="imgs/35.jpg" />
+			</div>
+			<div id="/section-4/page-22" class="ft-page page-22 left-img" data-id="page-5">
+				<h3 id="text-24">Mỗi ngày, chỉ cần được lắng nghe em nói cười, cùng chia sẻ những câu chuyện nhỏ cũng
+					thấy bình yên và hạnh phúc roiii</h3>
+				<img src="imgs/15.jpg" tppabs="imgs/15.jpg" />
+			</div>
+			<div id="/section-4/page-23" class="ft-page page-23 left-img" data-id="page-6">
+				<h3 id="text-25">Chúng mình sẽ cùng nhau nắm tay đi dạo, khám phá thật nhiều quán xá quen thuộc và ngõ
+					phố đáng yêu.</h3>
+				<img src="imgs/31.jpg" tppabs="imgs/31.jpg" />
+			</div>
+			<div id="/section-4/page-24" class="ft-page page-24 full-img" data-id="page-7">
+				<h3 id="text-26">Và dẫu ngày dài có mệt mỏi ra sao, chỉ cần có em ở bên anh, mọi lo toan
+					đều tan biến.</h3>
+				<img src="imgs/28.jpg" tppabs="imgs/28.jpg" />
+			</div>
+		</div>
+		<div class="ft-section section-5" data-id="section-5">
+			<div id="/section-5/page-1" class="ft-page page-25 left-img" data-id="page-1">
+				<h3><span id="text-27">Tối đến, sau những dòng tin nhắn chúc ngủ ngon,</span><br /><span
+						id="text-28">anh lại nhớ về khuôn mặt dễ thương và nụ cười của em.</span></h3>
+				<img src="imgs/51.jpg" tppabs="imgs/51.jpg" />
+			</div>
+			<div id="/section-5/page-2" class="ft-page page-26 top-text" data-id="page-2">
+				<h3 id="text-29">Để rồi chìm vào giấc ngủ thật êm đềm, và trong những giấc mơ hồng anh vẫn được ôm em
+					thật chặt.</h3>
+				<img src="imgs/iali29.jpg" tppabs="imgs/iali29.jpg" />
+			</div>
+			<div id="/section-5/page-3" class="ft-page page-27" data-id="page-3">
+				<h3 id="text-30">Anh nguyện làm người bảo vệ và che chở cho em, sẵn sàng xách đồ và cùng em yêu đi mua
+					sắm
+					mọi lúc mọi nơi!</h3>
+				<img src="imgs/49.jpg" tppabs="imgs/49.jpg" />
+			</div>
+			<div id="/section-5/page-4" class="ft-page page-28" data-id="page-4">
+				<h3 id="text-31">Hai đứa mình sẽ cùng nhau đi du lịch, đặt chân đến những vùng đất mới và chụp cho nhau
+					thật nhiều ảnh xinh nha!</h3>
+				<img src="imgs/30.jpg" tppabs="imgs/30.jpg" />
+			</div>
+			<div id="/section-5/page-5" class="ft-page page-29" data-id="page-5">
+				<h3 id="text-32">Anh muốn cùng bé iu ăn thật nhiều món ngon, cùng trở thành cặp đôi "tâm hồn ăn uống"
+					đáng yêu nhất quả đất!</h3>
+				<img src="imgs/6.jpg" tppabs="imgs/6.jpg" />
+			</div>
+			<div id="/section-5/page-6" class="ft-page page-30" data-id="page-6">
+				<h3 id="text-33">Tương lai sau này, hai đứa mình sẽ cùng vun vén cho một tổ ấm nhỏ tràn ngập tiếng cười
+					và tình thương yêu...</h3>
+				<img src="imgs/12.jpg" tppabs="imgs/12.jpg" />
+			</div>
+			<div id="/section-5/page-7" class="ft-page page-31" data-id="page-7">
+				<h3 id="text-34">Để chuẩn bị tốt nhất cho tương lai của chúng ta, anh sẽ nỗ lực học hỏi và tích lũy thêm
+					thật nhiều điều mới...</h3>
+				<img src="imgs/55.jpg" tppabs="imgs/55.jpg" />
+			</div>
+		</div>
+		<div class="ft-section section-6" data-id="section-6">
+			<div id="/section-6/page-1" class="ft-page page-32" data-id="page-1">
+				<h3 id="text-35">Anh mong chúng mình sẽ mãi yêu thương và trân trọng nhau như thế, cùng nhau vun đắp
+					cho một tương lai tươi sáng và hạnh phúc.</h3>
+				<img src="imgs/3.jpg" tppabs="imgs/3.jpg" />
+			</div>
+			<div id="/section-6/page-2" class="ft-page page-33 top-text" data-id="page-2">
+				<h3 id="text-36">Anh mong mỗi sáng thức dậy, hai đứa mình đều ngập tràn năng lượng và vui vẻ.</h3>
+				<img src="imgs/2.jpg" tppabs="imgs/2.jpg" />
+			</div>
+			<div id="/section-6/page-3" class="ft-page page-34 left-img" data-id="page-3">
+				<h3 id="text-37">Rồi cùng vui vẻ nắm tay nhau bước qua những ngày thường nhật, trao nhau những cái ôm
+					động viên ngọt ngào.</h3>
+				<img src="imgs/26.jpg" tppabs="imgs/26.jpg" />
+			</div>
+			<div id="/section-6/page-4" class="ft-page page-35" data-id="page-4">
+				<h3><span id="text-38">Anh tự hào và hạnh phúc vô cùng khi được làm một nửa của em,</span><br /><span
+						id="text-39">được em trao trọn niềm tin</span><br /><span id="text-40">và tình yêu chân
+						thành.</span></h3>
+				<img src="imgs/50.jpg" tppabs="imgs/50.jpg" />
+			</div>
+			<div id="/section-6/page-5" class="ft-page page-36 full-img" data-id="page-5">
+				<h3 id="text-41">Đôi khi, tình yêu của hai đứa mình cũng không tránh khỏi những lúc giận hờn, tranh cãi
+					vu vơ...</h3>
+				<img src="imgs/23.jpg" tppabs="imgs/23.jpg" />
+			</div>
+			<div id="/section-6/page-6" class="ft-page page-37 left-img" data-id="page-6">
+				<h3 id="text-42">But anh hứa sẽ luôn bao dung, lắng nghe để hiểu em nhiều hơn, quyết không để em yêu
+					phải buồn lòng.</h3>
+				<img src="imgs/38.jpg" tppabs="imgs/38.jpg" />
+			</div>
+			<div id="/section-6/page-7" class="ft-page page-38 bottom-text" data-id="page-7">
+				<h3 id="text-43">Mỗi lúc em giận, anh sẽ chủ động dỗ dành em trước, vì nụ cười ngọt ngào của em mới là
+					điều quan trọng nhất</h3>
+				<img src="imgs/11.jpg" tppabs="imgs/11.jpg" />
+			</div>
+		</div>
+		<div class="ft-section section-7" data-id="section-7">
+			<div id="/section-7/page-1" class="ft-page page-39 left-img" data-id="page-1">
+				<h3 id="text-44">Cảm ơn bé yêu đã bước vào đời anh, biến những ngày bình thường nhất thành những ngày
+					rực rỡ sắc màu.</h3>
+				<img src="imgs/25.jpg" tppabs="imgs/25.jpg" />
+			</div>
+			<div id="/section-7/page-2" class="ft-page page-40" data-id="page-2">
+				<h3 id="text-45">Sự hiện diện và lời động viên ấm áp của em chính là điểm tựa tinh thần vững chắc nhất
+					của anh...</h3>
+				<img src="imgs/24.jpg" tppabs="imgs/24.jpg" />
+			</div>
+			<div id="/section-7/page-3" class="ft-page page-41" data-id="page-3">
+				<h3 id="text-46">Là nguồn sức mạnh to lớn giúp anh vững bước phấn đấu, cùng em bay cao và bay xa hơn
+					nữa!</h3>
+				<img src="imgs/36.jpg" tppabs="imgs/36.jpg" class='img1' />
+				<img src="imgs/13.jpg" tppabs="imgs/13.jpg" class='img2' />
+			</div>
+			<div id="/section-7/page-4" class="ft-page page-42" data-id="page-4">
+				<h3><span id="text-47">Anh sẽ luôn lắng nghe để thấu hiểu em sâu sắc hơn,</span><br /><span
+						id="text-48">học cách yêu thương em trọn vẹn và chu đáo nhất mỗi ngày.</span></h3>
+				<img src="imgs/10.jpg" tppabs="imgs/10.jpg" />
+			</div>
+			<div id="/section-7/page-5" class="ft-page page-43" data-id="page-5">
+				<h3 id="text-49">Anh nguyện là bờ vai vững chãi để em tựa vào mỗi khi mệt mỏi, che chở em qua mọi giông
+					bão cuộc đời.</h3>
+				<img src="imgs/43.jpg" tppabs="imgs/43.jpg" />
+			</div>
+			<div id="/section-7/page-6" class="ft-page page-44 left-img" data-id="page-6">
+				<h3><span id="text-50">Tình yêu của chúng mình giống như một đóa hoa đẹp,</span><br /><span
+						id="text-51">luôn cần được tưới tắm bằng lòng chân thành và sự bao dung.</span></h3>
+				<img src="imgs/iali16.jpg" tppabs="imgs/iali16.jpg" />
+			</div>
+			<div id="/section-7/page-7" class="ft-page page-45 left-img" data-id="page-7">
+				<h3><span id="text-52">Anh tự hứa sẽ luôn trân trọng từng phút giây bên em,</span><br /><span
+						id="text-53">tự tay chuẩn bị những điều bất ngờ nho nhỏ để làm em vui.</span></h3>
+				<img src="imgs/17.jpg" tppabs="imgs/17.jpg" />
+			</div>
+		</div>
+		<div class="ft-section section-8" data-id="section-8">
+			<div id="/section-8/page-1" class="ft-page page-46" data-id="page-1">
+				<h3>
+					<span id="text-54">Được nhìn thấy nụ cười lấp lánh hạnh phúc</span>
+					<span id="text-55">và ánh mắt rạng rỡ của em,</span>
+					<span id="text-56">anh cảm thấy mọi nỗ lực và sự cố gắng</span>
+					<span id="text-57">của mình đều hoàn toàn xứng đáng.</span>
+				</h3>
+				<img src="imgs/37.jpg" tppabs="imgs/37.jpg" />
+			</div>
+			<div id="/section-8/page-2" class="ft-page page-47 top-text" data-id="page-2">
+				<h3>
+					<span id="text-58">Chúng mình sẽ tiếp tục đồng hành</span>
+					<span id="text-59">viết nên những chương mới của cuộc đời,</span>
+					<span id="text-60">đầy ắp tiếng cười và những</span>
+					<span id="text-61">chuyến hành trình kỳ thú.</span>
+				</h3>
+				<img src="imgs/33.jpg" tppabs="imgs/33.jpg" />
+			</div>
+			<div id="/section-8/page-3" class="ft-page page-48 left-img" data-id="page-3">
+				<p><span id="text-62">Anh sẽ luôn nỗ lực hết mình để xây dựng</span><br /><span id="text-63">một tương
+						lai vững chắc và ngập tràn hạnh phúc dành riêng cho hai đứa mình.</span>
+				</p>
+				<img src="imgs/14.jpg" tppabs="imgs/14.jpg" />
+			</div>
+			<div id="/section-8/page-4" class="ft-page page-49 full-img" data-id="page-4">
+				<p class="text">
+					<span class='text' id="text-64">Cảm ơn yêu dấu của anh đã luôn ở bên cạnh thấu hiểu, động viên và
+						trao cho anh một tình yêu vô giá. Anh tin rằng mỗi ngày trôi qua sau này đều sẽ tràn đầy niềm
+						vui,</span><br />
+					<span class='text' id="text-65">đơn giản là được bên nhau và trân quý từng phút giây bên em!</span>
+				</p>
+				<img src="imgs/41.jpg" tppabs="imgs/41.jpg" />
+			</div>
+			<div id="/section-8/page-5" class="ft-page page-50" data-id="page-5">
+				<p class='text' id="text-66">Anh muốn cùng em nắm tay đi qua những tháng năm tuổi trẻ rực rỡ, bình yên
+					bước đến những ngày đầu bạc răng long.</p>
+				<img src="imgs/5.jpg" tppabs="imgs/5.jpg" class='img1' />
+				<img src="imgs/iali4.jpg" tppabs="imgs/iali4.jpg" class='img2' />
+			</div>
+			<div id="/section-8/page-6" class="ft-page page-51" data-id="page-6">
+				<p>
+					<span id="text-67">Mãi mãi là bao lâu?</span><br />
+					<span id="text-68">Với anh, việc được yêu thương và chăm sóc em mỗi ngày chính là định nghĩa hoàn
+						hảo nhất của hạnh phúc trọn vẹn và mãi mãi.</span><br />
+					<span id="text-69">Thế giới này rộng lớn thế nào?</span><br />
+					<span id="text-70">Em đi đến đâu, thế giới của anh rộng lớn đến đó.</span>
+				</p>
+			</div>
+		</div>
+		<div class="ft-section section-9" data-id="section-9">
+			<div id="/section-9/page-1" class="ft-page page-52 full-img" data-id="page-1">
+				<h3 id="text-71">Duyên phận kỳ diệu đã đưa hai ta gặp nhau, nhưng chính sự chân thành và thấu hiểu đã
+					giúp chúng ta gắn kết bền chặt.</h3>
+				<img src="imgs/16.jpg" tppabs="imgs/16.jpg" />
+			</div>
+			<div id="/section-9/page-2" class="ft-page page-53" data-id="page-2">
+				<h3 id="text-72">Anh yêu em nhiều lắm, Quỳnh Trang xinh đẹp - công chúa duy nhất và là thế giới ngọt
+					ngào của anh! 💕</h3>
+				<img src="imgs/29.jpg" tppabs="imgs/29.jpg" alt='Chúc Mừng Hạnh Phúc' />
+			</div>
+			<div id="/section-9/page-3" class="ft-page page-54 center-img" data-id="page-3">
+				<div class="center-img">I Love You, Quỳnh Trang xinh đẹp</div>
+			</div>
+			<div id="/section-9/page-4" class="ft-page page-55 right-img" data-id="page-4">
+				<p class="text">
+					<span id="text-73">Hành trình yêu thương của chúng mình chắc chắn sẽ còn viết tiếp những trang nhật
+						ký đong đầy và bền chặt hơn nữa theo năm tháng. Cảm ơn em yêu vì tất cả!</span><br />
+					<span id="text-74">Bé yêu ơi, anh yêu bé nhiều lắmm</span><br />
+					<br />
+					<br />
+					<span> -- Em yêu nhấn phím "Esc" để xem toàn bộ câu chuyện nhaaa, yêu emm</span>
+				</p>
+				<img src="imgs/40.jpg" tppabs="imgs/40.jpg" />
+			</div>
+		</div>
+	</div>
+
+	<audio id="bgmMusic" src="Ánh Nắng Của Anh.mp3" autoplay="autoplay" loop preload="auto" type="audio/mp3"></audio>
+
+	<script src="jquery.min.js" tppabs="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+	<script src="all.min.js"></script>
+	<script src="love.min.js"></script>
+
+	<div class="mPower">
+		<span id="on" title="Nhấp để tạm dừng" style=""></span>
+		<span id="off" title="Nhấp để phát nhạc" style=""></span>
+		<div class="disc-needle">
+			<div class="needle-pivot"></div>
+			<div class="needle-body"></div>
+			<div class="needle-head"></div>
+		</div>
+	</div>
+
+	<!-- Custom Floating Hearts & Sync Script -->
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			// 1. Floating Hearts Background Generator
+			function createHeart() {
+				const heart = document.createElement("div");
+				heart.classList.add("floating-heart");
+				heart.innerHTML = "❤";
+				heart.style.left = Math.random() * 100 + "vw";
+				// Random floating speed
+				const duration = Math.random() * 4 + 3;
+				heart.style.animationDuration = duration + "s";
+				// Random sizing
+				const size = Math.random() * 20 + 10;
+				heart.style.fontSize = size + "px";
+
+				// Beautiful color palettes of rose pink, crimson red, gold
+				const colors = ["#ff4d6d", "#ff758f", "#ff8fa3", "#ffb3c1", "#ffccd5", "#c9184a", "#ffb703"];
+				heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+				heart.style.opacity = Math.random() * 0.7 + 0.3;
+
+				// Add soft romantic shadow
+				heart.style.textShadow = `0 0 ${Math.random() * 5 + 2}px rgba(255, 77, 109, 0.8)`;
+
+				document.body.appendChild(heart);
+
+				// Remove after animation completes
+				setTimeout(() => {
+					heart.remove();
+				}, duration * 1000);
+			}
+
+			// Generate hearts gently
+			setInterval(createHeart, 250);
+
+			// 2. Vinyl Record Player (mPower Widget) Sync Script
+			var mPower = document.querySelector(".mPower");
+			var onBtn = document.getElementById("on");
+
+			// Periodically check active/paused state of love.min.js audio controller
+			setInterval(function () {
+				if (onBtn && onBtn.style.display !== "none") {
+					mPower.classList.add("playing");
+				} else {
+					mPower.classList.remove("playing");
+				}
+			}, 100);
+		});
+	</script>
+</body>
+
+</html>
