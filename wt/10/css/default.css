@@ -1,0 +1,192 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #fdc9d1;
+    font-size: 12px;
+    overflow: auto
+}
+
+#mainDiv {
+    width: 100%;
+    height: 100%
+}
+
+#loveHeart {
+    float: left;
+    width: 670px;
+    height: 620px;
+    position: relative;
+}
+
+#garden {
+    width: 100%;
+    height: 100%
+}
+
+#elapseClock {
+    text-align: right;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+#words {
+    font-family: "sans-serif";
+    width: 500px;
+    font-size: 24px;
+    color: #666
+}
+
+#messages {
+    display: none
+}
+
+#elapseClock .digit {
+    font-family: "digit";
+    font-size: 36px
+}
+
+#loveu {
+    padding: 5px;
+    font-size: 22px;
+    margin-top: 25px;
+    text-align: center;
+    display: none;
+}
+
+#loveu .signature {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+#clickSound {
+    display: none
+}
+
+#code {
+    float: left;
+    width: 440px;
+    margin-top: 60px !important;
+    margin-right: 40px;
+    height: 530px;
+    color: #333;
+    font-family: "Consolas", "Monaco", "Bitstream Vera Sans Mono", "Courier New", "sans-serif";
+    font-size: 12px;
+    overflow-y: auto;
+}
+
+#code::-webkit-scrollbar {
+    width: 6px;
+}
+
+#code::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#code::-webkit-scrollbar-thumb {
+    background: rgba(255, 77, 109, 0.4);
+    border-radius: 3px;
+}
+
+#code::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 77, 109, 0.7);
+}
+
+#code .string {
+    color: #2a36ff
+}
+
+#code .keyword {
+    color: #7f0055;
+    font-weight: bold
+}
+
+#code .placeholder {
+    margin-left: 15px
+}
+
+#code .space {
+    margin-left: 7px
+}
+
+#code .comments {
+    color: #3f7f5f
+}
+
+#copyright {
+    margin-top: 40px;
+    text-align: center;
+    width: 100%;
+    color: #666
+}
+
+#errorMsg {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    position: absolute;
+    top: 100px;
+    left: 0
+}
+
+#copyright a {
+    color: #666
+}
+
+@media only screen and (max-width: 900px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    #content {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin: 10px auto !important;
+    }
+
+    #code {
+        width: 90% !important;
+        height: 380px !important;
+        margin-top: 20px !important;
+        margin-right: 0 !important;
+        margin-bottom: 20px !important;
+        float: none !important;
+    }
+
+    #loveHeart {
+        float: none !important;
+        width: 670px !important;
+        height: 620px !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        transform: scale(0.85);
+        transform-origin: top center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #loveHeart {
+        transform: scale(0.65);
+        height: 400px !important;
+        margin-bottom: -100px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    #loveHeart {
+        transform: scale(0.52);
+        height: 320px !important;
+        margin-bottom: -150px;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    #loveHeart {
+        transform: scale(0.45);
+        height: 280px !important;
+        margin-bottom: -180px;
+    }
+}

@@ -88,11 +88,31 @@ Bloom.prototype = {
 		if (b == true) {
 			this.garden.removeBloom(this)
 		}
-	}, init: function () {
+	}, 	init: function () {
 		var c = 360 / this.pc;
 		var b = Garden.randomInt(0, 90);
+		// Layer 1: Outer petals
 		for (var a = 0; a < this.pc; a++) {
-			this.petals.push(new Petal(Garden.random(Garden.options.petalStretch.min, Garden.options.petalStretch.max), Garden.random(Garden.options.petalStretch.min, Garden.options.petalStretch.max), b + a * c, c, Garden.random(Garden.options.growFactor.min, Garden.options.growFactor.max), this))
+			this.petals.push(new Petal(
+				Garden.random(Garden.options.petalStretch.min, Garden.options.petalStretch.max),
+				Garden.random(Garden.options.petalStretch.min, Garden.options.petalStretch.max),
+				b + a * c, c,
+				Garden.random(Garden.options.growFactor.min, Garden.options.growFactor.max),
+				this
+			));
+		}
+		// Layer 2: Inner petals (rose core)
+		var innerCount = Math.floor(this.pc / 1.5);
+		var innerC = 360 / innerCount;
+		var innerB = Garden.randomInt(0, 90);
+		for (var a = 0; a < innerCount; a++) {
+			this.petals.push(new Petal(
+				Garden.random(Garden.options.petalStretch.min * 0.4, Garden.options.petalStretch.max * 0.5),
+				Garden.random(Garden.options.petalStretch.min * 0.4, Garden.options.petalStretch.max * 0.5),
+				innerB + a * innerC, innerC,
+				Garden.random(Garden.options.growFactor.min * 0.8, Garden.options.growFactor.max * 0.8),
+				this
+			));
 		}
 	}
 };
@@ -129,13 +149,21 @@ Garden.prototype = {
 	}
 };
 Garden.options = {
-	petalCount: {min: 8, max: 15},
+	petalCount: {min: 10, max: 18},
 	petalStretch: {min: 0.1, max: 3},
 	growFactor: {min: 0.1, max: 1},
 	bloomRadius: {min: 8, max: 10},
 	density: 10,
 	growSpeed: 1000 / 60,
-	color: {rmin: 128, rmax: 255, gmin: 0, gmax: 128, bmin: 0, bmax: 128, opacity: 0.1},
+	color: {
+		rmin: 210,
+		rmax: 255,
+		gmin: 10,
+		gmax: 45,
+		bmin: 25,
+		bmax: 75,
+		opacity: 0.15
+	},
 	tanAngle: 60
 };
 Garden.random = function (b, a) {
