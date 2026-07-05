@@ -15,13 +15,13 @@ $(function () {
 	if ($(window).width() > 900) {
 		$("#content").css("width", $loveHeart.width() + $("#code").width() + 40);
 		$("#content").css("height", Math.max($loveHeart.height(), $("#code").height()));
-		$("#content").css("margin-top", Math.max(($window.height() - $("#content").height()) / 2 - 50, 10));
+		$("#content").css("margin-top", Math.max(($window.height() - $("#content").height()) / 2 - 20, 30));
 		$("#content").css("margin-left", Math.max(($window.width() - $("#content").width()) / 2, 10));
 	} else {
 		$("#content").css({
 			"width": "100%",
 			"height": "auto",
-			"margin-top": "10px",
+			"margin-top": "30px",
 			"margin-left": "0"
 		});
 	}
@@ -126,7 +126,7 @@ function showMessages() {
 
 function adjustWordsPosition() {
 	$("#words").css("position", "absolute");
-	$("#words").css("top", $("#garden").position().top + 175);
+	$("#words").css("top", $("#garden").position().top + 195);
 	$("#words").css("left", $("#garden").position().left + ($("#garden").width() - $("#words").width()) / 2);
 }
 
