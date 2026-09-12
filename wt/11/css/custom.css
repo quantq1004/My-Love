@@ -1,0 +1,844 @@
+/* ====================================================
+   CUSTOM STYLES FOR TRỊNH QUÂN & NGUYỄN TRANG
+   THEME: NỀN HÒA QUYỆN XANH DƯƠNG NHẠT & HỒNG NHẠT PASTEL
+   TRÁI TIM MÀU ĐỎ RỰC RỠ (VIVID RED HEARTS)
+   KỶ NIỆM 6 THÁNG YÊU NHAU (HALF YEAR ANNIVERSARY)
+   ==================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap');
+
+:root {
+    /* Pastel Baby Blue (Trịnh Quân) */
+    --pastel-blue: #a2d2ff;
+    --pastel-blue-light: #bde0fe;
+    --pastel-blue-soft: #e3f2fd;
+    --pastel-blue-text: #1d3557;
+    --pastel-blue-glow: rgba(162, 210, 255, 0.5);
+
+    /* Pastel Pink (Nguyễn Trang) */
+    --pastel-pink: #ffafcc;
+    --pastel-pink-light: #ffc8dd;
+    --pastel-pink-soft: #fce4ec;
+    --pastel-pink-text: #590d22;
+    --pastel-pink-glow: rgba(255, 175, 204, 0.5);
+
+    /* Vivid Romantic Red for Hearts */
+    --love-red: #ff1a40;
+    --love-red-glow: rgba(255, 26, 64, 0.75);
+
+    /* Dual Tone Blends */
+    --gradient-hero-title: linear-gradient(135deg, #bde0fe 0%, #ffc8dd 50%, #ffffff 100%);
+    --gradient-dual: linear-gradient(135deg, #a2d2ff 0%, #ffafcc 100%);
+    --gradient-dual-soft: linear-gradient(135deg, rgba(189, 224, 254, 0.3) 0%, rgba(255, 200, 221, 0.3) 100%);
+    
+    --text-dark: #2b2b2b;
+    --text-soft: #4f4f4f;
+}
+
+/* ===================================================
+   NỀN TRANG WEB HÒA QUYỆN HỒNG & XANH DƯƠNG NHẠT
+   (TRIỆT TIÊU TOÀN BỘ NỀN TRẮNG CŨ)
+   =================================================== */
+html,
+body,
+.wrapper {
+    background: linear-gradient(135deg, #e3f2fd 0%, #fce4ec 50%, #e8f0fe 100%) !important;
+    background-attachment: fixed !important;
+    min-height: 100vh;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    color: var(--text-soft);
+    letter-spacing: 0.2px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-handwriting {
+    font-family: 'Dancing Script', cursive !important;
+}
+
+/* ===================================================
+   QUY ĐỊNH TẤT CẢ TRÁI TIM ĐỀU LÀ MÀU ĐỎ TƯƠI RỰC RỠ
+   (KHÔNG PHẢI TRẮNG HAY ĐEN/XANH ĐẬM)
+   =================================================== */
+.red-heart {
+    color: var(--love-red) !important;
+    text-shadow: 0 0 12px var(--love-red-glow) !important;
+    display: inline-block;
+    margin: 0 4px;
+}
+
+.icon-heart:before {
+    content: "❤" !important;
+    font-family: Arial, sans-serif !important;
+    font-style: normal !important;
+    font-size: 20px !important;
+    line-height: 1;
+    color: var(--love-red) !important;
+    text-shadow: 0 0 10px var(--love-red-glow) !important;
+}
+
+.round-circle i,
+.circle-dashed i,
+.block-date-hero .icon-heart:before,
+.block-date-hero .round-circle i,
+.milestone-blue .icon-heart:before,
+.milestone-blue .round-circle i,
+.milestone-pink .icon-heart:before,
+.milestone-pink .round-circle i,
+.story-row .icon-heart:before,
+.story-row .round-circle i,
+.just-married .typo,
+h2.typo {
+    color: var(--love-red) !important;
+    text-shadow: 0 0 12px var(--love-red-glow) !important;
+}
+
+.round-circle i {
+    animation: heartPulse 1.4s ease-in-out infinite alternate !important;
+}
+
+@keyframes heartPulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.9);
+        filter: drop-shadow(0 0 5px rgba(255, 26, 64, 0.6));
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.3);
+        filter: drop-shadow(0 0 14px rgba(255, 26, 64, 1));
+    }
+}
+
+/* ================= HERO SECTION ================= */
+.hero.overlay:before {
+    background: linear-gradient(180deg, rgba(18, 25, 40, 0.45) 0%, rgba(35, 20, 35, 0.6) 100%) !important;
+}
+
+.hero-title {
+    font-family: 'Dancing Script', cursive !important;
+    font-size: 60px !important;
+    font-weight: 700 !important;
+    color: #ffffff;
+    text-shadow: 0 4px 20px rgba(162, 210, 255, 0.6), 0 2px 8px rgba(0, 0, 0, 0.6);
+    margin-bottom: 25px !important;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 767px) {
+    .hero-title {
+        font-size: 38px !important;
+    }
+}
+
+.hero-sub {
+    font-size: 18px !important;
+    font-weight: 400 !important;
+    color: rgba(255, 255, 255, 0.95) !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    background: rgba(255, 255, 255, 0.18);
+    display: inline-block;
+    padding: 9px 26px;
+    border-radius: 30px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Couple Names: Trịnh Quân (Xanh Dương Nhạt) & Nguyễn Trang (Hồng Nhạt) */
+.block-date-hero ul li {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 21px !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px;
+    text-transform: none !important;
+    padding: 14px 20px !important;
+    width: 200px !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Trịnh Quân - Nền Xanh Dương Nhạt */
+.block-date-hero ul li:first-child {
+    background: linear-gradient(135deg, #bde0fe 0%, #a2d2ff 100%) !important;
+    color: #1d3557 !important;
+    border-radius: 100px 0 0 100px !important;
+    box-shadow: -4px 6px 20px rgba(162, 210, 255, 0.5) !important;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-right: none;
+}
+
+/* Nguyễn Trang - Nền Hồng Nhạt */
+.block-date-hero ul li:last-child {
+    background: linear-gradient(135deg, #ffc8dd 0%, #ffafcc 100%) !important;
+    color: #590d22 !important;
+    border-radius: 0 100px 100px 0 !important;
+    box-shadow: 4px 6px 20px rgba(255, 175, 204, 0.5) !important;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-left: none;
+}
+
+@media (max-width: 767px) {
+    .block-date-hero ul li {
+        width: 145px !important;
+        font-size: 16px !important;
+        padding: 10px 12px !important;
+    }
+}
+
+/* Center Heart Icon in Hero: Nửa Xanh Nửa Hồng, Trái tim ở giữa ĐỎ RỰC */
+.block-date-hero .round-circle {
+    background: #a2d2ff !important; /* Bên trái: Xanh dương nhạt */
+    box-shadow: 0 0 20px rgba(162, 210, 255, 0.5) !important;
+}
+
+.block-date-hero .round-circle:before {
+    display: block !important;
+    background: #ffafcc !important; /* Bên phải: Hồng nhạt */
+    border-radius: 0 100px 100px 0 !important;
+}
+
+.block-date-hero .round-circle .dashed-border circle {
+    stroke: #ffffff !important;
+}
+
+/* ================= STORY & TIMELINE SECTION ================= */
+.story {
+    background: linear-gradient(180deg, rgba(227, 242, 253, 0.45) 0%, rgba(252, 228, 236, 0.65) 100%) !important;
+}
+
+.story .title {
+    font-size: 48px !important;
+    background: linear-gradient(135deg, #1d3557 0%, #c9184a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.story-subtitle {
+    font-size: 16px;
+    color: #666;
+    margin-top: 5px;
+    letter-spacing: 0.5px;
+}
+
+.heavy-vn {
+    font-size: 24px;
+    line-height: 1.6;
+    color: #2b2b2b;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+}
+
+.heavy-vn span {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #555;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+.couple-story p {
+    font-size: 15px !important;
+    line-height: 1.8 !important;
+    color: #333333;
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 24px 28px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(162, 210, 255, 0.18);
+    border: 1.5px solid rgba(255, 175, 204, 0.35);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.couple-story p:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(162, 210, 255, 0.28);
+    border-color: rgba(255, 175, 204, 0.7);
+}
+
+/* Badges with Blue & Pink accents */
+.story-badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.story-badge.badge-blue {
+    background: rgba(162, 210, 255, 0.35);
+    color: var(--pastel-blue-text);
+    border: 1px solid rgba(162, 210, 255, 0.7);
+}
+
+.story-badge.badge-pink {
+    background: rgba(255, 175, 204, 0.35);
+    color: var(--pastel-pink-text);
+    border: 1px solid rgba(255, 175, 204, 0.7);
+}
+
+/* =================================================================
+   GỠ BỎ TOÀN BỘ MÀU XANH LÁ CÂY (GREEN) VÀ NÂU/HỒNG ĐẤT CŨ Ở CỘT MỐC
+   ================================================================= */
+.circle-dashed.green,
+.round-circle.green,
+.circle-dashed.bg,
+.round-circle.bg {
+    background: none !important;
+}
+
+/* Đường nối Timeline giữa các cột mốc */
+.dashed-line {
+    stroke: #a2d2ff !important;
+    stroke-width: 2.5px !important;
+    stroke-dasharray: 6, 6 !important;
+    filter: drop-shadow(0 0 5px rgba(162, 210, 255, 0.6));
+}
+
+/* CỘT MỐC 1: XANH DƯƠNG NHẠT (BABY BLUE) - TRÁI TIM ĐỎ */
+.circle-dashed.milestone-blue,
+.story-row:first-of-type .circle-dashed {
+    background: rgba(189, 224, 254, 0.55) !important;
+    border: 2.5px solid #a2d2ff !important;
+    box-shadow: 0 0 25px rgba(162, 210, 255, 0.6) !important;
+}
+
+.milestone-blue .round-circle,
+.story-row:first-of-type .round-circle {
+    background: linear-gradient(135deg, #bde0fe 0%, #a2d2ff 100%) !important;
+    box-shadow: 0 0 15px rgba(162, 210, 255, 0.5) !important;
+}
+
+.milestone-blue .round-circle:before,
+.story-row:first-of-type .round-circle:before {
+    display: none !important;
+}
+
+.milestone-blue .round-circle .dashed-border circle,
+.story-row:first-of-type .round-circle .dashed-border circle {
+    stroke: #ffffff !important;
+}
+
+/* CỘT MỐC 2: HỒNG NHẠT (PASTEL PINK) - TRÁI TIM ĐỎ */
+.circle-dashed.milestone-pink,
+.circle-dashed.green,
+.story-row:nth-of-type(2) .circle-dashed {
+    background: rgba(255, 200, 221, 0.55) !important;
+    border: 2.5px solid #ffafcc !important;
+    box-shadow: 0 0 25px rgba(255, 175, 204, 0.6) !important;
+}
+
+.milestone-pink .round-circle,
+.round-circle.green,
+.story-row:nth-of-type(2) .round-circle {
+    background: linear-gradient(135deg, #ffc8dd 0%, #ffafcc 100%) !important;
+    box-shadow: 0 0 15px rgba(255, 175, 204, 0.5) !important;
+}
+
+.milestone-pink .round-circle:before,
+.round-circle.green:before,
+.story-row:nth-of-type(2) .round-circle:before {
+    display: none !important;
+}
+
+.milestone-pink .round-circle .dashed-border circle,
+.round-circle.green .dashed-border circle,
+.story-row:nth-of-type(2) .round-circle .dashed-border circle {
+    stroke: #ffffff !important;
+}
+
+/* Return button */
+.but {
+    background: linear-gradient(135deg, #a2d2ff, #ffafcc) !important;
+    border-radius: 30px;
+    color: #1d3557 !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(162, 210, 255, 0.4);
+}
+
+.but:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(255, 175, 204, 0.5);
+}
+
+/* ================= DATE / COUNTDOWN SECTION ================= */
+.date.overlay:before {
+    background: linear-gradient(135deg, rgba(20, 30, 50, 0.75) 0%, rgba(45, 20, 35, 0.8) 100%) !important;
+}
+
+.typo-vn {
+    font-family: 'Dancing Script', cursive !important;
+    font-size: 54px !important;
+    color: #ffffff !important;
+    text-shadow: 0 4px 18px rgba(162, 210, 255, 0.7);
+    margin-bottom: 8px;
+}
+
+.anniversary-tag {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 35px;
+    letter-spacing: 0.5px;
+}
+
+/* Glass Countdown Boxes with Blue & Pink Glowing Borders */
+.clock-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin: 20px auto 0;
+    max-width: 800px;
+}
+
+.clock-item {
+    background: rgba(255, 255, 255, 0.16);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 20px 18px;
+    min-width: 125px;
+    text-align: center;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+}
+
+.clock-item.item-blue {
+    border: 1.5px solid rgba(162, 210, 255, 0.65);
+    box-shadow: 0 10px 25px rgba(162, 210, 255, 0.25);
+}
+
+.clock-item.item-pink {
+    border: 1.5px solid rgba(255, 175, 204, 0.65);
+    box-shadow: 0 10px 25px rgba(255, 175, 204, 0.25);
+}
+
+.clock-item:hover {
+    transform: translateY(-6px);
+}
+
+.clock-item.item-blue:hover {
+    border-color: #a2d2ff;
+    box-shadow: 0 15px 30px rgba(162, 210, 255, 0.45);
+}
+
+.clock-item.item-pink:hover {
+    border-color: #ffafcc;
+    box-shadow: 0 15px 30px rgba(255, 175, 204, 0.45);
+}
+
+.clock-item .digit {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 46px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.1;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.clock-item.item-blue .digit {
+    color: #e2f0fc;
+    text-shadow: 0 2px 12px rgba(162, 210, 255, 0.6);
+}
+
+.clock-item.item-pink .digit {
+    color: #ffe5ec;
+    text-shadow: 0 2px 12px rgba(255, 175, 204, 0.6);
+}
+
+.clock-item .label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 8px;
+}
+
+.clock-summary {
+    margin-top: 32px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 600px) {
+    .clock-item {
+        min-width: 75px;
+        padding: 12px 10px;
+        border-radius: 14px;
+    }
+    .clock-item .digit {
+        font-size: 28px;
+    }
+    .clock-item .label {
+        font-size: 10px;
+        letter-spacing: 0.5px;
+    }
+    .clock-display {
+        gap: 8px;
+    }
+}
+
+/* ================= ALBUM SECTION - SWIPEABLE SLIDER ================= */
+.album,
+.album.bg-grey {
+    background: linear-gradient(180deg, rgba(252, 228, 236, 0.65) 0%, rgba(227, 242, 253, 0.75) 100%) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.album .title {
+    font-size: 48px !important;
+    background: linear-gradient(135deg, #1d3557 0%, #c9184a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.album-slider-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding: 0 25px;
+}
+
+.album-slider-track {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 20px 10px 35px;
+    scrollbar-width: none;
+}
+
+.album-slider-track::-webkit-scrollbar {
+    display: none;
+}
+
+.album-slide {
+    flex: 0 0 calc(33.333% - 17px);
+    min-width: 290px;
+    scroll-snap-align: start;
+    box-sizing: border-box;
+}
+
+@media (max-width: 991px) {
+    .album-slide {
+        flex: 0 0 calc(50% - 13px);
+        min-width: 260px;
+    }
+}
+
+@media (max-width: 650px) {
+    .album-slide {
+        flex: 0 0 calc(85% - 10px);
+        min-width: 250px;
+    }
+    .album-slider-wrapper {
+        padding: 0 10px;
+    }
+}
+
+.album-card {
+    background: rgba(255, 255, 255, 0.92) !important;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(162, 210, 255, 0.2), 0 5px 15px rgba(255, 175, 204, 0.15);
+    border: 3px solid rgba(255, 255, 255, 0.95);
+    transition: all 0.4s ease;
+    height: 380px;
+    position: relative;
+    cursor: default;
+    user-select: none;
+}
+
+@media (max-width: 600px) {
+    .album-card {
+        height: 320px;
+    }
+}
+
+.album-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 35px rgba(162, 210, 255, 0.35), 0 10px 20px rgba(255, 175, 204, 0.25);
+    border-color: #a2d2ff;
+}
+
+.album-img-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #f0f4f8;
+}
+
+.album-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    pointer-events: none;
+}
+
+.album-card:hover .album-img-box img {
+    transform: scale(1.06);
+}
+
+/* Slider Navigation Buttons */
+.slider-arrow {
+    position: absolute;
+    top: 45%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12), 0 0 0 2px rgba(162, 210, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.slider-arrow:hover {
+    background: linear-gradient(135deg, #a2d2ff, #ffafcc);
+    box-shadow: 0 8px 25px rgba(255, 175, 204, 0.4);
+    transform: scale(1.1);
+}
+
+.slider-arrow.prev-btn {
+    left: -12px;
+}
+
+.slider-arrow.next-btn {
+    right: -12px;
+}
+
+.slider-arrow svg {
+    width: 22px;
+    height: 22px;
+    fill: #1d3557;
+    transition: fill 0.3s ease;
+}
+
+.slider-arrow:hover svg {
+    fill: #ffffff;
+}
+
+.slider-hint {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.slider-hint span.icon {
+    font-size: 18px;
+    animation: swipeAnim 1.8s ease-in-out infinite;
+}
+
+@keyframes swipeAnim {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(8px);
+    }
+}
+
+/* ================= BANNER QUOTE SECTION ================= */
+.just-married.overlay:before {
+    background: linear-gradient(180deg, rgba(20, 30, 45, 0.65) 0%, rgba(45, 20, 35, 0.75) 100%) !important;
+}
+
+.quote-sub {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 18px;
+    font-style: italic;
+    max-width: 650px;
+    margin: 20px auto 0;
+    line-height: 1.8;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    background: linear-gradient(180deg, rgba(227, 242, 253, 0.75) 0%, rgba(252, 228, 236, 0.85) 100%) !important;
+    border-top: 1.5px solid rgba(162, 210, 255, 0.35) !important;
+}
+
+/* ================= FLOATING MUSIC PLAYER ================= */
+.music-player-widget {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.music-disk-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #8ecae6 0%, #ffafcc 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 20px rgba(162, 210, 255, 0.5), 0 0 0 4px rgba(255, 255, 255, 0.9);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.music-player-widget:hover .music-disk-btn {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(255, 175, 204, 0.6), 0 0 0 5px #ffffff;
+}
+
+.music-icon-svg {
+    width: 26px;
+    height: 26px;
+    fill: #1d3557;
+    filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.5));
+}
+
+.music-disk-btn.playing {
+    animation: rotateVinyl 4s linear infinite;
+}
+
+@keyframes rotateVinyl {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.music-note-bubble {
+    position: absolute;
+    top: -10px;
+    right: -5px;
+    font-size: 16px;
+    color: var(--love-red);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.music-disk-btn.playing .music-note-bubble {
+    animation: floatNote 2s ease-in-out infinite;
+}
+
+@keyframes floatNote {
+    0% {
+        transform: translateY(0) scale(0.6);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-25px) scale(1.2);
+        opacity: 0;
+    }
+}
+
+.music-tooltip {
+    position: absolute;
+    right: 68px;
+    background: rgba(29, 53, 87, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #ffffff;
+    padding: 7px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(162, 210, 255, 0.3);
+}
+
+.music-player-widget:hover .music-tooltip {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ================= FLOATING PARTICLES CANVAS ================= */
+#loveCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 99;
+}
+
+/* Preloader Spinner: Xanh & Hồng Pastel */
+.loader {
+    background: linear-gradient(135deg, #e3f2fd 0%, #fce4ec 100%) !important;
+}
+
+@keyframes spinner-color {
+    0%, 100% {
+        stroke: #a2d2ff;
+    }
+    50% {
+        stroke: #ffafcc;
+    }
+}
+@-webkit-keyframes spinner-color {
+    0%, 100% {
+        stroke: #a2d2ff;
+    }
+    50% {
+        stroke: #ffafcc;
+    }
+}
+
+/* Selection Color */
+::selection {
+    background: #ffc8dd;
+    color: #1d3557;
+}
+::-moz-selection {
+    background: #ffc8dd;
+    color: #1d3557;
+}
+
+/* Header style when scrolled */
+.header.switched-header {
+    background: rgba(245, 238, 248, 0.95) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid rgba(162, 210, 255, 0.3) !important;
+    box-shadow: 0 4px 20px rgba(162, 210, 255, 0.2) !important;
+}
