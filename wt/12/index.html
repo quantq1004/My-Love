@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title> Chúc mừng ngày 20/10 - bé iu của anh 💐</title>
+    <link rel="icon" href="../../preview/flower.png" type="image/png">
+
+    <!-- Google Web Fonts chất lượng cao -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- CSS chính -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="bg-glow"></div>
+
+    <a href="../../index.html" class="back-home-btn">
+        <span>🏠 Trang Chủ</span>
+    </a>
+
+    <!-- Canvas hạt sao, hoa rơi và tim bay bồng bềnh -->
+    <canvas id="heartCanvas"></canvas>
+    <canvas id="flowerCanvas"></canvas>
+
+    <!-- Nội dung chính -->
+    <div class="main-wrapper">
+
+        <!-- ==================== HERO HEADER ==================== -->
+        <header class="hero-header">
+            <div class="badge-2010">
+                <span class="icon-crown">👑</span>
+                <span>Happy Vietnamese Women's Day • 20/10</span>
+                <span>🌹</span>
+            </div>
+            <h1 class="hero-title">💖 Quỳnh Trang xinh đẹp của anh 💖</h1>
+            <p class="hero-subtitle">
+                Chúc bé yêu của anh ngày <b>20/10</b> vui vẻ và rạng rỡ như những đóa hoa nha! <span class="heart-emoji">🌹</span>
+            </p>
+        </header>
+        <section class="portrait-container">
+            <!-- Vương miện công chúa -->
+            <div class="crown-top">👑</div>
+
+            <!-- Vòng hoa hồng phát sáng quanh ảnh chân dung -->
+            <div class="portrait-frame-glow">
+                <div class="floral-wreath">
+                    <span class="floral-wreath-decor f-decor-1">🌸</span>
+                    <span class="floral-wreath-decor f-decor-2">🌺</span>
+                    <span class="floral-wreath-decor f-decor-3">🌹</span>
+                    <span class="floral-wreath-decor f-decor-4">🌷</span>
+                    <span class="floral-wreath-decor f-decor-5">✨</span>
+                    <span class="floral-wreath-decor f-decor-6">💖</span>
+                    <span class="floral-wreath-decor f-decor-7">🌸</span>
+                    <span class="floral-wreath-decor f-decor-8">💕</span>
+                </div>
+
+                <div class="portrait-img-box">
+                    <img id="portraitImg" class="portrait-img" src="img/mylove.png" alt="Quỳnh Trang">
+                    <!-- ================================================================= -->
+                </div>
+            </div>
+
+            <!-- Tên & Danh hiệu -->
+            <div class="portrait-caption">
+                <div class="portrait-name">
+                    <span style="color: #ff3366;">❤️</span>
+                    <span>Quỳnh Trang</span>
+                    <span style="color: #ff3366;">❤️</span>
+                </div>
+                <div class="portrait-tagline">✨ Bông hoa đẹp nhất của anhiuu ✨</div>
+
+                <!-- <button type="button" id="changePhotoBtn" class="change-photo-btn" title="Bấm để tải ảnh chân dung mới từ máy bạn">
+                    <span>📷 Đổi ảnh chân dung</span>
+                </button> -->
+                <input type="file" id="photoInput" accept="image/*">
+            </div>
+        </section>
+
+        <!-- ==================== THANH TƯƠNG TÁC THẢ HOA VÀ TIM ==================== -->
+        <div class="interactive-action-bar">
+            <button class="action-btn action-btn-heart" id="heartActionBtn">
+                <span>💖 Thả tim cho yêu</span>
+                <span class="counter-badge" id="heartCountDisplay">999</span>
+            </button>
+            <button class="action-btn action-btn-flower" id="flowerActionBtn">
+                <span>💐 Tặng bé bó hoa</span>
+                <span class="counter-badge" id="flowerCountDisplay">520</span>
+            </button>
+            <button class="action-btn action-btn-letter" id="letterActionBtn">
+                <span>💌 Mở thư tình 20/10</span>
+            </button>
+        </div>
+
+        <!-- ==================== ĐỒNG HỒ ĐẾM THỜI GIAN BÊN NHAU ==================== -->
+        <section class="love-timer-card">
+            <div class="timer-header">
+                <span>🌹</span>
+                <h3>Hành trình yêu thương của anh và em</h3>
+                <span>🌹</span>
+            </div>
+            <div class="timer-grid">
+                <div class="timer-box">
+                    <div class="timer-num" id="timerDays">00</div>
+                    <div class="timer-label">Ngày</div>
+                </div>
+                <div class="timer-box">
+                    <div class="timer-num" id="timerHours">00</div>
+                    <div class="timer-label">Giờ</div>
+                </div>
+                <div class="timer-box">
+                    <div class="timer-num" id="timerMinutes">00</div>
+                    <div class="timer-label">Phút</div>
+                </div>
+                <div class="timer-box">
+                    <div class="timer-num" id="timerSeconds">00</div>
+                    <div class="timer-label">Giây</div>
+                </div>
+            </div>
+            <div class="timer-footer">
+                Trịnh Quân ❤️ Quỳnh Trang — Từng khoảnh khắc bên em đều là những ngày tươi đẹp nhất của anh!
+            </div>
+        </section>
+
+        <!-- ==================== BỨC THƯ TÌNH 20/10 DÀNH RIÊNG CHO QUỲNH TRANG ==================== -->
+        <section class="letter-section" id="letterSection">
+            <div class="envelope-wrapper">
+                <div class="envelope-seal">💌</div>
+                <h2 class="letter-title">Những lời yêu thương anh gửi đến bé iu của anh</h2>
+                <div class="letter-content">
+                    <div class="letter-salutation">Gửi em iu của anh,</div>
+                    <div class="letter-body">
+                        <p>
+                            Nhân ngày 20/10 – ngày tôn vinh những người con gái, những người phụ nữ tuyệt vời, anh muốn dành những điều ngọt ngào nhất, chân thành nhất từ tận đáy lòng để gửi trao đến em.
+                        </p>
+                        <p>
+                            Cảm ơn em vì đã xuất hiện và bước vào cuộc đời anh, mang theo nụ cười rạng rỡ, sự ấm áp và vô vàn khoảnh khắc dịu dàng khiến mỗi ngày của anh đều trở nên ý nghĩa hơn bao giờ hết. Đối với anh, dù ngoài kia có ngàn bông hoa xinh đẹp, thì bé yêu vẫn luôn là đóa hoa rực rỡ, kiêu sa, xinh đẹp và đáng yêu nhất.
+                        </p>
+                        <p>
+                            Chúc công chúa của anh ngày 20/10 tràn ngập niềm vui, lúc nào cũng tươi cười hạnh phúc, luôn tự tin và đạt được mọi điều em mong ước.
+                        </p>
+                        <p>
+                            Anh mong rằng anh và em sẽ luôn nắm tay nhau, cùng nhau đi qua mọi thử thách, cùng nhau tạo nên những kỷ niệm đẹp và hạnh phúc trên những chặng đường phía trước.
+                        </p>
+                        <p>
+                            Chúc bé iu ngày càng xinh đẹp, dịu dàng, hạnh phúc và gặp nhiều điều tốt đẹpppp
+                        </p>
+                        <p>
+                            Happy Women's Day, my sweet love! 💖
+                        </p>
+                    </div>
+                    <div class="letter-signature">
+                        Yêu em bé iu của anh thật nhiều,<br>
+                        <span class="letter-signature-name">Anh iuu của em 💕</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 4 HỘP QUÀ TÌNH YÊU 20/10 ==================== -->
+        <section class="gifts-section">
+            <h2 class="section-heading">4 Món Quà Bí Mật Dành Cho Em</h2>
+            <p class="section-sub">Chạm vào từng hộp quà để nhận điều bất ngờ từ anh nhé!</p>
+
+            <div class="gifts-grid">
+                <!-- Quà 1 -->
+                <div class="gift-card">
+                    <div class="gift-icon">🌹</div>
+                    <div class="gift-title">999 đóa hồng</div>
+                    <div class="gift-preview">Bấm để nhận hoa 🎁</div>
+                    <div class="gift-revealed">
+                        Tặng yêu 999 đóa hồng, gửi gắm trong từng cánh hoa là tình yêu chân thành và những điều ngọt ngào nhất anh dành cho em. Chúc bé yêu luôn rạng rỡ, hạnh phúc và xinh tươi như những đóa hoa, mỗi ngày đều ngập tràn niềm vui và yêu thương🌹
+                    </div>
+                </div>
+
+                <!-- Quà 2 -->
+                <div class="gift-card">
+                    <div class="gift-icon">💖</div>
+                    <div class="gift-title">Trái tim trọn vẹn</div>
+                    <div class="gift-preview">Bấm để nhận quà 🎁</div>
+                    <div class="gift-revealed">
+                        Trái tim này là của em, chỉ thuộc về một mình em. Nơi luôn có sự cưng chiều, yêu thương và lắng nghe mọi vui buồn của công chúa nhỏ!
+                    </div>
+                </div>
+
+                <!-- Quà 3 -->
+                <div class="gift-card">
+                    <div class="gift-icon">✨</div>
+                    <div class="gift-title">Triệu niềm vui</div>
+                    <div class="gift-preview">Bấm để nhận quà 🎁</div>
+                    <div class="gift-revealed">
+                        Chúc cho mọi áp lực mệt mỏi của em đều tan biến, chỉ còn lại sự ngọt ngào, may mắn và nụ cười rạng rỡ luôn nở trên môi emm!
+                    </div>
+                </div>
+
+                <!-- Quà 4 -->
+                <div class="gift-card">
+                    <div class="gift-icon">👑</div>
+                    <div class="gift-title">Đặc quyền nữ hoàng</div>
+                    <div class="gift-preview">Bấm để nhận quà 🎁</div>
+                    <div class="gift-revealed">
+                        Em là nữ hoàng của anh, là người con gái tuyệt vời nhất trong cuộc đời anh. Anh sẽ luôn yêu thương, bảo vệ và cưng chiều để em luôn hạnh phúc và rạng rỡ như một nữ hoàng thực thụ! 
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== FOOTER ==================== -->
+        <footer class="page-footer">
+            <div>Made with all my heart ❤️ by <b>Quang Quân</b> for <b>Quỳnh Trang</b></div>
+            <div>20/10 — Ngập tràn hoa và trái tim dành tặng em yêu 🌸</div>
+        </footer>
+
+    </div>
+
+    <!-- ==================== MUSIC PLAYER FLOATING BAR ==================== -->
+    <div class="music-bar">
+        <div class="disk-box" id="diskBox">
+            <div class="disk-center"></div>
+        </div>
+        <div class="music-info">
+            <div class="music-title" id="musicTitle">Có em đời bỗng vui</div>
+            <div class="music-author" id="musicArtist">Chillies</div>
+        </div>
+        <div class="music-controls">
+            <button class="music-btn" id="musicPrevBtn" title="Bài trước">⏮</button>
+            <button class="music-btn music-play-btn" id="musicPlayBtn" title="Phát / Dừng">▶</button>
+            <button class="music-btn" id="musicNextBtn" title="Bài kế tiếp">⏭</button>
+        </div>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="bgAudio" preload="auto"></audio>
+
+    <!-- JS chính -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
