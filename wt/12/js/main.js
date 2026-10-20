@@ -325,7 +325,7 @@ const playlist = [
     },
     {
         title: "Giải cứu thế giới",
-        artist: "TINH HÀ SAY HI",
+        artist: "Tinh hà - say hi",
         src: "audio/giai-cuu-the-gioi.mp3"
     }
 ];
