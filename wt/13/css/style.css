@@ -1,0 +1,987 @@
+/* ========================================================
+   GIAO DIỆN SINH NHẬT QUỲNH TRANG - 03/11
+   Phong cách: Modern Editorial & Soft Warm Aesthetic
+   Tông màu: Kem ngà, Trắng sứ, Vàng Champagne & Nâu ấm
+   Tối giản, Sang trọng, Tinh tế, Khác biệt hoàn toàn
+   ======================================================== */
+
+:root {
+    --bg-main: #fbf9f6;
+    --bg-surface: #ffffff;
+    --bg-warm: #f5efe6;
+    --bg-subtle: #f0ebe1;
+    --text-primary: #1f1b18;
+    --text-secondary: #6e645e;
+    --text-muted: #9c9189;
+    --accent-gold: #c5a059;
+    --accent-terracotta: #b26e5d;
+    --border-light: rgba(0, 0, 0, 0.08);
+    --border-warm: rgba(197, 160, 89, 0.35);
+    --shadow-soft: 0 12px 35px rgba(0, 0, 0, 0.04);
+    --shadow-hover: 0 20px 45px rgba(0, 0, 0, 0.08);
+    
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-script: 'Cormorant Garamond', Georgia, serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: var(--font-sans);
+    color: var(--text-primary);
+    background-color: var(--bg-main);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    line-height: 1.6;
+}
+
+/* Hiệu ứng nền nhẹ nhàng, ấm áp, hoàn toàn không màu mè */
+.bg-ambient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    background: 
+        radial-gradient(circle at 10% 15%, rgba(245, 239, 230, 0.9) 0%, transparent 50%),
+        radial-gradient(circle at 90% 25%, rgba(250, 240, 235, 0.8) 0%, transparent 45%),
+        radial-gradient(circle at 50% 85%, rgba(240, 235, 225, 0.8) 0%, transparent 55%);
+}
+
+/* Nút trở về trang chủ */
+.top-nav {
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    z-index: 100;
+}
+
+.back-home-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid var(--border-light);
+    border-radius: 40px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.back-home-link:hover {
+    color: var(--text-primary);
+    background: #ffffff;
+    border-color: var(--accent-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Container chính */
+.main-container {
+    position: relative;
+    z-index: 10;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 70px 24px 140px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==================== 1. EDITORIAL HEADER ==================== */
+.editorial-header {
+    text-align: center;
+    margin-bottom: 55px;
+    padding-bottom: 35px;
+    border-bottom: 1px solid var(--border-light);
+    position: relative;
+}
+
+.issue-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin-bottom: 18px;
+}
+
+.issue-tag::before, .issue-tag::after {
+    content: '';
+    width: 25px;
+    height: 1px;
+    background-color: var(--accent-gold);
+}
+
+.main-title {
+    font-family: var(--font-serif);
+    font-size: clamp(42px, 7vw, 68px);
+    font-weight: 400;
+    letter-spacing: -1px;
+    line-height: 1.15;
+    color: #fa5f79;
+    margin-bottom: 16px;
+}
+
+.main-title span.italic-accent {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--accent-terracotta);
+}
+
+.header-lead {
+    font-size: clamp(15px, 2vw, 18px);
+    color: var(--text-secondary);
+    max-width: 620px;
+    margin: 0 auto;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+/* ==================== 2. MAIN HERO PORTRAIT (CHÂN DUNG CHỮ NHẬT NGHỆ THUẬT) ==================== */
+.hero-showcase {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 45px;
+    align-items: center;
+    margin-bottom: 80px;
+    background: var(--bg-surface);
+    padding: 35px;
+    border-radius: 20px;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-soft);
+}
+
+.portrait-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border-radius: 14px;
+    overflow: hidden;
+    background-color: var(--bg-warm);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.portrait-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    display: block;
+}
+
+.portrait-frame:hover .portrait-image {
+    transform: scale(1.04);
+}
+
+.frame-badge {
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Cột thông điệp bên cạnh ảnh chân dung */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.editorial-quote {
+    font-family: var(--font-serif);
+    font-size: clamp(24px, 3.2vw, 32px);
+    line-height: 1.4;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.editorial-desc {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.editorial-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-light);
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.meta-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+}
+
+.meta-value {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: 2px;
+    align-self: center;
+}
+
+/* Nút thay ảnh nhanh cho người dùng */
+.photo-change-tool {
+    margin-top: 20px;
+}
+
+.btn-soft-change {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    background: var(--bg-warm);
+    border: 1px solid transparent;
+    padding: 7px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-soft-change:hover {
+    color: var(--text-primary);
+    background: #ffffff;
+    border-color: var(--accent-gold);
+}
+
+#hiddenFileInput {
+    display: none;
+}
+
+/* ==================== 3. AESTHETIC FLORAL & HEART BIRTHDAY CAKE (KHOẢNH KHẮC NGUYỆN ƯỚC) ==================== */
+.candle-ritual-section {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    border-radius: 24px;
+    padding: 55px 35px 50px;
+    text-align: center;
+    margin-bottom: 80px;
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    overflow: hidden;
+}
+
+.ritual-flower-tag {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--accent-terracotta);
+    background: rgba(178, 110, 93, 0.08);
+    padding: 5px 16px;
+    border-radius: 30px;
+    margin-bottom: 12px;
+}
+
+.ritual-title {
+    font-family: var(--font-serif);
+    font-size: clamp(30px, 4.5vw, 42px);
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.ritual-sub {
+    font-size: 15.5px;
+    color: var(--text-secondary);
+    max-width: 540px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+}
+
+/* KHUNG CHỨA CHIẾC BÁNH SINH NHẬT */
+.birthday-cake-wrapper {
+    position: relative;
+    width: 320px;
+    margin: 0 auto 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Các hoa và trái tim bồng bềnh xung quanh bánh */
+.cake-ambient-decorations {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.floating-decor {
+    position: absolute;
+    font-size: 20px;
+    animation: gentleFloat 3.5s ease-in-out infinite alternate;
+}
+
+.fd-1 { top: 0%; left: 0%; animation-delay: 0s; font-size: 22px; }
+.fd-2 { top: 12%; right: -5%; animation-delay: 0.7s; font-size: 20px; }
+.fd-3 { top: 50%; left: -12%; animation-delay: 1.4s; font-size: 24px; }
+.fd-4 { top: 55%; right: -10%; animation-delay: 0.4s; font-size: 22px; }
+.fd-5 { bottom: 20%; left: -5%; animation-delay: 1.1s; font-size: 18px; }
+.fd-6 { bottom: 25%; right: 0%; animation-delay: 1.8s; font-size: 20px; }
+
+@keyframes gentleFloat {
+    0% { transform: translateY(0) rotate(0deg) scale(1); }
+    100% { transform: translateY(-12px) rotate(8deg) scale(1.1); }
+}
+
+.cake-assembly {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5;
+}
+
+/* CÂY NẾN & NGỌN LỬA */
+.candle-unit {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: -4px;
+    z-index: 10;
+}
+
+.candle-flame {
+    width: 18px;
+    height: 28px;
+    background: radial-gradient(circle at bottom, #ffffff 15%, #ffd27d 45%, #f28b50 85%, transparent 100%);
+    border-radius: 50% 50% 35% 35% / 60% 60% 40% 40%;
+    box-shadow: 0 0 20px rgba(255, 179, 71, 0.9), 0 0 45px rgba(255, 120, 71, 0.5);
+    animation: flamePulse 1.8s infinite ease-in-out;
+    transform-origin: bottom center;
+    transition: all 0.7s ease;
+}
+
+@keyframes flamePulse {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+    25% { transform: scale(1.08, 0.95) rotate(-3deg); opacity: 0.95; }
+    50% { transform: scale(0.96, 1.05) rotate(2deg); opacity: 1; }
+    75% { transform: scale(1.03, 0.98) rotate(-1deg); opacity: 0.92; }
+}
+
+.candle-smoke {
+    position: absolute;
+    top: -5px;
+    width: 6px;
+    height: 6px;
+    background: rgba(150, 140, 130, 0.6);
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.is-extinguished .candle-flame {
+    opacity: 0;
+    transform: scale(0.2) translateY(-10px);
+    box-shadow: none;
+}
+
+.is-extinguished .candle-smoke {
+    animation: smokeDrift 2.2s forwards ease-out;
+}
+
+@keyframes smokeDrift {
+    0% { opacity: 0.8; transform: translateY(0) scale(1); }
+    100% { opacity: 0; transform: translateY(-40px) scale(3.5); filter: blur(5px); }
+}
+
+.candle-wick {
+    width: 3px;
+    height: 10px;
+    background: #3b302a;
+    border-radius: 2px;
+}
+
+.candle-body {
+    width: 18px;
+    height: 48px;
+    background: linear-gradient(180deg, #ffffff 0%, #fae6de 100%);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+    box-shadow: inset 0 -3px 6px rgba(0, 0, 0, 0.05);
+}
+
+.candle-flower-collar {
+    font-size: 16px;
+    margin-top: -6px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* CÁC TẦNG BÁNH KEM */
+.cake-tier {
+    position: relative;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Tầng trên */
+.cake-tier-top {
+    width: 170px;
+    height: 60px;
+    background: linear-gradient(180deg, #ffffff 0%, #fff3ed 100%);
+    border: 1px solid rgba(230, 200, 190, 0.5);
+    border-radius: 14px 14px 10px 10px;
+    box-shadow: inset 0 -4px 8px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(178, 110, 93, 0.08);
+    z-index: 4;
+}
+
+.frosting-pearls {
+    position: absolute;
+    top: -9px;
+    display: flex;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.cake-text-icing {
+    font-family: var(--font-serif);
+    font-size: 12.5px;
+    font-style: italic;
+    color: var(--accent-terracotta);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Tầng dưới */
+.cake-tier-bottom {
+    width: 230px;
+    height: 68px;
+    background: linear-gradient(180deg, #fff7f2 0%, #ffede6 100%);
+    border: 1px solid rgba(230, 200, 190, 0.55);
+    border-radius: 16px 16px 12px 12px;
+    margin-top: -4px;
+    box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.04), 0 6px 18px rgba(0, 0, 0, 0.05);
+    z-index: 3;
+}
+
+.tier-floral-ribbon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 17px;
+}
+
+.ribbon-flower {
+    animation: gentleWiggle 3s infinite ease-in-out;
+}
+
+.ribbon-heart {
+    animation: heartBeat 2s infinite ease-in-out;
+}
+
+@keyframes gentleWiggle {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(6deg) scale(1.08); }
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+/* ĐĨA SỨ ĐỰNG BÁNH */
+.cake-ceramic-stand {
+    width: 270px;
+    position: relative;
+    margin-top: -3px;
+    z-index: 2;
+}
+
+.plate-top {
+    width: 100%;
+    height: 14px;
+    background: linear-gradient(180deg, #ffffff 0%, #f0eae1 100%);
+    border-radius: 50%;
+    border: 1.5px solid rgba(197, 160, 89, 0.4);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.plate-base {
+    width: 110px;
+    height: 12px;
+    background: linear-gradient(180deg, #e8dfd3 0%, #ded2c4 100%);
+    border-radius: 0 0 10px 10px;
+    margin: -3px auto 0;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+}
+
+/* CÁNH HOA & TRÁI TIM RẢI XUNG QUANH ĐĨA */
+.fallen-petals {
+    position: absolute;
+    width: 100%;
+    bottom: -6px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+    font-size: 16px;
+    pointer-events: none;
+    z-index: 6;
+}
+
+.p-1 { transform: rotate(-20deg); }
+.p-2 { transform: rotate(15deg); }
+.p-3 { transform: rotate(-10deg); }
+.p-4 { transform: rotate(25deg); }
+
+/* NÚT THỔI NẾN & TƯƠNG TÁC */
+.ritual-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.btn-minimal-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 34px;
+    background: linear-gradient(135deg, #2c2725 0%, #443c39 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 40px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 6px 20px rgba(44, 39, 37, 0.2);
+}
+
+.btn-minimal-action:hover {
+    background: linear-gradient(135deg, var(--accent-terracotta) 0%, #c97d6c 100%);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 28px rgba(178, 110, 93, 0.3);
+}
+
+.btn-relight-action {
+    display: none;
+    padding: 14px 30px;
+    background: var(--bg-warm);
+    color: var(--text-primary);
+    border: 1px solid var(--border-light);
+    border-radius: 40px;
+    font-size: 14.5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-relight-action:hover {
+    background: #ffffff;
+    border-color: var(--accent-gold);
+    transform: translateY(-2px);
+}
+
+/* THÔNG ĐIỆP ĐIỀU ƯỚC NỞ HOA */
+.wish-reveal-note {
+    max-width: 620px;
+    margin: 30px auto 0;
+    padding: 24px 28px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 245, 242, 0.95));
+    border: 1.5px dashed rgba(178, 110, 93, 0.4);
+    border-radius: 18px;
+    font-size: 15.5px;
+    color: var(--text-primary);
+    line-height: 1.8;
+    display: none;
+    box-shadow: 0 8px 25px rgba(178, 110, 93, 0.08);
+    animation: fadeIn 0.8s ease;
+}
+
+.wish-reveal-note.visible {
+    display: block;
+}
+
+.wish-icon-row {
+    font-size: 20px;
+    margin-bottom: 8px;
+    letter-spacing: 4px;
+}
+
+/* ==================== 4. THE GALLERY EXHIBITION (TRIỂN LÃM ẢNH KỶ NIỆM BỐ CỤC NGHỆ THUẬT) ==================== */
+.gallery-exhibition {
+    margin-bottom: 80px;
+}
+
+.section-editorial-header {
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 18px;
+}
+
+.section-editorial-title {
+    font-family: var(--font-serif);
+    font-size: clamp(26px, 3.5vw, 36px);
+    color: var(--text-primary);
+    font-weight: 400;
+}
+
+.section-editorial-count {
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+}
+
+.exhibition-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.art-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    border-radius: 14px;
+    padding: 14px 14px 18px;
+    box-shadow: var(--shadow-soft);
+    cursor: pointer;
+    transition: all 0.35s ease;
+}
+
+.art-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(197, 160, 89, 0.4);
+}
+
+.art-img-box {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--bg-warm);
+}
+
+.art-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.6s ease;
+    display: block;
+}
+
+.art-card:hover .art-img {
+    transform: scale(1.06);
+}
+
+.art-info {
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.art-title {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.art-tag {
+    font-size: 11.5px;
+    color: var(--accent-gold);
+    font-weight: 500;
+}
+
+/* ==================== 5. AN EDITORIAL LOVE NOTE FROM TRỊNH QUÂN ==================== */
+.letter-section {
+    margin-bottom: 60px;
+}
+
+.letter-sheet {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    border-radius: 20px;
+    padding: 55px 50px;
+    box-shadow: var(--shadow-soft);
+    position: relative;
+}
+
+.letter-header-tag {
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent-terracotta);
+    margin-bottom: 25px;
+}
+
+.letter-content {
+    font-family: var(--font-script);
+    font-size: 21px;
+    line-height: 1.85;
+    color: #2e2621;
+}
+
+.letter-content p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.letter-closing {
+    margin-top: 35px;
+    text-align: right;
+    font-family: var(--font-sans);
+}
+
+.closing-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.closing-signature {
+    font-family: var(--font-serif);
+    font-size: 26px;
+    font-style: italic;
+    color: var(--text-primary);
+    margin-top: 4px;
+    display: block;
+}
+
+/* ==================== 6. MINIMALIST FLOATING AUDIO BAR ==================== */
+.audio-capsule {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid var(--border-light);
+    padding: 8px 18px;
+    border-radius: 40px;
+    backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.audio-capsule:hover {
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.audio-icon-pulse {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--bg-warm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    font-size: 14px;
+}
+
+.audio-capsule.is-playing .audio-icon-pulse {
+    background: var(--accent-terracotta);
+    color: #ffffff;
+}
+
+.audio-details {
+    max-width: 140px;
+}
+
+.audio-name {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.audio-singer {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.audio-btn-toggle {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+
+.audio-btn-toggle:hover {
+    transform: scale(1.15);
+    color: var(--accent-terracotta);
+}
+
+/* ==================== 7. LIGHTBOX XEM ẢNH FULL SIZE ==================== */
+.modal-viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10000;
+    background: rgba(31, 27, 24, 0.75);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.35s ease;
+    padding: 24px;
+}
+
+.modal-viewer.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.viewer-inner {
+    max-width: 680px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 20px 20px 24px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    transform: scale(0.92);
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.modal-viewer.active .viewer-inner {
+    transform: scale(1);
+}
+
+.btn-close-viewer {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--bg-warm);
+    border: none;
+    color: var(--text-primary);
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.btn-close-viewer:hover {
+    background: #e8ded2;
+}
+
+.viewer-image {
+    width: 100%;
+    max-height: 72vh;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.viewer-caption {
+    margin-top: 15px;
+    font-family: var(--font-serif);
+    font-size: 20px;
+    color: var(--text-primary);
+}
+
+/* ==================== 8. FOOTER ==================== */
+.editorial-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-light);
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.editorial-footer b {
+    color: var(--text-primary);
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 860px) {
+    .hero-showcase {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 24px;
+    }
+    .exhibition-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .letter-sheet {
+        padding: 35px 25px;
+    }
+    .audio-capsule {
+        bottom: 16px;
+        right: 16px;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
